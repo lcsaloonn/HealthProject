@@ -196,6 +196,77 @@
             }
         },
         {
+            "name": "FrameNumberComponent",
+            "id": "component-FrameNumberComponent-450df4683eff5016b20948cfe4e4c5a533b99f58a5267883607b504e2ea9768f93fff19104ca9c13974cd334cb255bf4641a24e44e624c26d1636d335d057677",
+            "file": "src/stories/libs/composite/frame-number/frame-number.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "frame-number",
+            "styleUrls": [
+                "./frame-number.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./frame-number.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'frame-number',\n  templateUrl: './frame-number.component.html',\n  styleUrls: ['./frame-number.component.scss'],\n})\nexport class FrameNumberComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./frame-number.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"frame-container mt-12\">\n  {{ title }}\n</div>\n"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
             "file": "src/stories/header.component.ts",
@@ -347,6 +418,118 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "TestComponent",
+            "id": "component-TestComponent-47d088b32c8b1ce4c1cea90e35425b769e7013bff154135cae00ce31c2f712b4760963c61641b49b75842b561fce520d7c5197f951bc61304d58a4a49388baf0",
+            "file": "src/stories/libs/test/test.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-test",
+            "styleUrls": [
+                "./test.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./test.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "button",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "information",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isExpertTricot",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "openingInfo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "phoneNumber",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-test',\n  templateUrl: './test.component.html',\n  styleUrls: ['./test.component.scss'],\n})\nexport class TestComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  information!: string;\n\n  @Input()\n  phoneNumber!: string;\n\n  @Input()\n  button!: string;\n\n  @Input()\n  openingInfo!: string;\n\n  @Input()\n  type!: string;\n\n  @Input()\n  isExpertTricot = false;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./test.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container-bloc\">\n  <img\n    *ngIf=\"type === 'phone' && !isExpertTricot\"\n    src=\"assets/img/contact_appel.svg\"\n    alt=\"\"\n  />\n  <img\n    *ngIf=\"type === 'phone' && isExpertTricot\"\n    src=\"assets/img/contact-telephone-expert-tricot.svg\"\n    alt=\"\"\n  />\n  <img *ngIf=\"type === 'visio'\" src=\"assets/img/contact_visio.svg\" alt=\"\" />\n  <img\n    *ngIf=\"type === 'email'\"\n    src=\"assets/img/contact-email-expert-tricot.svg\"\n    alt=\"\"\n  />\n  <div class=\"title\" data-testId=\"title\">\n    <span *ngIf=\"type === 'phone'\">Par téléphone</span>\n    <span *ngIf=\"type === 'email'\">Par mail</span>\n    <span *ngIf=\"type === 'visio'\">Par visio</span>\n  </div>\n  <div class=\"text-info\" data-testId=\"textInformation\">\n    {{ information }}\n  </div>\n\n  <div *ngIf=\"type === 'phone'\">\n    <div class=\"phone-number-container\">\n      <a [href]=\"\" class=\"phone-number\" data-testId=\"phoneNumber\">thomas}</a>\n      <span class=\"local-call-price\">prix d'un appel local</span>\n    </div>\n    <div class=\"opening-info\" data-testId=\"openingInfo\">\n      {{ openingInfo }}\n    </div>\n  </div>\n\n  <div *ngIf=\"type === 'email' || type === 'visio'\">\n    <button class=\"primaryWhiteBg mt-34\" data-testId=\"button\">thomas</button>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -433,6 +616,50 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "FrameNumberModule",
+            "id": "module-FrameNumberModule-3024fb279701c14108596af2788be8076d0ffcef6c169d72a1e399814c1edd8a5aa74d32155ac3ceac4e24ebfd58d387d92a12d81dee8a085f87e8ec9b12d1fb",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/frame-number/frame-number.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameNumberComponent } from './frame-number.component';\r\n\r\n@NgModule({\r\n  imports: [],\r\n  declarations: [FrameNumberComponent],\r\n  exports: [FrameNumberComponent],\r\n})\r\nexport class FrameNumberModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FrameNumberComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FrameNumberComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -451,6 +678,16 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -458,14 +695,14 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
-                "name": "environment",
+                "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -516,6 +753,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "mock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/test/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  information:\r\n    'Pressées ? Lorem ipsum dolor sit amet, consectetur adipiscing elit',\r\n  phoneNumber: {\r\n    label: '(+33) 0 825 082 509',\r\n    url: '',\r\n  },\r\n  openingInfo: 'Du lundi au vendredi de 9h à 18h',\r\n}"
             },
             {
                 "name": "Primary",
@@ -585,6 +832,26 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/test/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TestComponent>",
+                "defaultValue": "(args: TestComponent) => ({\r\n  component: TestComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FrameNumberComponent>",
+                "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -612,6 +879,18 @@
                     "type": "literal type"
                 }
             ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -624,16 +903,26 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "intagrated",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FrameNumberComponent>",
+                    "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -751,6 +1040,28 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "src/stories/libs/test/test.stories.ts": [
+                {
+                    "name": "mock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/test/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  information:\r\n    'Pressées ? Lorem ipsum dolor sit amet, consectetur adipiscing elit',\r\n  phoneNumber: {\r\n    label: '(+33) 0 825 082 509',\r\n    url: '',\r\n  },\r\n  openingInfo: 'Du lundi au vendredi de 9h à 18h',\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/test/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TestComponent>",
+                    "defaultValue": "(args: TestComponent) => ({\r\n  component: TestComponent,\r\n  props: args,\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -772,7 +1083,7 @@
         ]
     },
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -939,6 +1250,64 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-number/frame-number.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FrameNumberComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/test/test.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TestComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/test/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/test/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

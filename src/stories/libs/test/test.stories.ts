@@ -37,28 +37,28 @@ const mock = {
   openingInfo: 'Du lundi au vendredi de 9h à 18h',
 };
 
-export const phone = Template.bind({});
-phone.args = {
-  ...mock,
-  type: 'phone',
-  isExpertTricot: false,
-};
+// export const phone = Template.bind({});
+// phone.args = {
+//   ...mock,
+//   type: 'phone',
+//   isExpertTricot: false,
+// };
 
-export const phoneExpertTricot = Template.bind({});
-phoneExpertTricot.args = {
-  ...mock,
-  type: 'phone',
-  isExpertTricot: true,
-};
+// export const phoneExpertTricot = Template.bind({});
+// phoneExpertTricot.args = {
+//   ...mock,
+//   type: 'phone',
+//   isExpertTricot: true,
+// };
 
-export const mail = Template.bind({});
-mail.args = {
-  ...mock,
-  type: 'email',
-};
+// export const mail = Template.bind({});
+// mail.args = {
+//   ...mock,
+//   type: 'email',
+// };
 
-export const visio = Template.bind({});
-visio.args = {
-  ...mock,
-  type: 'visio',
-};
+// export const visio = Template.bind({});
+// visio.args = {
+//   ...mock,
+//   type: 'visio',
+// };
