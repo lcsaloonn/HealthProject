@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    container: false,
   },
   plugins: [],
 };
