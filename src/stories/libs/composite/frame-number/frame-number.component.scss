@@ -1,0 +1,17 @@
+.frame {
+  display: flex;
+  align-items: center;
+  margin: auto 20% auto 20%;
+  justify-content: center;
+  &-spire {
+    width: 100%;
+    background-color: rgb(211, 28, 28);
+    height: 3px;
+    border-radius: 10px;
+  }
+  &-title {
+    padding: 0 20px 0 20px;
+    font-size: 25px;
+    white-space: nowrap;
+  }
+}

@@ -13,9 +13,7 @@ export default {
       declarations: [FrameNumberComponent],
       imports: [],
     }),
-    componentWrapperDecorator(
-      (story) => `<div class="container mt-30" >${story}</div>`
-    ),
+    componentWrapperDecorator((story) => `<div class="" >${story}</div>`),
   ],
   parameters: {
     layout: 'fullscreen',
@@ -29,5 +27,5 @@ const Template: Story<FrameNumberComponent> = (args: FrameNumberComponent) => ({
 
 export const intagrated = Template.bind({});
 intagrated.args = {
-  title: 'Thomas',
+  title: 'Étape 1',
 };
