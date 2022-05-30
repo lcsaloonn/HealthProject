@@ -1,0 +1,40 @@
+<div class="container-bloc">
+  <img
+    *ngIf="type === 'phone' && !isExpertTricot"
+    src="assets/img/contact_appel.svg"
+    alt=""
+  />
+  <img
+    *ngIf="type === 'phone' && isExpertTricot"
+    src="assets/img/contact-telephone-expert-tricot.svg"
+    alt=""
+  />
+  <img *ngIf="type === 'visio'" src="assets/img/contact_visio.svg" alt="" />
+  <img
+    *ngIf="type === 'email'"
+    src="assets/img/contact-email-expert-tricot.svg"
+    alt=""
+  />
+  <div class="title" data-testId="title">
+    <span *ngIf="type === 'phone'">Par téléphone</span>
+    <span *ngIf="type === 'email'">Par mail</span>
+    <span *ngIf="type === 'visio'">Par visio</span>
+  </div>
+  <div class="text-info" data-testId="textInformation">
+    {{ information }}
+  </div>
+
+  <div *ngIf="type === 'phone'">
+    <div class="phone-number-container">
+      <a [href]="" class="phone-number" data-testId="phoneNumber">thomas}</a>
+      <span class="local-call-price">prix d'un appel local</span>
+    </div>
+    <div class="opening-info" data-testId="openingInfo">
+      {{ openingInfo }}
+    </div>
+  </div>
+
+  <div *ngIf="type === 'email' || type === 'visio'">
+    <button class="primaryWhiteBg mt-34" data-testId="button">thomas</button>
+  </div>
+</div>
