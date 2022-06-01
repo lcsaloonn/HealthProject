@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'frame-number',
+  selector: '[frame-number]',
   templateUrl: './frame-number.component.html',
   styleUrls: ['./frame-number.component.scss'],
 })

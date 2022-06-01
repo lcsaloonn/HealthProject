@@ -1,0 +1,26 @@
+.ingredient {
+  display: flex;
+
+  margin-bottom: 10px;
+
+  span {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: red;
+    align-items: center;
+    margin: auto 10px auto 5px;
+  }
+  &-name {
+    font-weight: 400;
+    padding-right: 5px;
+  }
+  &-description {
+    padding-left: 10px;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 4rem;
+  }
+}

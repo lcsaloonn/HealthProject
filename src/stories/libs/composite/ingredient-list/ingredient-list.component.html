@@ -1,0 +1,16 @@
+<div class="ingredient-container">
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      <div class="ingredient">
+        <span></span>
+        <div class="ingredient-name">
+          <strong>{{ ingredient.name }}</strong>
+        </div>
+        <div class="ingredient-quantity">
+          {{ ingredient.quantity }} {{ ingredient.quantityValue }}
+        </div>
+        <div class="ingredient-description">{{ ingredient.description }}</div>
+      </div>
+    </li>
+  </ul>
+</div>
