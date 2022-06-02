@@ -1,0 +1,23 @@
+<div class="indication">
+  <div class="indication-container">
+    <div class="icon">
+      <fa-icon [icon]="faCoffee" size="2x"></fa-icon>
+    </div>
+
+    <div class="indication-container-text">{{ time }} mm</div>
+  </div>
+
+  <div class="indication-container">
+    <div class="icon">
+      <fa-icon [icon]="faSpoon" size="2x"></fa-icon>
+    </div>
+    <div class="indication-container-text">{{ difficulty }}</div>
+  </div>
+
+  <div class="indication-container">
+    <div class="icon">
+      <fa-icon [icon]="faBurn" size="2x"></fa-icon>
+    </div>
+    <div class="indication-container-text">Calories: {{ calories }}</div>
+  </div>
+</div>

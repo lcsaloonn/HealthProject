@@ -106,7 +106,24 @@
     ],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "RecipeDescriptionModule",
+            "id": "class-RecipeDescriptionModule-6e47f5b6ac1e5cfa2680ead037bb48fa0f9a2cceef39865b0c14002dbe6b9629c6f7f1fab7d160774d73b87080905014295de1dc8eeab49ff50e981834ab8220",
+            "file": "src/stories/libs/composite/recipe-description/recipe-description.module.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RecipeDescriptionComponent } from './recipe-description.component';\r\n\r\nNgModule({\r\n  imports: [CommonModule],\r\n  declarations: [RecipeDescriptionComponent],\r\n  exports: [RecipeDescriptionComponent],\r\n});\r\nexport class RecipeDescriptionModule {}\r\n",
+            "properties": [],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [],
     "components": [
         {
@@ -285,7 +302,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".ingredient {\r\n  display: flex;\r\n  //justify-content: center;\r\n  margin-bottom: 5px;\r\n\r\n  span {\r\n    height: 2.5px;\r\n    width: 18px;\r\n    background-color: red;\r\n    align-items: center;\r\n    margin: auto 5px auto 0;\r\n  }\r\n  &-name {\r\n    font-weight: 400;\r\n    padding-right: 5px;\r\n  }\r\n  &-description {\r\n    padding-left: 10px;\r\n  }\r\n  &-container {\r\n    display: flex;\r\n    justify-content: center;\r\n  }\r\n}\r\n",
+                    "data": ".ingredient {\r\n  display: flex;\r\n\r\n  margin-bottom: 10px;\r\n\r\n  span {\r\n    height: 5px;\r\n    width: 5px;\r\n    border-radius: 50%;\r\n    background-color: red;\r\n    align-items: center;\r\n    margin: auto 10px auto 5px;\r\n  }\r\n  &-name {\r\n    font-weight: 400;\r\n    padding-right: 5px;\r\n  }\r\n  &-description {\r\n    padding-left: 10px;\r\n  }\r\n  &-container {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin: 50px 0 50px 4rem;\r\n  }\r\n}\r\n",
                     "styleUrl": "./ingredient-list.component.scss"
                 }
             ],
@@ -304,8 +321,70 @@
             "templateData": "<div class=\"ingredient-container\">\n  <ul>\n    <li *ngFor=\"let ingredient of ingredients\">\n      <div class=\"ingredient\">\n        <span></span>\n        <div class=\"ingredient-name\">\n          <strong>{{ ingredient.name }}</strong>\n        </div>\n        <div class=\"ingredient-quantity\">\n          {{ ingredient.quantity }} {{ ingredient.quantityValue }}\n        </div>\n        <div class=\"ingredient-description\">{{ ingredient.description }}</div>\n      </div>\n    </li>\n  </ul>\n</div>\n"
         },
         {
+            "name": "RecipeDescriptionComponent",
+            "id": "component-RecipeDescriptionComponent-6dfc10615b20b474b77ca13f8edcb3fcd605e599db6d780e2e39f2e7cc8687e47aea53fd8eefb95774a3a95b8acf33c5b74fed1abb290e8da0d20adae3199e19",
+            "file": "src/stories/libs/composite/recipe-description/recipe-description.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[recipe-description]",
+            "styleUrls": [
+                "./recipe-description.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recipe-description.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[recipe-description]',\n  templateUrl: './recipe-description.component.html',\n  styleUrls: ['./recipe-description.component.scss'],\n})\nexport class RecipeDescriptionComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./recipe-description.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"indication\">\n  dd\n  <div class=\"indication-icon-container\"><i class=\"fa-solid fa-timer\"></i></div>\n</div>\n"
+        },
+        {
             "name": "ViewRecipeComponent",
-            "id": "component-ViewRecipeComponent-6919b2d7f28e8abcd1a412d58b18524645e6b4c227a39de808bc4a0388e223d428feab930b1cd0c4813bd53fad514d493af63d9a3f35b4d152d79c9e3a40379f",
+            "id": "component-ViewRecipeComponent-43ddf83590811d5a6b717a1513f888ba855194822df0b6dc5f9a98a7cd38e39b60d0c903423075fed331f333d0ce321f0804939aa8596766e8dd5ef8401e5996",
             "file": "src/app/view/view-recipe/view-recipe.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -332,7 +411,17 @@
                     "type": "Iingredient[]",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "['Ingrédient', 'Étape']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
                 }
             ],
             "methodsClass": [
@@ -342,7 +431,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -354,7 +443,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Iingredient } from 'src/interface/ingredient.interface';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Iingredient } from 'src/interface/ingredient.interface';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor() {}\n\n  title: string[] = ['Ingrédient', 'Étape'];\n  ngOnInit(): void {}\n\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -374,7 +463,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"recipe-header\">\n  <img src=\"\" alt=\"\" />\n  <div class=\"recipe-header-title\">TITRE</div>\n</div>\n<div class=\"recipe-body\">\n  <div class=\"recipe-body-description\"></div>\n\n  <div class=\"recipe-body-ingredients\">\n    <div ingredient-list [ingredients]=\"mock\"></div>\n  </div>\n\n  <!-- for each étape \n  <div class=\"recipe-body-step\">\n    <div frame-number [title]=\"etape 1\"></div>\n    <div class=\"recipe-body-content\">\n      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi nam cumque\n      ut maxime. Impedit odio similique maiores! Sed similique quaerat,\n      accusantium debitis, recusandae quia mollitia quae voluptatibus commodi\n      inventore atque.\n    </div>\n  </div>\n</div>-->\n\n  <!-- information calorie glucide ... \n\n<div class=\"recipe-footer\">date</div>\n--></div>\n"
+            "templateData": "<div class=\"recipe-header\">\n  <img src=\"\" alt=\"\" />\n  <div class=\"recipe-header-title\">TITRE</div>\n</div>\n\n<div class=\"recipe-body\">\n  <div frame-number [title]=\"title[0]\" class=\"mt-5\"></div>\n  <div class=\"recipe-body-description\"></div>\n\n  <div class=\"recipe-body-ingredients\">\n    <div ingredient-list [ingredients]=\"mock\"></div>\n  </div>\n\n  <!-- for each étape -->\n  <div class=\"recipe-body-step\">\n    <div frame-number [title]=\"title[1]\"></div>\n    <div class=\"recipe-body-content content-container\">\n      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi nam cumque\n      ut maxime. Impedit odio similique maiores! Sed similique quaerat,\n      accusantium debitis, recusandae quia mollitia quae voluptatibus commodi\n      inventore atque.\n    </div>\n  </div>\n</div>\n\n<!-- information calorie glucide ... -->\n\n<div class=\"recipe-footer\">date</div>\n"
         }
     ],
     "modules": [
@@ -511,13 +600,13 @@
         },
         {
             "name": "IngredientListModule",
-            "id": "module-IngredientListModule-96376e10d00960764e46a1c4ba111338450c00199418625e4ac96d820d7448c1c54131e5baad659df04d22d641519e65ce1f2ffc6ff4a6dedc52fd437fcb0f3c",
+            "id": "module-IngredientListModule-0fe08bf180a82a9c2b829ba36b4e0be968301f8e97a19edbf9145f94bb865b453753a01526c89b3313867214b8c421c5976634512a2fface27eca8445b9002ee",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/stories/libs/composite/ingredient-list/ingredient-list.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { IngredientListComponent } from './ingredient-list.component';\r\n\r\n@NgModule({\r\n  imports: [],\r\n  declarations: [IngredientListComponent],\r\n  exports: [IngredientListComponent],\r\n})\r\nexport class IngredientListModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { IngredientListComponent } from './ingredient-list.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule],\r\n  declarations: [IngredientListComponent],\r\n  exports: [IngredientListComponent],\r\n})\r\nexport class IngredientListModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -555,13 +644,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-c56750e6e3a9fe3dffeb8fe53376c32b81284f2f983d0c2eb194c21df949d42e942a87b46f30f5a6730aa1a41d8eea177986fa0f04cbdce4143ebbf6641cf52a",
+            "id": "module-SharedModule-c82f67240873ff511d9a66eb3d981d565c9d5340f30b1fc1dbbbb5c28fdc5129668cdbc14c88631c7316bd6c36709aa520bbe32ca6b4dee71d1c89f46f8512c2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClient, HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  exports: [FormsModule, HttpClientModule],\r\n  providers: [],\r\n})\r\nexport class SharedModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { HttpClient, HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  exports: [FormsModule, HttpClientModule, CommonModule],\r\n  providers: [],\r\n})\r\nexport class SharedModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -691,13 +780,13 @@
         },
         {
             "name": "ViewRecipeModule",
-            "id": "module-ViewRecipeModule-728d1ee743fa401974c665fe1db0e6a19e116495c6e5b53f19182a3dbdcfe991ea9193bfaa65896e3c431346354d120e6143ec46a5854cb0d15e7a589b9a000a",
+            "id": "module-ViewRecipeModule-19d932ea7efcef2f77dd960a4333a67d332bd5f00f4707a51e318a9bf25a967255712fa47040d4edf2f58934ec12a3e63583028596466345797477b94783bc42",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/view/view-recipe/view-recipe.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'src/app/shared/shared.module';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewRecipeComponent } from './view-recipe.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewRecipeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewRecipeComponent }]),\r\n  ],\r\n  exports: [ViewRecipeComponent],\r\n})\r\nexport class ViewRecipeModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'src/app/shared/shared.module';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewRecipeComponent } from './view-recipe.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewRecipeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewRecipeComponent }]),\r\n  ],\r\n  exports: [ViewRecipeComponent],\r\n})\r\nexport class ViewRecipeModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -797,6 +886,16 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -851,6 +950,16 @@
                 "deprecationMessage": "",
                 "type": "Story<IngredientListComponent>",
                 "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RecipeDescriptionComponent>",
+                "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -964,6 +1073,28 @@
                     "deprecationMessage": "",
                     "type": "Story<IngredientListComponent>",
                     "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RecipeDescriptionComponent>",
+                    "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
@@ -1083,7 +1214,7 @@
                 "linktype": "component",
                 "name": "ViewRecipeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -1185,6 +1316,44 @@
             },
             {
                 "filePath": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-description/recipe-description.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecipeDescriptionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-description/recipe-description.module.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "RecipeDescriptionModule",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
