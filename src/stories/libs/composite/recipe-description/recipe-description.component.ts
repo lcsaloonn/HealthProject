@@ -8,7 +8,7 @@ import { faBurn } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './recipe-description.component.html',
   styleUrls: ['./recipe-description.component.scss'],
 })
-export class RecipeDescriptionComponent implements OnInit {
+export class RecipeDescriptionComponent {
   constructor() {}
   faCoffee = faClock;
   faSpoon = faSpoon;
@@ -17,6 +17,4 @@ export class RecipeDescriptionComponent implements OnInit {
   @Input() time!: number;
   @Input() difficulty!: string;
   @Input() calories!: number;
-
-  ngOnInit(): void {}
 }
