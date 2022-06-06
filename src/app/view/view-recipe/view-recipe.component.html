@@ -1,28 +1,45 @@
-<div class="recipe-header">
-  <img src="" alt="" />
-  <div class="recipe-header-title">TITRE</div>
-</div>
-
-<div class="recipe-body">
-  <div frame-number [title]="title[0]" class="mt-5"></div>
-  <div class="recipe-body-description"></div>
-
-  <div class="recipe-body-ingredients">
-    <div ingredient-list [ingredients]="mock"></div>
+<div *ngIf="recipe$ | async as recipe">
+  <div class="recipe-header">
+    <img [src]="recipe.fields.image.fields.file.url" alt="" />
+    <div class="recipe-header-title">{{ recipe.fields.name }}</div>
+  </div>
+  <div class="recipe-description">
+    <div
+      recipe-description
+      [time]="recipe.fields.time"
+      [difficulty]="recipe.fields.difficulty"
+      [calories]="recipe.fields.calories"
+    ></div>
   </div>
 
-  <!-- for each étape -->
-  <div class="recipe-body-step">
-    <div frame-number [title]="title[1]"></div>
-    <div class="recipe-body-content content-container">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi nam cumque
-      ut maxime. Impedit odio similique maiores! Sed similique quaerat,
-      accusantium debitis, recusandae quia mollitia quae voluptatibus commodi
-      inventore atque.
+  <div class="recipe-body">
+    <div frame-number [title]="title[0]" class="mt-5"></div>
+    <div class="recipe-body-description"></div>
+
+    <div class="recipe-body-ingredients">
+      <div ingredient-list [ingredients]="recipe.fields.ingredients"></div>
+    </div>
+
+    <!-- for each étape -->
+    <div class="recipe-body-step">
+      <div frame-number [title]="title[1]"></div>
+      <div class="content-container">
+        <div
+          class="recipe-body-content"
+          [innerHtml]="_returnHtmlFromRichText(recipe.fields.recipe)"
+        ></div>
+      </div>
     </div>
   </div>
+
+  <!-- information calorie glucide ... -->
+
+  <div class="recipe-footer">
+    <i>{{ recipe.fields.date }}</i>
+  </div>
+  <!-- 
+  <pre>
+    {{ recipe.fields.recipe | json }}
+  </pre>
+</div> -->
 </div>
-
-<!-- information calorie glucide ... -->
-
-<div class="recipe-footer">date</div>

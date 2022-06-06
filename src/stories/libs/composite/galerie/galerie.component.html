@@ -1,0 +1,16 @@
+<div class="gallery">
+  <div class="gallery-column" *ngFor="let post of images">
+    <a href="" *ngFor="let i of post" class="gallery-link">
+      <figure class="gallery-thumb">
+        <img
+          [src]="i.fields.image.fields.file.url"
+          alt=""
+          class="gallery-image"
+        />
+        <figcaption class="gallery-caption">
+          {{ i.fields.name }}
+        </figcaption>
+      </figure>
+    </a>
+  </div>
+</div>

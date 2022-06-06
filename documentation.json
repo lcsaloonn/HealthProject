@@ -55,26 +55,68 @@
     "injectables": [
         {
             "name": "ContentfulService",
-            "id": "injectable-ContentfulService-ce7cdd872a9d4566f322dd16a236a5b022f8a158e7cc629830556cc4622ee7b43a47c861d4fb5251aeea2bcdddfe7343127d354325533785b7fb8cd828fad998",
+            "id": "injectable-ContentfulService-b4efbd01df8f990a59ae42d6a6a563003016676bc5f9e7d2e2d059c6c8ec35f4ffcbf1af08556315d4c6e4442c45fdd6faa9ddb294e525a1ef98eea3bf983069",
             "file": "src/app/shared/services/contentful/contentful.service.ts",
-            "properties": [],
+            "properties": [
+                {
+                    "name": "client",
+                    "defaultValue": "createClient({\n    space: environment.spaceId,\n    accessToken: environment.accessToken,\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
             "methods": [
                 {
-                    "name": "getData",
+                    "name": "getAllEntries",
                     "args": [],
+                    "optional": false,
+                    "returnType": "Observable<EntryCollection<>>",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getEntryById",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 11,
+                    "line": 24,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { map } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ContentfulService {\n  constructor(private http: HttpClient) {}\n\n  getData() {\n    return this.http\n      .get(\n        'https://cdn.contentful.com/spaces/zfepwmneoymr/environments/master/entries?access_token=pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM'\n      )\n      .pipe(\n        map((res: any) => {\n          return res;\n        })\n      );\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { createClient, Entry, EntryCollection } from 'contentful';\nimport { HttpClient } from '@angular/common/http';\nimport { from, map, Observable } from 'rxjs';\nimport { environment } from 'src/environments/environment';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ContentfulService {\n  constructor(private http: HttpClient) {}\n\n  private client = createClient({\n    space: environment.spaceId,\n    accessToken: environment.accessToken,\n  });\n\n  getAllEntries(): Observable<EntryCollection<unknown>> {\n    const promise = this.client.getEntries();\n    //from renvoie un observable à partir d'une promesse\n    return from(promise);\n  }\n\n  getEntryById(id: string) {\n    const promise = this.client.getEntry(id);\n    return from(promise);\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -88,7 +130,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 8,
+                "line": 10,
                 "jsdoctags": [
                     {
                         "name": "http",
@@ -106,24 +148,7 @@
     ],
     "guards": [],
     "interceptors": [],
-    "classes": [
-        {
-            "name": "RecipeDescriptionModule",
-            "id": "class-RecipeDescriptionModule-6e47f5b6ac1e5cfa2680ead037bb48fa0f9a2cceef39865b0c14002dbe6b9629c6f7f1fab7d160774d73b87080905014295de1dc8eeab49ff50e981834ab8220",
-            "file": "src/stories/libs/composite/recipe-description/recipe-description.module.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "class",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RecipeDescriptionComponent } from './recipe-description.component';\r\n\r\nNgModule({\r\n  imports: [CommonModule],\r\n  declarations: [RecipeDescriptionComponent],\r\n  exports: [RecipeDescriptionComponent],\r\n});\r\nexport class RecipeDescriptionModule {}\r\n",
-            "properties": [],
-            "methods": [],
-            "indexSignatures": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "hostBindings": [],
-            "hostListeners": []
-        }
-    ],
+    "classes": [],
     "directives": [],
     "components": [
         {
@@ -249,6 +274,130 @@
             "templateData": "<div class=\"frame\">\n  <span class=\"frame-spire\"></span>\n  <div class=\"frame-title\">{{ title }}</div>\n  <span class=\"frame-spire\"></span>\n</div>\n"
         },
         {
+            "name": "GalerieComponent",
+            "id": "component-GalerieComponent-e40bbf362c06c07ba1ed8f6e509df8e135b6dd2f34fa7848f5c6ed587e96df83ea0f6cbf8ac32b2fa68cf3fbe8fb3ffef2da7a38e81b82be5f9654c2c22df47f",
+            "file": "src/stories/libs/composite/galerie/galerie.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-galerie",
+            "styleUrls": [
+                "./galerie.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./galerie.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "posts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "images",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "splitToChunks",
+                    "args": [
+                        {
+                            "name": "array",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "parts",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "array",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "parts",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-galerie',\n  templateUrl: './galerie.component.html',\n  styleUrls: ['./galerie.component.scss'],\n})\n\n/**\n * Composant permetant de recevoir une liste d'image 12 au total pour être display en galerie\n *\n */\nexport class GalerieComponent implements OnInit {\n  @Input() posts!: any[];\n\n  images!: any[];\n\n  constructor() {}\n\n  ngOnInit(): void {\n    this.posts.splice(12);\n    this.images = this.splitToChunks(this.posts, 4);\n    console.log(this.images);\n  }\n\n  splitToChunks(array: any, parts: number) {\n    let result = [];\n    for (let i = parts; i > 0; i--) {\n      result.push(array.splice(0, Math.ceil(array.length / i)));\n    }\n    return result;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// img {\r\n//   background-color: aqua;\r\n// }\r\n\r\n// .gallery {\r\n//   display: flex;\r\n//   padding: 2px;\r\n//   transition: 0.3s;\r\n//   justify-content: center;\r\n//   &:hover &-image {\r\n//     filter: grayscale(1);\r\n//   }\r\n\r\n//   &-column {\r\n//     display: flex;\r\n//     flex-direction: column;\r\n//     width: 95%;\r\n//   }\r\n\r\n//   &-link {\r\n//     margin: 2px;\r\n//     overflow: hidden;\r\n\r\n//     &:hover {\r\n//       .gallery-image {\r\n//         filter: grayscale(0);\r\n//       }\r\n\r\n//       .gallery-caption {\r\n//         opacity: 1;\r\n//       }\r\n//     }\r\n//   }\r\n\r\n//   &-thumb {\r\n//     position: relative;\r\n//   }\r\n\r\n//   &-image {\r\n//     display: block;\r\n//     width: 100%;\r\n//     transition: 0.3s;\r\n\r\n//     &:hover {\r\n//       transform: scale(1.1);\r\n//     }\r\n//   }\r\n\r\n//   &-caption {\r\n//     position: absolute;\r\n//     bottom: 0;\r\n//     left: 0;\r\n//     padding: 25px 15px 15px;\r\n//     width: 100%;\r\n//     font-family: \"Raleway\", sans-serif;\r\n//     font-size: 16px;\r\n//     color: white;\r\n//     opacity: 0;\r\n//     background: linear-gradient(\r\n//       0deg,\r\n//       rgba(0, 0, 0, 0.5) 0%,\r\n//       rgba(255, 255, 255, 0) 100%\r\n//     );\r\n//     transition: 0.3s;\r\n//   }\r\n// }\r\n\r\n.gallery {\r\n  display: flex;\r\n  padding: 2px;\r\n  transition: 0.3s;\r\n\r\n  &:hover &__image {\r\n    filter: grayscale(1);\r\n  }\r\n\r\n  &__column {\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 25%;\r\n  }\r\n\r\n  &__link {\r\n    margin: 2px;\r\n    overflow: hidden;\r\n\r\n    &:hover {\r\n      .gallery__image {\r\n        filter: grayscale(0);\r\n      }\r\n\r\n      .gallery__caption {\r\n        opacity: 1;\r\n      }\r\n    }\r\n  }\r\n\r\n  &__thumb {\r\n    position: relative;\r\n  }\r\n\r\n  &__image {\r\n    display: block;\r\n    width: 100%;\r\n    transition: 0.3s;\r\n\r\n    &:hover {\r\n      transform: scale(1.1);\r\n    }\r\n  }\r\n\r\n  &__caption {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    padding: 25px 15px 15px;\r\n    width: 100%;\r\n    font-family: \"Raleway\", sans-serif;\r\n    font-size: 16px;\r\n    color: white;\r\n    opacity: 0;\r\n    background: linear-gradient(\r\n      0deg,\r\n      rgba(0, 0, 0, 0.5) 0%,\r\n      rgba(255, 255, 255, 0) 100%\r\n    );\r\n    transition: 0.3s;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./galerie.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!-- <div class=\"gallery\">\n  <div *ngFor=\"let post of images\">\n    <div class=\"gallery-column\">\n      <div *ngFor=\"let i of post\">\n        <a href=\"\" class=\"gallery-link\">\n          <figure class=\"gallery-thumb\">\n            <img\n              [src]=\"i.fields.image.fields.file.url\"\n              alt=\"\"\n              class=\"gallery-image\"\n            />\n            <figcaption class=\"gallery-caption\">\n              {{ i.fields.name }}\n            </figcaption>\n          </figure>\n        </a>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n<hr />\n\n<div class=\"gallery\">\n  <div *ngFor=\"let post of images\"></div>\n  <div class=\"gallery__column\">\n    <div *ngFor=\"let i of post\">\n      <a target=\"_blank\" class=\"gallery__link\">\n        <figure class=\"gallery__thumb\">\n          <img\n            [src]=\"i.fields.image.fields.file.url\"\n            alt=\"Portrait by Jessica Felicio\"\n            class=\"gallery__image\"\n          />\n          <figcaption class=\"gallery__caption\">\n            Portrait by Jessica Felicio\n          </figcaption>\n        </figure>\n      </a>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
             "name": "IngredientListComponent",
             "id": "component-IngredientListComponent-82f00a88c793e4a7c89e39f44dbea18936efb4fc34ba79ea21edc2e2731e16e7924f6406ffbd34875fe3d54cf12ea8d25f24ecba897b7a16386b5722a851a182",
             "file": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
@@ -322,7 +471,7 @@
         },
         {
             "name": "RecipeDescriptionComponent",
-            "id": "component-RecipeDescriptionComponent-6dfc10615b20b474b77ca13f8edcb3fcd605e599db6d780e2e39f2e7cc8687e47aea53fd8eefb95774a3a95b8acf33c5b74fed1abb290e8da0d20adae3199e19",
+            "id": "component-RecipeDescriptionComponent-45aca9720cf09d6cc4484c94ad4722de66218cdfe856867040441f4d48d178d9589c8300ac15b212de71382a2309e7bab93cd1c88e149d9e7a6c17c054e18b89",
             "file": "src/stories/libs/composite/recipe-description/recipe-description.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -338,9 +487,123 @@
                 "./recipe-description.component.html"
             ],
             "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "calories",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "difficulty",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "time",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faBurn",
+                    "defaultValue": "faBurn",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "faCoffee",
+                    "defaultValue": "faClock",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "faSpoon",
+                    "defaultValue": "faSpoon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { faClock } from '@fortawesome/free-solid-svg-icons';\nimport { faSpoon } from '@fortawesome/free-solid-svg-icons';\nimport { faBurn } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: '[recipe-description]',\n  templateUrl: './recipe-description.component.html',\n  styleUrls: ['./recipe-description.component.scss'],\n})\nexport class RecipeDescriptionComponent {\n  constructor() {}\n  faCoffee = faClock;\n  faSpoon = faSpoon;\n  faBurn = faBurn;\n\n  @Input() time!: number;\n  @Input() difficulty!: string;\n  @Input() calories!: number;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".indication {\r\n  margin: 0 20px 0 20px;\r\n  display: flex;\r\n  justify-content: center;\r\n  &-container {\r\n    padding: 0 40px 0 40px;\r\n    text-align: center;\r\n    .icon {\r\n      padding-bottom: 6px;\r\n      color: #a9e5bb;\r\n    }\r\n    &-text {\r\n      font-weight: 600;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./recipe-description.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "templateData": "<div class=\"indication\">\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faCoffee\" size=\"2x\"></fa-icon>\n    </div>\n\n    <div class=\"indication-container-text\">{{ time }} mm</div>\n  </div>\n\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faSpoon\" size=\"2x\"></fa-icon>\n    </div>\n    <div class=\"indication-container-text\">{{ difficulty }}</div>\n  </div>\n\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faBurn\" size=\"2x\"></fa-icon>\n    </div>\n    <div class=\"indication-container-text\">Calories: {{ calories }}</div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ViewHomeComponent",
+            "id": "component-ViewHomeComponent-fc99f43341570171a58b06dfe0cb63ef02d2e25c287875460b0936a47204ad11c07caef9437b210e0a1a54e35024b4de9f955c1cc883850fc72c594ae3761952",
+            "file": "src/app/view/view-home/view-home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-view-home",
+            "styleUrls": [
+                "./view-home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./view-home.component.html"
+            ],
+            "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "post$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any> | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -348,7 +611,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -360,12 +623,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[recipe-description]',\n  templateUrl: './recipe-description.component.html',\n  styleUrls: ['./recipe-description.component.scss'],\n})\nexport class RecipeDescriptionComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';\n\n@Component({\n  selector: 'app-view-home',\n  templateUrl: './view-home.component.html',\n  styleUrls: ['./view-home.component.scss'],\n})\nexport class ViewHomeComponent implements OnInit {\n  constructor(private contentful: ContentfulService) {}\n\n  post$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.post$ = this.contentful.getAllEntries();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./recipe-description.component.scss"
+                    "styleUrl": "./view-home.component.scss"
                 }
             ],
             "stylesData": "",
@@ -374,17 +637,35 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 8
+                "args": [
+                    {
+                        "name": "contentful",
+                        "type": "ContentfulService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "contentful",
+                        "type": "ContentfulService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"indication\">\n  dd\n  <div class=\"indication-icon-container\"><i class=\"fa-solid fa-timer\"></i></div>\n</div>\n"
+            "templateData": "<h1>Liste des recettes</h1>\n\n<p>*faire une grille/tableau plus tard</p>\n\n<div *ngIf=\"post$ | async as post\">\n  <!-- envoie de post dans composant gallery -->\n  <pre>{{ post.items | json }}</pre>\n  <div *ngFor=\"let recipe of post.items\">\n    <a [routerLink]=\"['recipe', recipe.sys.id]\">read more</a>\n  </div>\n</div>\n"
         },
         {
             "name": "ViewRecipeComponent",
-            "id": "component-ViewRecipeComponent-43ddf83590811d5a6b717a1513f888ba855194822df0b6dc5f9a98a7cd38e39b60d0c903423075fed331f333d0ce321f0804939aa8596766e8dd5ef8401e5996",
+            "id": "component-ViewRecipeComponent-67e697e0a0e1201c83238df55c1701611649168c13f41ca1998678af3782e534df41c4b0e3afb9f964b898a9c6b0bc633d401f6c79c51fcdd6730b570d1079fc",
             "file": "src/app/view/view-recipe/view-recipe.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -410,28 +691,66 @@
                     "deprecationMessage": "",
                     "type": "Iingredient[]",
                     "optional": false,
+                    "description": "<p>d</p>\n",
+                    "line": 69,
+                    "rawdescription": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nd\n"
+                },
+                {
+                    "name": "recipe$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any> | undefined",
+                    "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 21
                 },
                 {
                     "name": "title",
-                    "defaultValue": "['Ingrédient', 'Étape']",
+                    "defaultValue": "['Ingrédient', 'Étapes']",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 20
                 }
             ],
             "methodsClass": [
+                {
+                    "name": "_returnHtmlFromRichText",
+                    "args": [
+                        {
+                            "name": "richText",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "richText",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -443,11 +762,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Iingredient } from 'src/interface/ingredient.interface';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor() {}\n\n  title: string[] = ['Ingrédient', 'Étape'];\n  ngOnInit(): void {}\n\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';\nimport { Iingredient } from 'src/interface/ingredient.interface';\nimport { documentToHtmlString } from '@contentful/rich-text-html-renderer';\nimport { BLOCKS, INLINES } from '@contentful/rich-text-types';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor(\n    private route: ActivatedRoute,\n    private contentful: ContentfulService\n  ) {}\n\n  title: string[] = ['Ingrédient', 'Étapes'];\n  recipe$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.route.params.subscribe((params) => {\n      const id = params['id'];\n      this.recipe$ = this.contentful.getEntryById(id);\n    });\n  }\n\n  _returnHtmlFromRichText(richText: any) {\n    const options2: any = {\n      renderNode: {\n        [BLOCKS.PARAGRAPH]: (node: any, next: any) =>\n          `<p class=\"pb-5\">${next(node.content)}</p>`,\n      },\n    };\n\n    if (\n      richText === undefined ||\n      richText === null ||\n      richText.nodeType !== 'document'\n    ) {\n      return '<p>No text</p>';\n    }\n    return documentToHtmlString(richText, options2);\n  }\n  /**\n * \n * \n * \n * \n * \n * \n\n\n\n\n\n\n\n\n\n\n\n\n\nd\n */\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".recipe {\r\n  &-header {\r\n    position: relative;\r\n    width: 100%;\r\n    height: 250px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: bisque;\r\n\r\n    &-title {\r\n      position: absolute;\r\n      text-align: center;\r\n      margin: auto;\r\n      font-size: 3.75rem;\r\n      color: rgb(255, 255, 255);\r\n      font-weight: 600;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ".recipe {\r\n  &-header {\r\n    position: relative;\r\n    width: auto;\r\n    height: 500px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n\r\n    img {\r\n      height: 500px;\r\n      width: auto;\r\n    }\r\n\r\n    &-title {\r\n      position: absolute;\r\n      text-align: center;\r\n      margin: auto;\r\n      width: 700px;\r\n      font-size: 3.75rem;\r\n      color: #fcf6b1;\r\n      font-weight: 600;\r\n      -webkit-text-stroke-width: 2px;\r\n      -webkit-text-stroke-color: #fff;\r\n    }\r\n  }\r\n  &-body {\r\n    &-content {\r\n      padding: 50px 40px 0 40px;\r\n      .paragraph {\r\n        padding-bottom: 5px;\r\n      }\r\n    }\r\n  }\r\n  &-description {\r\n    margin-top: 20px;\r\n    margin-bottom: 10px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./view-recipe.component.scss"
                 }
             ],
@@ -457,25 +776,58 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 9
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "contentful",
+                        "type": "ContentfulService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "contentful",
+                        "type": "ContentfulService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"recipe-header\">\n  <img src=\"\" alt=\"\" />\n  <div class=\"recipe-header-title\">TITRE</div>\n</div>\n\n<div class=\"recipe-body\">\n  <div frame-number [title]=\"title[0]\" class=\"mt-5\"></div>\n  <div class=\"recipe-body-description\"></div>\n\n  <div class=\"recipe-body-ingredients\">\n    <div ingredient-list [ingredients]=\"mock\"></div>\n  </div>\n\n  <!-- for each étape -->\n  <div class=\"recipe-body-step\">\n    <div frame-number [title]=\"title[1]\"></div>\n    <div class=\"recipe-body-content content-container\">\n      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi nam cumque\n      ut maxime. Impedit odio similique maiores! Sed similique quaerat,\n      accusantium debitis, recusandae quia mollitia quae voluptatibus commodi\n      inventore atque.\n    </div>\n  </div>\n</div>\n\n<!-- information calorie glucide ... -->\n\n<div class=\"recipe-footer\">date</div>\n"
+            "templateData": "<div *ngIf=\"recipe$ | async as recipe\">\n  <div class=\"recipe-header\">\n    <img [src]=\"recipe.fields.image.fields.file.url\" alt=\"\" />\n    <div class=\"recipe-header-title\">{{ recipe.fields.name }}</div>\n  </div>\n  <div class=\"recipe-description\">\n    <div\n      recipe-description\n      [time]=\"recipe.fields.time\"\n      [difficulty]=\"recipe.fields.difficulty\"\n      [calories]=\"recipe.fields.calories\"\n    ></div>\n  </div>\n\n  <div class=\"recipe-body\">\n    <div frame-number [title]=\"title[0]\" class=\"mt-5\"></div>\n    <div class=\"recipe-body-description\"></div>\n\n    <div class=\"recipe-body-ingredients\">\n      <div ingredient-list [ingredients]=\"recipe.fields.ingredients\"></div>\n    </div>\n\n    <!-- for each étape -->\n    <div class=\"recipe-body-step\">\n      <div frame-number [title]=\"title[1]\"></div>\n      <div class=\"content-container\">\n        <div\n          class=\"recipe-body-content\"\n          [innerHtml]=\"_returnHtmlFromRichText(recipe.fields.recipe)\"\n        ></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- information calorie glucide ... -->\n\n  <div class=\"recipe-footer\">\n    <i>{{ recipe.fields.date }}</i>\n  </div>\n  <!-- \n  <pre>\n    {{ recipe.fields.recipe | json }}\n  </pre>\n</div> -->\n</div>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-710d9afea8c555eff5ec3c7b4e7893aba54cc964b3fbb23be4f9547a776345feff83bf4ecfc500c8b5b04c32b6a3c5a6ca4c4bf28306b11d1709f5b1366064f9",
+            "id": "module-AppModule-17ce14394c59ca8ff1bcb5412f3a930f8d4e80753db4b509bc35541f61bd8318c27184fe69e1c9db47753ffbd4a85995b04eb784895049ed2976e2b0c412522d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\nimport { ViewModule } from './view/view.module';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule, AppRoutingModule, ViewModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { MarkdownComponent, MarkdownModule } from 'ngx-markdown';\n\nimport { ViewModule } from './view/view.module';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule, AppRoutingModule, ViewModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -520,13 +872,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-1675f9466c66b3656e19843cac18aad23ce8994a74115da544a262d8dd6bb041f8c00ab09c30f558c2d9d5110230719c51951584393f7a48d65aed63055db1c8",
+            "id": "module-AppRoutingModule-1ce327ef961a7231670d8b6f169ec882c1d0ac4c2c6d88c88093547f271ee8ffe0b1a23c0e8ffbf79ccd2f1e09762d63e8474cda90d013104dca45051c37067e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipes',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipe/:id',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n  {\n    path: '',\n    loadChildren: () =>\n      \"import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule)\",\n    pathMatch: 'full',\n    // full = que si tous l'url est blanc alors on redirige\n  },\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -643,18 +995,66 @@
             ]
         },
         {
+            "name": "RecipeDescriptionModule",
+            "id": "module-RecipeDescriptionModule-94dc7d576a11babe57e26eecdf89bce8ecf304e54ff6f9b6381a87cb6e27482aaf5fa41b910fcb5f631cdc99db44a0b0521a3e3ba5fec9286efe68151a408f3a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/recipe-description/recipe-description.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { RecipeDescriptionComponent } from './recipe-description.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, FontAwesomeModule],\r\n  declarations: [RecipeDescriptionComponent],\r\n  exports: [RecipeDescriptionComponent],\r\n})\r\nexport class RecipeDescriptionModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RecipeDescriptionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "RecipeDescriptionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "SharedModule",
-            "id": "module-SharedModule-c82f67240873ff511d9a66eb3d981d565c9d5340f30b1fc1dbbbb5c28fdc5129668cdbc14c88631c7316bd6c36709aa520bbe32ca6b4dee71d1c89f46f8512c2",
+            "id": "module-SharedModule-b2311eacc1d14519b92da090d7cc6aa6bd5152eaeeacabaedf6b2a8ad812c3810562a95599c0e5c1e5d8ef84e01b5dad46f600f88d3d73cf84709934b10a2110",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { HttpClient, HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@NgModule({\r\n  exports: [FormsModule, HttpClientModule, CommonModule],\r\n  providers: [],\r\n})\r\nexport class SharedModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { HttpClient, HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ContentfulService } from './services/contentful/contentful.service';\r\n\r\n@NgModule({\r\n  exports: [FormsModule, HttpClientModule, CommonModule, FontAwesomeModule],\r\n  providers: [ContentfulService],\r\n})\r\nexport class SharedModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ContentfulService"
+                        }
+                    ]
                 },
                 {
                     "type": "declarations",
@@ -680,13 +1080,13 @@
         },
         {
             "name": "uiModule",
-            "id": "module-uiModule-65aa2f687a33c843b62606c32e285975547920b2539ce5a35f31517fa20bd59d196da3c392bc941ab50fc2bc623d0dfeb5ff732d82dd2248425fc5228d54fe1f",
+            "id": "module-uiModule-f0569f03f2ad7e54e0faebd20dd57a4cac03d2a02c57cd6f5e5a3d9ae4d435d4969a159415dcee335da1c571863cbfcee0533f7ef17d23da627391946b7f8d1d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameNumberComponent } from 'src/stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'src/stories/libs/composite/frame-number/frame-number.module';\r\nimport { IngredientListComponent } from 'src/stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\n\r\nconst modules = [FrameNumberModule, IngredientListModule];\r\n\r\nconst components = [FrameNumberComponent, IngredientListComponent];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameNumberComponent } from 'src/stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'src/stories/libs/composite/frame-number/frame-number.module';\r\nimport { IngredientListComponent } from 'src/stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'src/stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'src/stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -704,6 +1104,9 @@
                         },
                         {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "RecipeDescriptionModule"
                         }
                     ]
                 },
@@ -715,6 +1118,60 @@
                         },
                         {
                             "name": "IngredientListComponent"
+                        },
+                        {
+                            "name": "RecipeDescriptionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ViewHomeModule",
+            "id": "module-ViewHomeModule-8048ceede92d70696dadda2efb8b08d41e61733bcf2b2701b68dbf1284eae8779a5c7210249b962028751df7f69c797a89b0d61e646832440c4acca19fb89ae4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/view/view-home/view-home.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'src/app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewHomeComponent } from './view-home.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewHomeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewHomeComponent }]),\r\n  ],\r\n\r\n  exports: [ViewHomeComponent],\r\n})\r\nexport class ViewHomeModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ViewHomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        },
+                        {
+                            "name": "ViewModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ViewHomeComponent"
                         }
                     ]
                 },
@@ -754,6 +1211,9 @@
                         },
                         {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "RecipeDescriptionModule"
                         }
                     ]
                 },
@@ -765,6 +1225,9 @@
                         },
                         {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "RecipeDescriptionModule"
                         }
                     ]
                 },
@@ -840,7 +1303,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[FrameNumberComponent, IngredientListComponent]"
+                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n]"
             },
             {
                 "name": "context",
@@ -870,7 +1333,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "intagrated",
@@ -893,14 +1376,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "intagrated",
+                "name": "mock",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test1.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test2.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test3.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test4.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test11.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test6.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test7.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test8.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test9.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test10.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test5.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test12.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n]"
             },
             {
                 "name": "mock",
@@ -920,7 +1403,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[FrameNumberModule, IngredientListModule]"
+                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n]"
             },
             {
                 "name": "modules",
@@ -945,6 +1428,26 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FrameNumberComponent>",
+                "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<GalerieComponent>",
+                "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -960,16 +1463,6 @@
                 "deprecationMessage": "",
                 "type": "Story<RecipeDescriptionComponent>",
                 "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FrameNumberComponent>",
-                "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -985,7 +1478,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[FrameNumberComponent, IngredientListComponent]"
+                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n]"
                 },
                 {
                     "name": "modules",
@@ -995,7 +1488,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[FrameNumberModule, IngredientListModule]"
+                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n]"
                 }
             ],
             "src/test.ts": [
@@ -1040,7 +1533,61 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
+                }
+            ],
+            "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FrameNumberComponent>",
+                    "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/galerie/galerie.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "mock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test1.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test2.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test3.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test4.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test11.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test6.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test7.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test8.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test9.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test10.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test5.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n  {\r\n    fields: {\r\n      name: 'tomate',\r\n      image: {\r\n        fields: {\r\n          file: {\r\n            url: 'assets/images/test12.jpg',\r\n          },\r\n        },\r\n      },\r\n    },\r\n  },\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<GalerieComponent>",
+                    "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts": [
@@ -1097,28 +1644,6 @@
                     "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FrameNumberComponent>",
-                    "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
-                }
-            ],
             "src/app/view/view.module.ts": [
                 {
                     "name": "modules",
@@ -1147,13 +1672,25 @@
                 "module": "AppRoutingModule",
                 "children": [
                     {
-                        "path": "recipes",
+                        "path": "recipe/:id",
                         "loadChildren": "./view/view-recipe/view-recipe.module#ViewRecipeModule",
                         "children": [
                             {
                                 "kind": "module",
                                 "children": [],
                                 "module": "ViewRecipeModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "loadChildren": "./view/view-home/view-home.module#ViewHomeModule",
+                        "pathMatch": "full",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [],
+                                "module": "ViewHomeModule"
                             }
                         ]
                     },
@@ -1185,7 +1722,7 @@
                 "linktype": "injectable",
                 "name": "ContentfulService",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -1209,12 +1746,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/view/view-home/view-home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ViewHomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/view/view-recipe/view-recipe.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ViewRecipeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coveragePercent": 14,
+                "coverageCount": "1/7",
                 "status": "low"
             },
             {
@@ -1286,6 +1832,45 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/libs/composite/galerie/galerie.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GalerieComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/galerie/galerie.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1330,16 +1915,7 @@
                 "linktype": "component",
                 "name": "RecipeDescriptionComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/libs/composite/recipe-description/recipe-description.module.ts",
-                "type": "class",
-                "linktype": "classe",
-                "name": "RecipeDescriptionModule",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

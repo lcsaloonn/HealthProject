@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { createClient, Entry, EntryCollection } from 'contentful';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { from, map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,15 +10,19 @@ import { map } from 'rxjs';
 export class ContentfulService {
   constructor(private http: HttpClient) {}
 
-  getData() {
-    return this.http
-      .get(
-        'https://cdn.contentful.com/spaces/zfepwmneoymr/environments/master/entries?access_token=pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM'
-      )
-      .pipe(
-        map((res: any) => {
-          return res;
-        })
-      );
+  private client = createClient({
+    space: environment.spaceId,
+    accessToken: environment.accessToken,
+  });
+
+  getAllEntries(): Observable<EntryCollection<unknown>> {
+    const promise = this.client.getEntries();
+    //from renvoie un observable à partir d'une promesse
+    return from(promise);
+  }
+
+  getEntryById(id: string) {
+    const promise = this.client.getEntry(id);
+    return from(promise);
   }
 }
