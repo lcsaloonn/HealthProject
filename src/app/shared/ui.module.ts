@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { LogoComponent } from 'src/stories/libs/Base/logo/logo.component';
+import { LogoModule } from 'src/stories/libs/Base/logo/logo.module';
 import { FrameNumberComponent } from 'src/stories/libs/composite/frame-number/frame-number.component';
 import { FrameNumberModule } from 'src/stories/libs/composite/frame-number/frame-number.module';
 import { IngredientListComponent } from 'src/stories/libs/composite/ingredient-list/ingredient-list.component';
@@ -10,12 +12,14 @@ const modules = [
   FrameNumberModule,
   IngredientListModule,
   RecipeDescriptionModule,
+  LogoModule,
 ];
 
 const components = [
   FrameNumberComponent,
   IngredientListComponent,
   RecipeDescriptionComponent,
+  LogoComponent,
 ];
 
 @NgModule({
