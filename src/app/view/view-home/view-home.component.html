@@ -1,11 +1,1 @@
-<h1>Liste des recettes</h1>
 
-<p>*faire une grille/tableau plus tard</p>
-
-<div *ngIf="post$ | async as post">
-  <!-- envoie de post dans composant gallery -->
-  <pre>{{ post.items | json }}</pre>
-  <div *ngFor="let recipe of post.items">
-    <a [routerLink]="['recipe', recipe.sys.id]">read more</a>
-  </div>
-</div>

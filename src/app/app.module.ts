@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MarkdownComponent, MarkdownModule } from 'ngx-markdown';
 
 import { ViewModule } from './view/view.module';
 
