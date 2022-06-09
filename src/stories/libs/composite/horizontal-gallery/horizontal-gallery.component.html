@@ -1,0 +1,8 @@
+<div class="horizantal-gallery-container">
+  <div class="card" *ngFor="let card of cards">
+    <a [routerLink]="card.link">
+      <img [src]="card.src" />
+      <div class="card__head">{{ card.alt }}</div>
+    </a>
+  </div>
+</div>

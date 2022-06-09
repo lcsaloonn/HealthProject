@@ -15,4 +15,28 @@ export class ViewHomeComponent implements OnInit {
   ngOnInit(): void {
     this.post$ = this.contentful.getAllEntries();
   }
+
+  //MOCKS
+  mock = [
+    {
+      src: './assets/images/muscu-test.jpg',
+      alt: 'MUSCULATION',
+      link: '',
+    },
+    {
+      src: './assets/images/recette-test.jpg',
+      alt: 'RECETTES',
+      link: '',
+    },
+    {
+      src: './assets/images/entrainement-test.jpg',
+      alt: 'ENTRAINEMENTS',
+      link: '',
+    },
+    {
+      src: './assets/images/defis-test.png',
+      alt: 'DÉFIS',
+      link: '',
+    },
+  ];
 }
