@@ -2,6 +2,47 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "IImage",
+            "id": "interface-IImage-eb7205f281dd9a0ec7aac8f6088921af226b442be1f286ca91488c4899096dc45e16f99771a4bc2e057b4e9dc0dabb00acc87a65064e6d7f6933daf57e01be40",
+            "file": "src/interface/image.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IImage {\r\n  src: string;\r\n  alt: string;\r\n  link: string | undefined;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "alt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "src",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "Iingredient",
             "id": "interface-Iingredient-685b122c124bbc077b1272dcf5d0a76d1bbd40c69ecc16aeb65251e09b6f401f9daf3147b5a2be4d3587703e609204c08f03467d2da818f42a6c951348422579",
             "file": "src/interface/ingredient.interface.ts",
@@ -55,7 +96,7 @@
     "injectables": [
         {
             "name": "ContentfulService",
-            "id": "injectable-ContentfulService-b4efbd01df8f990a59ae42d6a6a563003016676bc5f9e7d2e2d059c6c8ec35f4ffcbf1af08556315d4c6e4442c45fdd6faa9ddb294e525a1ef98eea3bf983069",
+            "id": "injectable-ContentfulService-e9448b5e4370220c02648ee9ce102a38103c79c14dfe81bb20948c569fcc095afef9b03331b09df712659adf7ca11e2b69bc38970897257989e8f2e20d30cd08",
             "file": "src/app/shared/services/contentful/contentful.service.ts",
             "properties": [
                 {
@@ -116,7 +157,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { createClient, Entry, EntryCollection } from 'contentful';\nimport { HttpClient } from '@angular/common/http';\nimport { from, map, Observable } from 'rxjs';\nimport { environment } from 'src/environments/environment';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ContentfulService {\n  constructor(private http: HttpClient) {}\n\n  private client = createClient({\n    space: environment.spaceId,\n    accessToken: environment.accessToken,\n  });\n\n  getAllEntries(): Observable<EntryCollection<unknown>> {\n    const promise = this.client.getEntries();\n    //from renvoie un observable à partir d'une promesse\n    return from(promise);\n  }\n\n  getEntryById(id: string) {\n    const promise = this.client.getEntry(id);\n    return from(promise);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { createClient, Entry, EntryCollection } from 'contentful';\nimport { HttpClient } from '@angular/common/http';\nimport { from, map, Observable } from 'rxjs';\nimport { environment } from 'environments/environment';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ContentfulService {\n  constructor(private http: HttpClient) {}\n\n  private client = createClient({\n    space: environment.spaceId,\n    accessToken: environment.accessToken,\n  });\n\n  getAllEntries(): Observable<EntryCollection<unknown>> {\n    const promise = this.client.getEntries();\n    //from renvoie un observable à partir d'une promesse\n    return from(promise);\n  }\n\n  getEntryById(id: string) {\n    const promise = this.client.getEntry(id);\n    return from(promise);\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -201,6 +242,88 @@
             ],
             "stylesData": "",
             "templateData": "<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "DateTrainingComponent",
+            "id": "component-DateTrainingComponent-ade477290ef6826d183dd7155cd2f47ebd2257fc8540b35b03e0585eef8dbe7a33098be214951faecb2c9e79221f0fcf6b80f24bc9f631a5fc8fb2e748570211",
+            "file": "src/stories/libs/composite/date-training/date-training.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-date-training",
+            "styleUrls": [
+                "./date-training.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./date-training.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setDate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "todayDate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-date-training',\n  templateUrl: './date-training.component.html',\n  styleUrls: ['./date-training.component.scss'],\n})\nexport class DateTrainingComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {\n    this.todayDate();\n  }\n\n  setDate() {\n    const checkbox = <HTMLInputElement>document.getElementById('inputSetDate');\n    const inputDate = <HTMLInputElement>document.getElementById('date');\n    if (checkbox.checked === false) {\n      inputDate.disabled = false;\n    } else {\n      this.todayDate();\n      inputDate.disabled = true;\n    }\n  }\n\n  todayDate() {\n    const inputDate = <HTMLInputElement>document.getElementById('date');\n    const date = new Date();\n    inputDate.valueAsDate = date;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".date-container {\r\n  display: flex;\r\n}\r\n",
+                    "styleUrl": "./date-training.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"date-container\">\n  <input type=\"date\" id=\"date\" disabled />\n  Aujourd'hui\n  <input\n    type=\"checkbox\"\n    id=\"inputSetDate\"\n    checked=\"true\"\n    (change)=\"setDate()\"\n  />\n</div>\n"
         },
         {
             "name": "FrameNumberComponent",
@@ -379,7 +502,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// img {\r\n//   background-color: aqua;\r\n// }\r\n\r\n// .gallery {\r\n//   display: flex;\r\n//   padding: 2px;\r\n//   transition: 0.3s;\r\n//   justify-content: center;\r\n//   &:hover &-image {\r\n//     filter: grayscale(1);\r\n//   }\r\n\r\n//   &-column {\r\n//     display: flex;\r\n//     flex-direction: column;\r\n//     width: 95%;\r\n//   }\r\n\r\n//   &-link {\r\n//     margin: 2px;\r\n//     overflow: hidden;\r\n\r\n//     &:hover {\r\n//       .gallery-image {\r\n//         filter: grayscale(0);\r\n//       }\r\n\r\n//       .gallery-caption {\r\n//         opacity: 1;\r\n//       }\r\n//     }\r\n//   }\r\n\r\n//   &-thumb {\r\n//     position: relative;\r\n//   }\r\n\r\n//   &-image {\r\n//     display: block;\r\n//     width: 100%;\r\n//     transition: 0.3s;\r\n\r\n//     &:hover {\r\n//       transform: scale(1.1);\r\n//     }\r\n//   }\r\n\r\n//   &-caption {\r\n//     position: absolute;\r\n//     bottom: 0;\r\n//     left: 0;\r\n//     padding: 25px 15px 15px;\r\n//     width: 100%;\r\n//     font-family: \"Raleway\", sans-serif;\r\n//     font-size: 16px;\r\n//     color: white;\r\n//     opacity: 0;\r\n//     background: linear-gradient(\r\n//       0deg,\r\n//       rgba(0, 0, 0, 0.5) 0%,\r\n//       rgba(255, 255, 255, 0) 100%\r\n//     );\r\n//     transition: 0.3s;\r\n//   }\r\n// }\r\n\r\n.gallery {\r\n  display: flex;\r\n  padding: 2px;\r\n  transition: 0.3s;\r\n\r\n  &:hover &__image {\r\n    filter: grayscale(1);\r\n  }\r\n\r\n  &__column {\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 25%;\r\n  }\r\n\r\n  &__link {\r\n    margin: 2px;\r\n    overflow: hidden;\r\n\r\n    &:hover {\r\n      .gallery__image {\r\n        filter: grayscale(0);\r\n      }\r\n\r\n      .gallery__caption {\r\n        opacity: 1;\r\n      }\r\n    }\r\n  }\r\n\r\n  &__thumb {\r\n    position: relative;\r\n  }\r\n\r\n  &__image {\r\n    display: block;\r\n    width: 100%;\r\n    transition: 0.3s;\r\n\r\n    &:hover {\r\n      transform: scale(1.1);\r\n    }\r\n  }\r\n\r\n  &__caption {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    padding: 25px 15px 15px;\r\n    width: 100%;\r\n    font-family: \"Raleway\", sans-serif;\r\n    font-size: 16px;\r\n    color: white;\r\n    opacity: 0;\r\n    background: linear-gradient(\r\n      0deg,\r\n      rgba(0, 0, 0, 0.5) 0%,\r\n      rgba(255, 255, 255, 0) 100%\r\n    );\r\n    transition: 0.3s;\r\n  }\r\n}\r\n",
+                    "data": ".gallery {\r\n  display: flex;\r\n  padding: 2px;\r\n  transition: 0.3s;\r\n  justify-content: center;\r\n  &:hover &-image {\r\n    filter: grayscale(1);\r\n  }\r\n\r\n  &-column {\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n  }\r\n\r\n  &-link {\r\n    margin: 2px;\r\n\r\n    overflow: hidden;\r\n\r\n    &:hover {\r\n      .gallery-image {\r\n        filter: grayscale(0);\r\n      }\r\n\r\n      .gallery-caption {\r\n        opacity: 1;\r\n      }\r\n    }\r\n  }\r\n\r\n  &-thumb {\r\n    position: relative;\r\n  }\r\n\r\n  &-image {\r\n    display: block;\r\n    width: 100%;\r\n    transition: 0.3s;\r\n\r\n    &:hover {\r\n      transform: scale(1.1);\r\n    }\r\n  }\r\n\r\n  &-caption {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    padding: 25px 15px 15px;\r\n    width: 100%;\r\n    font-family: \"Raleway\", sans-serif;\r\n    font-size: 16px;\r\n    color: white;\r\n    opacity: 0;\r\n    background: linear-gradient(\r\n      0deg,\r\n      rgba(0, 0, 0, 0.5) 0%,\r\n      rgba(255, 255, 255, 0) 100%\r\n    );\r\n    transition: 0.3s;\r\n  }\r\n}\r\n",
                     "styleUrl": "./galerie.component.scss"
                 }
             ],
@@ -395,11 +518,144 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <div class=\"gallery\">\n  <div *ngFor=\"let post of images\">\n    <div class=\"gallery-column\">\n      <div *ngFor=\"let i of post\">\n        <a href=\"\" class=\"gallery-link\">\n          <figure class=\"gallery-thumb\">\n            <img\n              [src]=\"i.fields.image.fields.file.url\"\n              alt=\"\"\n              class=\"gallery-image\"\n            />\n            <figcaption class=\"gallery-caption\">\n              {{ i.fields.name }}\n            </figcaption>\n          </figure>\n        </a>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n<hr />\n\n<div class=\"gallery\">\n  <div *ngFor=\"let post of images\"></div>\n  <div class=\"gallery__column\">\n    <div *ngFor=\"let i of post\">\n      <a target=\"_blank\" class=\"gallery__link\">\n        <figure class=\"gallery__thumb\">\n          <img\n            [src]=\"i.fields.image.fields.file.url\"\n            alt=\"Portrait by Jessica Felicio\"\n            class=\"gallery__image\"\n          />\n          <figcaption class=\"gallery__caption\">\n            Portrait by Jessica Felicio\n          </figcaption>\n        </figure>\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"gallery\">\n  <div class=\"gallery-column\" *ngFor=\"let post of images\">\n    <a href=\"\" *ngFor=\"let i of post\" class=\"gallery-link\">\n      <figure class=\"gallery-thumb\">\n        <img\n          [src]=\"i.fields.image.fields.file.url\"\n          alt=\"\"\n          class=\"gallery-image\"\n        />\n        <figcaption class=\"gallery-caption\">\n          {{ i.fields.name }}\n        </figcaption>\n      </figure>\n    </a>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "HorizontalGalleryComponent",
+            "id": "component-HorizontalGalleryComponent-854be4b8e7ec491bd5944630b9d984d197e8c89b35be40e12c063f200dd906a6cbc470046a4ca003dbcdc50cb1830fa2755b3807ec8491f983ad3a55823a726a",
+            "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[horizontal-gallery]",
+            "styleUrls": [
+                "./horizontal-gallery.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./horizontal-gallery.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "cards",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "IImage[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { IImage } from 'interface/image.interface';\n\n@Component({\n  selector: '[horizontal-gallery]',\n  templateUrl: './horizontal-gallery.component.html',\n  styleUrls: ['./horizontal-gallery.component.scss'],\n})\nexport class HorizontalGalleryComponent implements OnInit {\n  @Input() cards!: IImage[];\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".horizantal-gallery-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: auto;\r\n  margin: 10vmin;\r\n  overflow: hidden;\r\n  // transform: skew(5deg);\r\n\r\n  .card {\r\n    //border: 1px solid black;\r\n    flex: 1;\r\n    transition: all 1s ease-in-out;\r\n    height: 50vmin;\r\n    position: relative;\r\n    .card__head {\r\n      color: white;\r\n      background: transparent;\r\n      padding: 0.5em;\r\n      min-width: 100%;\r\n      text-align: center;\r\n      position: absolute;\r\n      bottom: 0;\r\n      left: 0;\r\n      font-size: 1em;\r\n      white-space: nowrap;\r\n      font-size: 40px;\r\n      font-weight: bold;\r\n    }\r\n\r\n    &:hover {\r\n      flex-grow: 2.5;\r\n      img {\r\n        filter: grayscale(0);\r\n      }\r\n    }\r\n    img {\r\n      width: 100%;\r\n      height: 100%;\r\n      object-fit: cover;\r\n      transition: all 1s ease-in-out;\r\n      filter: grayscale(100%);\r\n    }\r\n    &:not(:nth-child(5)) {\r\n      margin-right: 1em;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./horizontal-gallery.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"horizantal-gallery-container\">\n  <div class=\"card\" *ngFor=\"let card of cards\">\n    <a [routerLink]=\"card.link\">\n      <img [src]=\"card.src\" />\n      <div class=\"card__head\">{{ card.alt }}</div>\n    </a>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "Information1Component",
+            "id": "component-Information1Component-bb29bbcf6c7dab683f6283ee8e649f74f44f19ed75a74d1a7d096bd4d76db71bc381763d5ea9bfe6708c4769609e3868a6f232f48865fc754687144a90a0e037",
+            "file": "src/stories/libs/composite/information1/information1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-information1",
+            "styleUrls": [
+                "./information1.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./information1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-information1',\n  templateUrl: './information1.component.html',\n  styleUrls: ['./information1.component.scss']\n})\nexport class Information1Component implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".information {\r\n  &-container {\r\n    padding: 25px;\r\n    background-color: antiquewhite;\r\n\r\n    display: flex;\r\n  }\r\n  &-text {\r\n    width: 50%;\r\n    &-title {\r\n      //font-size: 38px;\r\n\r\n      font-weight: normal;\r\n      letter-spacing: normal;\r\n      line-height: normal;\r\n    }\r\n  }\r\n  &-image {\r\n    img {\r\n      height: 100px;\r\n      width: auto;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./information1.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"information-container\">\n  <div class=\"information-text\">\n    <div class=\"information-text-title\">\n      Les meilleures recette selon vos envies\n    </div>\n    <div class=\"information-text-subtitle\">\n      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet\n      laudantium eaque neque velit nisi provident placeat architecto dicta\n      officia, distinctio reiciendis cumque, aliquam dolore, odio voluptas\n      nostrum magnam? Maxime, voluptatem!\n    </div>\n  </div>\n  <div class=\"information-image\">\n    <img [src]=\"image.src\" [alt]=\"image.alt\" />\n  </div>\n</div>\n"
         },
         {
             "name": "IngredientListComponent",
-            "id": "component-IngredientListComponent-82f00a88c793e4a7c89e39f44dbea18936efb4fc34ba79ea21edc2e2731e16e7924f6406ffbd34875fe3d54cf12ea8d25f24ecba897b7a16386b5722a851a182",
+            "id": "component-IngredientListComponent-e446c3496842a4b9cc0d09e60097ac8bafe6109c9a5ea2dd6d3c6bec720e07c8517b45eb21b62b02b41a67ac3b3943b2762fab02f5a21306c91173e76e4a9627",
             "file": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -447,7 +703,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Iingredient } from 'src/interface/ingredient.interface';\n\n@Component({\n  selector: '[ingredient-list]',\n  templateUrl: './ingredient-list.component.html',\n  styleUrls: ['./ingredient-list.component.scss'],\n})\nexport class IngredientListComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  ingredients: Iingredient[] = [];\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Iingredient } from 'interface/ingredient.interface';\n\n@Component({\n  selector: '[ingredient-list]',\n  templateUrl: './ingredient-list.component.html',\n  styleUrls: ['./ingredient-list.component.scss'],\n})\nexport class IngredientListComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  ingredients: Iingredient[] = [];\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -468,6 +724,68 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"ingredient-container\">\n  <ul>\n    <li *ngFor=\"let ingredient of ingredients\">\n      <div class=\"ingredient\">\n        <span></span>\n        <div class=\"ingredient-name\">\n          <strong>{{ ingredient.name }}</strong>\n        </div>\n        <div class=\"ingredient-quantity\">\n          {{ ingredient.quantity }} {{ ingredient.quantityValue }}\n        </div>\n        <div class=\"ingredient-description\">{{ ingredient.description }}</div>\n      </div>\n    </li>\n  </ul>\n</div>\n"
+        },
+        {
+            "name": "LogoComponent",
+            "id": "component-LogoComponent-8498466a0573f85071bc8dfc74917742919ff977f9bc7d61eb2dc9e71aaa7e3e32adbc05cf1f5baa7ed07c08d702b2a5d4d5cfac2113f9271d390ea276e12ace",
+            "file": "src/stories/libs/Base/logo/logo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[logo-title]",
+            "styleUrls": [
+                "./logo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./logo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[logo-title]',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".logo {\r\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\r\n  color: #353535;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-start;\r\n  align-items: flex-start;\r\n  span {\r\n    display: block;\r\n    text-align: center;\r\n  }\r\n  .logo-2 {\r\n    font-size: 50px;\r\n    font-weight: bold;\r\n    margin-left: -5px;\r\n  }\r\n  .logo-3 {\r\n    letter-spacing: 20px;\r\n  }\r\n}\r\n.container-logo {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n",
+                    "styleUrl": "./logo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container-logo\">\n  <div class=\"logo\">\n    <span class=\"logo-1\">The</span>\n    <span class=\"logo-2\">Healthy</span>\n    <span class=\"logo-3\">Project</span>\n  </div>\n</div>\n"
         },
         {
             "name": "RecipeDescriptionComponent",
@@ -574,8 +892,70 @@
             "templateData": "<div class=\"indication\">\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faCoffee\" size=\"2x\"></fa-icon>\n    </div>\n\n    <div class=\"indication-container-text\">{{ time }} mm</div>\n  </div>\n\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faSpoon\" size=\"2x\"></fa-icon>\n    </div>\n    <div class=\"indication-container-text\">{{ difficulty }}</div>\n  </div>\n\n  <div class=\"indication-container\">\n    <div class=\"icon\">\n      <fa-icon [icon]=\"faBurn\" size=\"2x\"></fa-icon>\n    </div>\n    <div class=\"indication-container-text\">Calories: {{ calories }}</div>\n  </div>\n</div>\n"
         },
         {
+            "name": "RecipeDisplayComponent",
+            "id": "component-RecipeDisplayComponent-2babaeb9ecec141af216462558a3ed628b4c1d9f168c6727d77bc0c076f10050e5bfc8fa06313fa6a109d7b1ad8d495b95a8cee6c7d255da822adae0506075a4",
+            "file": "src/stories/libs/composite/recipe-display/recipe-display.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-recipe-display",
+            "styleUrls": [
+                "./recipe-display.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./recipe-display.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-recipe-display',\n  templateUrl: './recipe-display.component.html',\n  styleUrls: ['./recipe-display.component.scss']\n})\nexport class RecipeDisplayComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./recipe-display.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>recipe-display works!</p>\n"
+        },
+        {
             "name": "ViewHomeComponent",
-            "id": "component-ViewHomeComponent-fc99f43341570171a58b06dfe0cb63ef02d2e25c287875460b0936a47204ad11c07caef9437b210e0a1a54e35024b4de9f955c1cc883850fc72c594ae3761952",
+            "id": "component-ViewHomeComponent-a75b6fb357ee02df4fdfe4a124b16f3194c4e1c6245861d9a8c6a08d378edf77efca90beb46e7b532fd6235200d4f13ca96fe0c6279c6af7880c45461811f10b",
             "file": "src/app/view/view-home/view-home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -594,6 +974,16 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "mock",
+                    "defaultValue": "[\n    {\n      src: './assets/images/muscu-test.jpg',\n      alt: 'MUSCULATION',\n      link: '',\n    },\n    {\n      src: './assets/images/recette-test.jpg',\n      alt: 'RECETTES',\n      link: '/recipes',\n    },\n    {\n      src: './assets/images/entrainement-test.jpg',\n      alt: 'ENTRAINEMENTS',\n      link: '',\n    },\n    {\n      src: './assets/images/defis-test.png',\n      alt: 'DÉFIS',\n      link: '',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
                 {
                     "name": "post$",
                     "deprecated": false,
@@ -623,7 +1013,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';\n\n@Component({\n  selector: 'app-view-home',\n  templateUrl: './view-home.component.html',\n  styleUrls: ['./view-home.component.scss'],\n})\nexport class ViewHomeComponent implements OnInit {\n  constructor(private contentful: ContentfulService) {}\n\n  post$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.post$ = this.contentful.getAllEntries();\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'app/shared/services/contentful/contentful.service';\n\n@Component({\n  selector: 'app-view-home',\n  templateUrl: './view-home.component.html',\n  styleUrls: ['./view-home.component.scss'],\n})\nexport class ViewHomeComponent implements OnInit {\n  constructor(private contentful: ContentfulService) {}\n\n  post$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.post$ = this.contentful.getAllEntries();\n  }\n\n  //MOCKS\n  mock = [\n    {\n      src: './assets/images/muscu-test.jpg',\n      alt: 'MUSCULATION',\n      link: '',\n    },\n    {\n      src: './assets/images/recette-test.jpg',\n      alt: 'RECETTES',\n      link: '/recipes',\n    },\n    {\n      src: './assets/images/entrainement-test.jpg',\n      alt: 'ENTRAINEMENTS',\n      link: '',\n    },\n    {\n      src: './assets/images/defis-test.png',\n      alt: 'DÉFIS',\n      link: '',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -661,11 +1051,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h1>Liste des recettes</h1>\n\n<p>*faire une grille/tableau plus tard</p>\n\n<div *ngIf=\"post$ | async as post\">\n  <!-- envoie de post dans composant gallery -->\n  <pre>{{ post.items | json }}</pre>\n  <div *ngFor=\"let recipe of post.items\">\n    <a [routerLink]=\"['recipe', recipe.sys.id]\">read more</a>\n  </div>\n</div>\n"
+            "templateData": "<header class=\"mt-5\">\n  <div logo-title></div>\n</header>\n\n<div horizontal-gallery [cards]=\"mock\"></div>\n"
         },
         {
             "name": "ViewRecipeComponent",
-            "id": "component-ViewRecipeComponent-67e697e0a0e1201c83238df55c1701611649168c13f41ca1998678af3782e534df41c4b0e3afb9f964b898a9c6b0bc633d401f6c79c51fcdd6730b570d1079fc",
+            "id": "component-ViewRecipeComponent-93c8a6fdcd268df4473c1b643c4bdd00a020e9858cdf124d90b355dd99553fce73cb4baed1d17b06dd77cec8eb140f1648a53e337f952b894bedf864d9695374",
             "file": "src/app/view/view-recipe/view-recipe.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -762,7 +1152,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';\nimport { Iingredient } from 'src/interface/ingredient.interface';\nimport { documentToHtmlString } from '@contentful/rich-text-html-renderer';\nimport { BLOCKS, INLINES } from '@contentful/rich-text-types';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor(\n    private route: ActivatedRoute,\n    private contentful: ContentfulService\n  ) {}\n\n  title: string[] = ['Ingrédient', 'Étapes'];\n  recipe$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.route.params.subscribe((params) => {\n      const id = params['id'];\n      this.recipe$ = this.contentful.getEntryById(id);\n    });\n  }\n\n  _returnHtmlFromRichText(richText: any) {\n    const options2: any = {\n      renderNode: {\n        [BLOCKS.PARAGRAPH]: (node: any, next: any) =>\n          `<p class=\"pb-5\">${next(node.content)}</p>`,\n      },\n    };\n\n    if (\n      richText === undefined ||\n      richText === null ||\n      richText.nodeType !== 'document'\n    ) {\n      return '<p>No text</p>';\n    }\n    return documentToHtmlString(richText, options2);\n  }\n  /**\n * \n * \n * \n * \n * \n * \n\n\n\n\n\n\n\n\n\n\n\n\n\nd\n */\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { ContentfulService } from 'app/shared/services/contentful/contentful.service';\nimport { Iingredient } from 'interface/ingredient.interface';\nimport { documentToHtmlString } from '@contentful/rich-text-html-renderer';\nimport { BLOCKS, INLINES } from '@contentful/rich-text-types';\n\n@Component({\n  selector: '[view-recipe]',\n  templateUrl: './view-recipe.component.html',\n  styleUrls: ['./view-recipe.component.scss'],\n})\nexport class ViewRecipeComponent implements OnInit {\n  constructor(\n    private route: ActivatedRoute,\n    private contentful: ContentfulService\n  ) {}\n\n  title: string[] = ['Ingrédient', 'Étapes'];\n  recipe$: Observable<any> | undefined;\n\n  ngOnInit(): void {\n    this.route.params.subscribe((params) => {\n      const id = params['id'];\n      this.recipe$ = this.contentful.getEntryById(id);\n    });\n  }\n\n  _returnHtmlFromRichText(richText: any) {\n    const options2: any = {\n      renderNode: {\n        [BLOCKS.PARAGRAPH]: (node: any, next: any) =>\n          `<p class=\"pb-5\">${next(node.content)}</p>`,\n      },\n    };\n\n    if (\n      richText === undefined ||\n      richText === null ||\n      richText.nodeType !== 'document'\n    ) {\n      return '<p>No text</p>';\n    }\n    return documentToHtmlString(richText, options2);\n  }\n  /**\n * \n * \n * \n * \n * \n * \n\n\n\n\n\n\n\n\n\n\n\n\n\nd\n */\n  mock: Iingredient[] = [\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Chou',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n    {\n      name: 'Patate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: 'couper en rondelle',\n    },\n    {\n      name: 'Tomate',\n      quantity: 5,\n      quantityValue: 'kg',\n      description: '',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -816,18 +1206,80 @@
                 "OnInit"
             ],
             "templateData": "<div *ngIf=\"recipe$ | async as recipe\">\n  <div class=\"recipe-header\">\n    <img [src]=\"recipe.fields.image.fields.file.url\" alt=\"\" />\n    <div class=\"recipe-header-title\">{{ recipe.fields.name }}</div>\n  </div>\n  <div class=\"recipe-description\">\n    <div\n      recipe-description\n      [time]=\"recipe.fields.time\"\n      [difficulty]=\"recipe.fields.difficulty\"\n      [calories]=\"recipe.fields.calories\"\n    ></div>\n  </div>\n\n  <div class=\"recipe-body\">\n    <div frame-number [title]=\"title[0]\" class=\"mt-5\"></div>\n    <div class=\"recipe-body-description\"></div>\n\n    <div class=\"recipe-body-ingredients\">\n      <div ingredient-list [ingredients]=\"recipe.fields.ingredients\"></div>\n    </div>\n\n    <!-- for each étape -->\n    <div class=\"recipe-body-step\">\n      <div frame-number [title]=\"title[1]\"></div>\n      <div class=\"content-container\">\n        <div\n          class=\"recipe-body-content\"\n          [innerHtml]=\"_returnHtmlFromRichText(recipe.fields.recipe)\"\n        ></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- information calorie glucide ... -->\n\n  <div class=\"recipe-footer\">\n    <i>{{ recipe.fields.date }}</i>\n  </div>\n  <!-- \n  <pre>\n    {{ recipe.fields.recipe | json }}\n  </pre>\n</div> -->\n</div>\n"
+        },
+        {
+            "name": "ViewRecipeHomeComponent",
+            "id": "component-ViewRecipeHomeComponent-0d5884ceb9a4515116a6c7b7a4592a0d11692737e44e80315805c3a14feb29968fa9a8e67da87309e50b7731306812259b01fff369ab80abc31b85f7de8c0b39",
+            "file": "src/app/view/view-recipe-home/view-recipe-home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[view-recipe-home]",
+            "styleUrls": [
+                "./view-recipe-home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./view-recipe-home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[view-recipe-home]',\n  templateUrl: './view-recipe-home.component.html',\n  styleUrls: ['./view-recipe-home.component.scss'],\n})\nexport class ViewRecipeHomeComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../shared/styles/mixins.scss';\r\n\r\n.recipe {\r\n  &-container {\r\n    display: block;\r\n    width: 23%;\r\n    overflow: hidden;\r\n  }\r\n  &-image {\r\n    height: 400px;\r\n    img {\r\n      object-fit: fill;\r\n      position: relative;\r\n    }\r\n  }\r\n  &-walpaper {\r\n    text-align: center;\r\n    position: relative;\r\n\r\n    a {\r\n      text-decoration: none;\r\n      div {\r\n        padding-top: 10px;\r\n        position: relative;\r\n        z-index: 50;\r\n        margin-top: -15px;\r\n        padding-bottom: 15px;\r\n        border-radius: 15px;\r\n        background: aquamarine;\r\n        overflow: hidden;\r\n        h2 {\r\n          @include mixins.text-format(20px, normal, normal);\r\n          font-weight: 600;\r\n          padding: 5px 20px;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./view-recipe-home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"recipe-container\">\r\n  <div class=\"recipe-image\">\r\n    <img src=\"./assets\\images\\test6.jpg\" alt=\"\" />\r\n  </div>\r\n  <div class=\"recipe-walpaper\">\r\n    <a>\r\n      <div class=\"recipe-description\"><h2>patte bolognaise</h2></div>\r\n    </a>\r\n  </div>\r\n</div>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-17ce14394c59ca8ff1bcb5412f3a930f8d4e80753db4b509bc35541f61bd8318c27184fe69e1c9db47753ffbd4a85995b04eb784895049ed2976e2b0c412522d",
+            "id": "module-AppModule-710d9afea8c555eff5ec3c7b4e7893aba54cc964b3fbb23be4f9547a776345feff83bf4ecfc500c8b5b04c32b6a3c5a6ca4c4bf28306b11d1709f5b1366064f9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { MarkdownComponent, MarkdownModule } from 'ngx-markdown';\n\nimport { ViewModule } from './view/view.module';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule, AppRoutingModule, ViewModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\nimport { ViewModule } from './view/view.module';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule, AppRoutingModule, ViewModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -872,13 +1324,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-1ce327ef961a7231670d8b6f169ec882c1d0ac4c2c6d88c88093547f271ee8ffe0b1a23c0e8ffbf79ccd2f1e09762d63e8474cda90d013104dca45051c37067e",
+            "id": "module-AppRoutingModule-1be17ded88e0faefa2c018779e394c5253915ea320907f29ae359ff43c5bb0b7b9864d0f3cefa53f04b432e3745c89037b34fafd38f6fcffe34a6a26e4579497",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipe/:id',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n  {\n    path: '',\n    loadChildren: () =>\n      \"import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule)\",\n    pathMatch: 'full',\n    // full = que si tous l'url est blanc alors on redirige\n  },\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipe/:id',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n  {\n    path: 'recipe',\n    loadChildren: () =>\n      \"import('./view/view-recipe-home/view-recipe-home.module').then(\\\n        (m) => m.ViewRecipeHomeModule\\\n      )\",\n  },\n  {\n    path: '',\n    loadChildren: () =>\n      \"import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule)\",\n    pathMatch: 'full',\n    // full = que si tous l'url est blanc alors on redirige\n  },\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -895,6 +1347,50 @@
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DateTrainingModule",
+            "id": "module-DateTrainingModule-37122adc221a82d81ff2f059a9514e1f3d832ece14d1bb39728f6cd20b134176bef3d95f7d08f63801f2c8b4cb5063240748cd28d27234ccdb3c5fa4e37cb9e1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/date-training/date-training.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { DateTrainingComponent } from './date-training.component';\r\n\r\n@NgModule({\r\n  declarations: [DateTrainingComponent],\r\n  imports: [],\r\n  exports: [DateTrainingComponent],\r\n})\r\nexport class DateTrainingModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DateTrainingComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DateTrainingComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -937,6 +1433,94 @@
                     "elements": [
                         {
                             "name": "FrameNumberComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HorizontalGalleryModule",
+            "id": "module-HorizontalGalleryModule-16fd6874f0fb72a512924a14251ff7f5d0e55cd27d0ce04dd1ccb86b8fc68017684910779e09f47dce4cc3d5bcb34aaa3b54446e19bd1d458b7731c2233f150f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/horizontal-gallery/horizantal-gallery.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { HorizontalGalleryComponent } from './horizontal-gallery.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, RouterModule],\r\n  declarations: [HorizontalGalleryComponent],\r\n  exports: [HorizontalGalleryComponent],\r\n})\r\nexport class HorizontalGalleryModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HorizontalGalleryComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HorizontalGalleryComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "Information1Module",
+            "id": "module-Information1Module-3b79046f8dcc9876f2553955a3c8e38a21501968687f5e2c61154ac14d4441136e8fc93bf0a1c749e69a21127f0f1ae06aa7d8a9da42a2de3c54c5cdfe382997",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/information1/information1.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Information1Component } from './information1.component';\r\n\r\n@NgModule({\r\n  imports: [],\r\n  declarations: [Information1Component],\r\n  exports: [Information1Component],\r\n})\r\nexport class Information1Module {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Information1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Information1Component"
                         }
                     ]
                 },
@@ -995,6 +1579,50 @@
             ]
         },
         {
+            "name": "LogoModule",
+            "id": "module-LogoModule-a6c9b19ffff48c992feed7d3ce6c8829cd7b03e59790754de1ab132da31c771dd7cd0251d65fabef1a879c9caf95dc0336268e78713971754ca9d99354f6dd63",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/Base/logo/logo.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { LogoComponent } from './logo.component';\r\n\r\n@NgModule({\r\n  imports: [],\r\n  declarations: [LogoComponent],\r\n  exports: [LogoComponent],\r\n})\r\nexport class LogoModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "RecipeDescriptionModule",
             "id": "module-RecipeDescriptionModule-94dc7d576a11babe57e26eecdf89bce8ecf304e54ff6f9b6381a87cb6e27482aaf5fa41b910fcb5f631cdc99db44a0b0521a3e3ba5fec9286efe68151a408f3a",
             "description": "",
@@ -1025,6 +1653,50 @@
                     "elements": [
                         {
                             "name": "RecipeDescriptionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "RecipeDisplayModule",
+            "id": "module-RecipeDisplayModule-561749b17f4ce872a7c7acfadec0e08dcbdebe926464d83eec9908df6b2e0cb7fe9b4a06698daf33f8cf197fe2b0cbcb64cd197d9505334840ae2f38e33189e2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/recipe-display/recipe-display.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RecipeDisplayComponent } from './recipe-display.component';\r\n\r\n@NgModule({\r\n  declarations: [RecipeDisplayComponent],\r\n  imports: [],\r\n  exports: [RecipeDisplayComponent],\r\n})\r\nexport class RecipeDisplayModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RecipeDisplayComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "RecipeDisplayComponent"
                         }
                     ]
                 },
@@ -1080,13 +1752,13 @@
         },
         {
             "name": "uiModule",
-            "id": "module-uiModule-f0569f03f2ad7e54e0faebd20dd57a4cac03d2a02c57cd6f5e5a3d9ae4d435d4969a159415dcee335da1c571863cbfcee0533f7ef17d23da627391946b7f8d1d",
+            "id": "module-uiModule-575f75ccaf76d062720b6f75182b2c72d670d3b67b200ad01d992be0560873bd782cd225f35483dd85780a3003cb047098cf5f8afc835641b7fa481843ba3a0c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameNumberComponent } from 'src/stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'src/stories/libs/composite/frame-number/frame-number.module';\r\nimport { IngredientListComponent } from 'src/stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'src/stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'src/stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\n//import { LogoComponent } from 'src/stories/libs/Base/logo/logo.component';\r\nimport { LogoComponent } from 'stories/libs/Base/logo/logo.component';\r\nimport { LogoModule } from 'stories/libs/Base/logo/logo.module';\r\nimport { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'stories/libs/composite/frame-number/frame-number.module';\r\nimport { HorizontalGalleryModule } from 'stories/libs/composite/horizontal-gallery/horizantal-gallery.module';\r\nimport { HorizontalGalleryComponent } from 'stories/libs/composite/horizontal-gallery/horizontal-gallery.component';\r\nimport { IngredientListComponent } from 'stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1103,7 +1775,13 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "HorizontalGalleryModule"
+                        },
+                        {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "LogoModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -1117,7 +1795,13 @@
                             "name": "FrameNumberComponent"
                         },
                         {
+                            "name": "HorizontalGalleryComponent"
+                        },
+                        {
                             "name": "IngredientListComponent"
+                        },
+                        {
+                            "name": "LogoComponent"
                         },
                         {
                             "name": "RecipeDescriptionComponent"
@@ -1136,13 +1820,13 @@
         },
         {
             "name": "ViewHomeModule",
-            "id": "module-ViewHomeModule-8048ceede92d70696dadda2efb8b08d41e61733bcf2b2701b68dbf1284eae8779a5c7210249b962028751df7f69c797a89b0d61e646832440c4acca19fb89ae4",
+            "id": "module-ViewHomeModule-1fa8311eb9c49841a1b63384073efd4cb964bc491cfeb06a4f5cb79323126476e48cf2da89f3c570405ed4c6b4db026b19a4448fb3cc534116b6584cef48363d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/view/view-home/view-home.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'src/app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewHomeComponent } from './view-home.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewHomeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewHomeComponent }]),\r\n  ],\r\n\r\n  exports: [ViewHomeComponent],\r\n})\r\nexport class ViewHomeModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewHomeComponent } from './view-home.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewHomeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewHomeComponent }]),\r\n  ],\r\n\r\n  exports: [ViewHomeComponent],\r\n})\r\nexport class ViewHomeModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1210,7 +1894,13 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "HorizontalGalleryModule"
+                        },
+                        {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "LogoModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -1224,7 +1914,13 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "HorizontalGalleryModule"
+                        },
+                        {
                             "name": "IngredientListModule"
+                        },
+                        {
+                            "name": "LogoModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -1242,14 +1938,65 @@
             ]
         },
         {
+            "name": "ViewRecipeHomeModule",
+            "id": "module-ViewRecipeHomeModule-3cb0ee63dc95f0f9ad2d0b9bf3465bdb60ffd6b377b0e22c3aeff9f7c9460bcda73c61bd3636b6a18742d8b660f946dbc2b775d57038048ddbc8dac8c94849f6",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/view/view-recipe-home/view-recipe-home.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewRecipeHomeComponent } from './view-recipe-home.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewRecipeHomeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '', component: ViewRecipeHomeComponent }]),\r\n  ],\r\n  exports: [ViewRecipeHomeComponent],\r\n})\r\nexport class ViewRecipeHomeModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ViewRecipeHomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        },
+                        {
+                            "name": "ViewModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ViewRecipeHomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ViewRecipeModule",
-            "id": "module-ViewRecipeModule-19d932ea7efcef2f77dd960a4333a67d332bd5f00f4707a51e318a9bf25a967255712fa47040d4edf2f58934ec12a3e63583028596466345797477b94783bc42",
+            "id": "module-ViewRecipeModule-eab9f33cfd984a1bc9269fc6dbee94771b83af51447786cace2e80e0793d46ead90b4c07917f48e7c04d656f5b78806d7f6bbb094cc84007c0004b1bd774e597",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/view/view-recipe/view-recipe.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'src/app/shared/shared.module';\r\nimport { IngredientListModule } from 'src/stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewRecipeComponent } from './view-recipe.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewRecipeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewRecipeComponent }]),\r\n  ],\r\n  exports: [ViewRecipeComponent],\r\n})\r\nexport class ViewRecipeModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'app/shared/shared.module';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewRecipeComponent } from './view-recipe.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewRecipeComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([{ path: '**', component: ViewRecipeComponent }]),\r\n  ],\r\n  exports: [ViewRecipeComponent],\r\n})\r\nexport class ViewRecipeModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1303,7 +2050,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n]"
             },
             {
                 "name": "context",
@@ -1339,6 +2086,26 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1359,7 +2126,7 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1370,6 +2137,36 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1389,6 +2186,16 @@
                 "name": "mock",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    src: './assets/images/muscu-test.jpg',\r\n    alt: 'MUSCULATION',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/recette-test.jpg',\r\n    alt: 'RECETTES',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/entrainement-test.jpg',\r\n    alt: 'ENREAINEMENTS',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/defis-test.png',\r\n    alt: 'DÉFIS',\r\n    link: '',\r\n  },\r\n]"
+            },
+            {
+                "name": "mock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1403,7 +2210,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n]"
             },
             {
                 "name": "modules",
@@ -1423,6 +2230,26 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DateTrainingComponent>",
+                "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LogoComponent>",
+                "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1448,11 +2275,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<IngredientListComponent>",
-                "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
+                "type": "Story<HorizontalGalleryComponent>",
+                "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1463,6 +2290,36 @@
                 "deprecationMessage": "",
                 "type": "Story<RecipeDescriptionComponent>",
                 "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Information1Component>",
+                "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RecipeDisplayComponent>",
+                "defaultValue": "(\r\n  args: RecipeDisplayComponent\r\n) => ({\r\n  component: RecipeDisplayComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<IngredientListComponent>",
+                "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1478,7 +2335,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n]"
                 },
                 {
                     "name": "modules",
@@ -1488,7 +2345,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n]"
                 }
             ],
             "src/test.ts": [
@@ -1534,6 +2391,50 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
+                }
+            ],
+            "src/stories/libs/composite/date-training/date-training.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DateTrainingComponent>",
+                    "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
+                }
+            ],
+            "src/stories/libs/Base/logo/logo.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LogoComponent>",
+                    "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
@@ -1590,6 +2491,104 @@
                     "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "mock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    src: './assets/images/muscu-test.jpg',\r\n    alt: 'MUSCULATION',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/recette-test.jpg',\r\n    alt: 'RECETTES',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/entrainement-test.jpg',\r\n    alt: 'ENREAINEMENTS',\r\n    link: '',\r\n  },\r\n  {\r\n    src: './assets/images/defis-test.png',\r\n    alt: 'DÉFIS',\r\n    link: '',\r\n  },\r\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HorizontalGalleryComponent>",
+                    "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RecipeDescriptionComponent>",
+                    "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/information1/information1.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Information1Component>",
+                    "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/recipe-display/recipe-display.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RecipeDisplayComponent>",
+                    "defaultValue": "(\r\n  args: RecipeDisplayComponent\r\n) => ({\r\n  component: RecipeDisplayComponent,\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts": [
                 {
                     "name": "intagrated",
@@ -1620,28 +2619,6 @@
                     "deprecationMessage": "",
                     "type": "Story<IngredientListComponent>",
                     "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<RecipeDescriptionComponent>",
-                    "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/view/view.module.ts": [
@@ -1679,6 +2656,17 @@
                                 "kind": "module",
                                 "children": [],
                                 "module": "ViewRecipeModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "recipe",
+                        "loadChildren": "./view/view-recipe-home/view-recipe-home.module#ViewRecipeHomeModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [],
+                                "module": "ViewRecipeHomeModule"
                             }
                         ]
                     },
@@ -1751,7 +2739,16 @@
                 "linktype": "component",
                 "name": "ViewHomeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/view/view-recipe-home/view-recipe-home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ViewRecipeHomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1794,12 +2791,79 @@
                 "status": "low"
             },
             {
+                "filePath": "src/interface/image.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/interface/ingredient.interface.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "Iingredient",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/logo/logo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LogoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/date-training/date-training.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DateTrainingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1871,6 +2935,74 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HorizontalGalleryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information1/information1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Information1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1930,6 +3062,35 @@
             },
             {
                 "filePath": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-display/recipe-display.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RecipeDisplayComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

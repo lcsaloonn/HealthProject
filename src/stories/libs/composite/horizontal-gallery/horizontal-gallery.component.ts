@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IImage } from 'src/interface/image.interface';
+import { IImage } from 'interface/image.interface';
 
 @Component({
   selector: '[horizontal-gallery]',

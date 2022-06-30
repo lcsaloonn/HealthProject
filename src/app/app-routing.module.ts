@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'recipe',
+    loadChildren: () =>
+      import('./view/view-recipe-home/view-recipe-home.module').then(
+        (m) => m.ViewRecipeHomeModule
+      ),
+  },
+  {
     path: '',
     loadChildren: () =>
       import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule),

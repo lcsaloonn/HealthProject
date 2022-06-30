@@ -5,7 +5,7 @@ import {
   Story,
 } from '@storybook/angular';
 import { IngredientListComponent } from './ingredient-list.component';
-import { Iingredient } from 'src/interface/ingredient.interface';
+import { Iingredient } from 'interface/ingredient.interface';
 import { CommonModule } from '@angular/common';
 
 export default {

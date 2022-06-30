@@ -1,0 +1,39 @@
+@use '../../shared/styles/mixins.scss';
+
+.recipe {
+  &-container {
+    display: block;
+    width: 23%;
+    overflow: hidden;
+  }
+  &-image {
+    height: 400px;
+    img {
+      object-fit: fill;
+      position: relative;
+    }
+  }
+  &-walpaper {
+    text-align: center;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      div {
+        padding-top: 10px;
+        position: relative;
+        z-index: 50;
+        margin-top: -15px;
+        padding-bottom: 15px;
+        border-radius: 15px;
+        background: aquamarine;
+        overflow: hidden;
+        h2 {
+          @include mixins.text-format(20px, normal, normal);
+          font-weight: 600;
+          padding: 5px 20px;
+        }
+      }
+    }
+  }
+}

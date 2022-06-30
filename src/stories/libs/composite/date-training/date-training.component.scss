@@ -1,0 +1,16 @@
+.date {
+  &-container {
+    display: flex;
+  }
+
+  &-picker {
+    margin-right: 40px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 25px;
+  }
+  &-check {
+    padding: 10px;
+  }
+}

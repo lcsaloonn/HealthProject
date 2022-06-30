@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';
+import { ContentfulService } from 'app/shared/services/contentful/contentful.service';
 
 @Component({
   selector: 'app-view-home',
@@ -26,7 +26,7 @@ export class ViewHomeComponent implements OnInit {
     {
       src: './assets/images/recette-test.jpg',
       alt: 'RECETTES',
-      link: '',
+      link: '/recipes',
     },
     {
       src: './assets/images/entrainement-test.jpg',

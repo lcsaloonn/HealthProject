@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Iingredient } from 'src/interface/ingredient.interface';
+import { Iingredient } from 'interface/ingredient.interface';
 
 @Component({
   selector: '[ingredient-list]',

@@ -1,0 +1,19 @@
+<div class="date-container">
+  <input
+    type="date"
+    id="date"
+    class="date-picker"
+    disabled
+    data-testId="inputDate"
+  />
+  <div class="date-check">
+    Aujourd'hui
+    <input
+      type="checkbox"
+      id="inputSetDate"
+      checked="true"
+      (change)="setDate()"
+      data-testId="checkboxToday"
+    />
+  </div>
+</div>

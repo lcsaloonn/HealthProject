@@ -5,9 +5,10 @@
   width: auto;
   margin: 10vmin;
   overflow: hidden;
-  transform: skew(5deg);
+  // transform: skew(5deg);
 
   .card {
+    //border: 1px solid black;
     flex: 1;
     transition: all 1s ease-in-out;
     height: 50vmin;

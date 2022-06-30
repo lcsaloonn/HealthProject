@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ContentfulService } from 'src/app/shared/services/contentful/contentful.service';
-import { Iingredient } from 'src/interface/ingredient.interface';
+import { ContentfulService } from 'app/shared/services/contentful/contentful.service';
+import { Iingredient } from 'interface/ingredient.interface';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
