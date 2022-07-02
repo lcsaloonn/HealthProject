@@ -1,0 +1,25 @@
+@use '../../../../app/shared/styles/mixins.scss';
+
+.type-container {
+  text-align: center;
+  h2 {
+    @include mixins.text-format(20px, normal, normal);
+    font-weight: 400;
+  }
+  input {
+    border: solid 2px aquamarine;
+    border-radius: 25px;
+    height: 40px;
+    width: 80%;
+    margin: 20px auto 2px auto;
+    text-align: center;
+    font-size: 1rem;
+    &:focus {
+      border: solid 2px rgb(0, 110, 255);
+      outline: none;
+    }
+    @screen lg {
+      width: 50%;
+    }
+  }
+}

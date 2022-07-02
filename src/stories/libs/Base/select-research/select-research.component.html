@@ -1,0 +1,25 @@
+<div class="select-box">
+  <div class="options-container" #optionsContainer>
+    <div
+      class="option"
+      #options
+      *ngFor="let i of items"
+      (click)="removeActiveLabel(i); addToItemSelected(i)"
+    >
+      <input type="radio" class="radio" [id]="i" name="item" />
+      <label [for]="i">{{ i }}</label>
+    </div>
+  </div>
+  <div class="selected" #selected (click)="toogleSelection()">
+    {{ selectName }}
+  </div>
+
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Recherche..."
+      #searchBox
+      (keyup)="filterList(searchBox.value)"
+    />
+  </div>
+</div>

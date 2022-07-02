@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Information1Component } from './information1.component';
+import { InputTypeSelectComponent } from './input-type-select.component';
 
-describe('Information1Component', () => {
-  let component: Information1Component;
-  let fixture: ComponentFixture<Information1Component>;
+describe('InputTypeSelectComponent', () => {
+  let component: InputTypeSelectComponent;
+  let fixture: ComponentFixture<InputTypeSelectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Information1Component ]
+      declarations: [ InputTypeSelectComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Information1Component);
+    fixture = TestBed.createComponent(InputTypeSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

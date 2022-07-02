@@ -1,0 +1,19 @@
+<div class="custom-type-select-container">
+  <h2>{{ title }}</h2>
+
+  <select *ngIf="isDisable" disabled class="custom-type-select-info">
+    <option value="0" selected disabled>NON FONCTIONEL</option>
+  </select>
+
+  <select
+    *ngIf="!isDisable"
+    id="custom-type-select-info"
+    class="custom-type-select-info"
+  >
+    <option *ngFor="let i of selectInfos" [value]="i">{{ i }}</option>
+  </select>
+
+  <div *ngIf="informationText != null">
+    <i class="customText" data-testId="custom">{{ informationText }}</i>
+  </div>
+</div>

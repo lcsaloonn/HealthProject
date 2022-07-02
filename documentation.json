@@ -307,7 +307,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".date-container {\r\n  display: flex;\r\n}\r\n",
+                    "data": ".date {\r\n  &-container {\r\n    display: flex;\r\n  }\r\n\r\n  &-picker {\r\n    margin-right: 40px;\r\n    border: 2px solid black;\r\n    box-sizing: border-box;\r\n    padding: 10px;\r\n    border-radius: 25px;\r\n  }\r\n  &-check {\r\n    padding: 10px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./date-training.component.scss"
                 }
             ],
@@ -323,7 +323,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"date-container\">\n  <input type=\"date\" id=\"date\" disabled />\n  Aujourd'hui\n  <input\n    type=\"checkbox\"\n    id=\"inputSetDate\"\n    checked=\"true\"\n    (change)=\"setDate()\"\n  />\n</div>\n"
+            "templateData": "<div class=\"date-container\">\n  <input\n    type=\"date\"\n    id=\"date\"\n    class=\"date-picker\"\n    disabled\n    data-testId=\"inputDate\"\n  />\n  <div class=\"date-check\">\n    Aujourd'hui\n    <input\n      type=\"checkbox\"\n      id=\"inputSetDate\"\n      checked=\"true\"\n      (change)=\"setDate()\"\n      data-testId=\"checkboxToday\"\n    />\n  </div>\n</div>\n"
         },
         {
             "name": "FrameNumberComponent",
@@ -592,68 +592,6 @@
             "templateData": "<div class=\"horizantal-gallery-container\">\n  <div class=\"card\" *ngFor=\"let card of cards\">\n    <a [routerLink]=\"card.link\">\n      <img [src]=\"card.src\" />\n      <div class=\"card__head\">{{ card.alt }}</div>\n    </a>\n  </div>\n</div>\n"
         },
         {
-            "name": "Information1Component",
-            "id": "component-Information1Component-bb29bbcf6c7dab683f6283ee8e649f74f44f19ed75a74d1a7d096bd4d76db71bc381763d5ea9bfe6708c4769609e3868a6f232f48865fc754687144a90a0e037",
-            "file": "src/stories/libs/composite/information1/information1.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-information1",
-            "styleUrls": [
-                "./information1.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./information1.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-information1',\n  templateUrl: './information1.component.html',\n  styleUrls: ['./information1.component.scss']\n})\nexport class Information1Component implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".information {\r\n  &-container {\r\n    padding: 25px;\r\n    background-color: antiquewhite;\r\n\r\n    display: flex;\r\n  }\r\n  &-text {\r\n    width: 50%;\r\n    &-title {\r\n      //font-size: 38px;\r\n\r\n      font-weight: normal;\r\n      letter-spacing: normal;\r\n      line-height: normal;\r\n    }\r\n  }\r\n  &-image {\r\n    img {\r\n      height: 100px;\r\n      width: auto;\r\n    }\r\n  }\r\n}\r\n",
-                    "styleUrl": "./information1.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"information-container\">\n  <div class=\"information-text\">\n    <div class=\"information-text-title\">\n      Les meilleures recette selon vos envies\n    </div>\n    <div class=\"information-text-subtitle\">\n      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet\n      laudantium eaque neque velit nisi provident placeat architecto dicta\n      officia, distinctio reiciendis cumque, aliquam dolore, odio voluptas\n      nostrum magnam? Maxime, voluptatem!\n    </div>\n  </div>\n  <div class=\"information-image\">\n    <img [src]=\"image.src\" [alt]=\"image.alt\" />\n  </div>\n</div>\n"
-        },
-        {
             "name": "IngredientListComponent",
             "id": "component-IngredientListComponent-e446c3496842a4b9cc0d09e60097ac8bafe6109c9a5ea2dd6d3c6bec720e07c8517b45eb21b62b02b41a67ac3b3943b2762fab02f5a21306c91173e76e4a9627",
             "file": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
@@ -724,6 +662,226 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"ingredient-container\">\n  <ul>\n    <li *ngFor=\"let ingredient of ingredients\">\n      <div class=\"ingredient\">\n        <span></span>\n        <div class=\"ingredient-name\">\n          <strong>{{ ingredient.name }}</strong>\n        </div>\n        <div class=\"ingredient-quantity\">\n          {{ ingredient.quantity }} {{ ingredient.quantityValue }}\n        </div>\n        <div class=\"ingredient-description\">{{ ingredient.description }}</div>\n      </div>\n    </li>\n  </ul>\n</div>\n"
+        },
+        {
+            "name": "InputTypeComponent",
+            "id": "component-InputTypeComponent-49370a0ed56ed04898f67d9713247c7c62e47d035124a5f0d47903046e3b7f349a9af466b59708048aab01f1157032b90e015c7db1eeb038d1436600ac4d1b9c",
+            "file": "src/stories/libs/Base/input-type/input-type.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input-type",
+            "styleUrls": [
+                "./input-type.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-type.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "customText",
+                    "defaultValue": "'* champ obligatoire'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "requiredField",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "sessionName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "sendName",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-input-type',\n  templateUrl: './input-type.component.html',\n  styleUrls: ['./input-type.component.scss'],\n})\nexport class InputTypeComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n  @Input()\n  requiredField!: boolean;\n  @Input()\n  customText: string | null = '* champ obligatoire';\n  @Output()\n  sessionName!: string;\n\n  sendName(event: Event) {\n    const input = <HTMLInputElement>document.getElementById('sessionTitle');\n    this.sessionName = input.value;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../app/shared/styles/mixins.scss';\r\n\r\n.type-container {\r\n  text-align: center;\r\n  h2 {\r\n    @include mixins.text-format(20px, normal, normal);\r\n    font-weight: 400;\r\n  }\r\n  input {\r\n    border: solid 2px aquamarine;\r\n    border-radius: 25px;\r\n    height: 40px;\r\n    width: 80%;\r\n    margin: 20px auto 2px auto;\r\n    text-align: center;\r\n    font-size: 1rem;\r\n    &:focus {\r\n      border: solid 2px rgb(0, 110, 255);\r\n      outline: none;\r\n    }\r\n    @screen lg {\r\n      width: 50%;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./input-type.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"type-container\">\n  <h2>{{ title }}</h2>\n  <input\n    type=\"text\"\n    id=\"sessionTitle\"\n    placeholder=\"Nom de votre séance\"\n    (focusout)=\"sendName($event)\"\n  />\n  <div *ngIf=\"requiredField\">\n    <i class=\"customText\" data-testId=\"custom\">{{ customText }}</i>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "InputTypeSelectComponent",
+            "id": "component-InputTypeSelectComponent-31f4a1ff76b97cf36860de2e1353a5a7c2fd19e004c4143674fad39826670e5a9b8401b81cc594d23d57a01c5a3e8b4d2c3170dfd253a1de08315bba54ebf547",
+            "file": "src/stories/libs/Base/input-type-select/input-type-select.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input-type-select",
+            "styleUrls": [
+                "./input-type-select.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-type-select.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "informationText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "isDisable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "selectInfos",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-input-type-select',\n  templateUrl: './input-type-select.component.html',\n  styleUrls: ['./input-type-select.component.scss'],\n})\nexport class InputTypeSelectComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n\n  @Input()\n  isDisable = false;\n\n  @Input()\n  selectInfos!: string[];\n\n  @Input()\n  informationText!: string | null;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../app/shared/styles/mixins.scss';\r\n\r\n.custom-type-select {\r\n  &-container {\r\n    text-align: center;\r\n\r\n    h2 {\r\n      @include mixins.text-format(20px, normal, normal);\r\n      font-weight: 400;\r\n    }\r\n  }\r\n  &-info {\r\n    border: solid 1px aquamarine;\r\n    border-radius: 25px;\r\n    height: 50px;\r\n    font-size: 1rem;\r\n    background-color: aquamarine;\r\n    text-align: center;\r\n    width: 80%;\r\n    appearance: none;\r\n\r\n    option {\r\n      background-color: white;\r\n      color: pink;\r\n\r\n      &:hover {\r\n        color: red;\r\n      }\r\n    }\r\n\r\n    @screen lg {\r\n      width: 50%;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./input-type-select.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"custom-type-select-container\">\n  <h2>{{ title }}</h2>\n\n  <select *ngIf=\"isDisable\" disabled class=\"custom-type-select-info\">\n    <option value=\"0\" selected disabled>NON FONCTIONEL</option>\n  </select>\n\n  <select\n    *ngIf=\"!isDisable\"\n    id=\"custom-type-select-info\"\n    class=\"custom-type-select-info\"\n  >\n    <option *ngFor=\"let i of selectInfos\" [value]=\"i\">{{ i }}</option>\n  </select>\n\n  <div *ngIf=\"informationText != null\">\n    <i class=\"customText\" data-testId=\"custom\">{{ informationText }}</i>\n  </div>\n</div>\n"
         },
         {
             "name": "LogoComponent",
@@ -952,6 +1110,148 @@
                 "OnInit"
             ],
             "templateData": "<p>recipe-display works!</p>\n"
+        },
+        {
+            "name": "SelectResearchComponent",
+            "id": "component-SelectResearchComponent-5f271caee87043d89ee41d0191de297972e2836c25397d0897a0fbf45e538ecc04d1aa7668fec7216062e546306a3239c9eb191614cb5cfabc8f2931dae619e1",
+            "file": "src/stories/libs/Base/select-research/select-research.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[select-research]",
+            "styleUrls": [
+                "./select-research.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select-research.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "options",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'options'"
+                        }
+                    ]
+                },
+                {
+                    "name": "optionsContainer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'optionsContainer'"
+                        }
+                    ]
+                },
+                {
+                    "name": "searchBox",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'search-box'"
+                        }
+                    ]
+                },
+                {
+                    "name": "selected",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'selected'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toogleSelection",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';\n\n@Component({\n  selector: '[select-research]',\n  templateUrl: './select-research.component.html',\n  styleUrls: ['./select-research.component.scss'],\n})\nexport class SelectResearchComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {\n    console.log(this.options);\n  }\n\n  @Input()\n  items!: string[];\n\n  @ViewChild('optionsContainer') optionsContainer!: ElementRef;\n  @ViewChild('selected') selected!: ElementRef;\n  @ViewChild('search-box') searchBox!: ElementRef;\n  @ViewChild('options') options!: ElementRef[];\n\n  toogleSelection() {\n    this.optionsContainer.nativeElement.classList.toggle('active');\n    this.searchBox.nativeElement.value = '';\n    //filterList('');\n\n    if (this.optionsContainer.nativeElement.classList.contains('active')) {\n      this.searchBox.nativeElement.focus();\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".select-box {\r\n  position: relative;\r\n  display: flex;\r\n  width: 400px;\r\n  flex-direction: column;\r\n}\r\n\r\n.select-box .options-container {\r\n  background: #2f3640;\r\n  color: #f5f6fa;\r\n  max-height: 0;\r\n  width: 100%;\r\n  opacity: 0;\r\n  transition: all 0.4s;\r\n  border-radius: 8px;\r\n  overflow: hidden;\r\n\r\n  order: 1;\r\n}\r\n\r\n.selected {\r\n  background: #2f3640;\r\n  border-radius: 8px;\r\n  margin-bottom: 8px;\r\n  color: #f5f6fa;\r\n  position: relative;\r\n\r\n  order: 0;\r\n}\r\n\r\n.selected::after {\r\n  content: \"\";\r\n  // background: url(\"img/arrow-down.svg\");\r\n  background-size: contain;\r\n  background-repeat: no-repeat;\r\n\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 32px;\r\n  right: 10px;\r\n  top: 5px;\r\n\r\n  transition: all 0.4s;\r\n}\r\n\r\n.select-box .options-container.active {\r\n  max-height: 240px;\r\n  opacity: 1;\r\n  overflow-y: scroll;\r\n  margin-top: 54px;\r\n}\r\n\r\n.select-box .options-container.active + .selected::after {\r\n  transform: rotateX(180deg);\r\n  top: -6px;\r\n}\r\n\r\n.select-box .options-container::-webkit-scrollbar {\r\n  width: 8px;\r\n  background: #0d141f;\r\n  border-radius: 0 8px 8px 0;\r\n}\r\n\r\n.select-box .options-container::-webkit-scrollbar-thumb {\r\n  background: #525861;\r\n  border-radius: 0 8px 8px 0;\r\n}\r\n\r\n.select-box .option,\r\n.selected {\r\n  padding: 12px 24px;\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option:hover {\r\n  background: #414b57;\r\n}\r\n\r\n.select-box label {\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option .radio {\r\n  display: none;\r\n}\r\n\r\n/* Searchbox */\r\n\r\n.search-box input {\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  font-family: \"Roboto\", sans-serif;\r\n  font-size: 16px;\r\n  position: absolute;\r\n  border-radius: 8px 8px 0 0;\r\n  z-index: 100;\r\n  border: 8px solid #2f3640;\r\n\r\n  opacity: 0;\r\n  pointer-events: none;\r\n  transition: all 0.4s;\r\n}\r\n\r\n.search-box input:focus {\r\n  outline: none;\r\n}\r\n\r\n.select-box .options-container.active ~ .search-box input {\r\n  opacity: 1;\r\n  pointer-events: auto;\r\n}\r\n",
+                    "styleUrl": "./select-research.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"select-box\">\n  <div class=\"options-container\" #optionsContainer>\n    <div class=\"option\" #options *ngFor=\"let i of items\">\n      <input type=\"radio\" class=\"radio\" [id]=\"i\" name=\"item\" />\n      <label [for]=\"i\">{{ i }}</label>\n    </div>\n  </div>\n  <div class=\"selected\" #selected (click)=\"toogleSelection()\">\n    Select Video Category\n  </div>\n\n  <div class=\"search-box\">\n    <input type=\"text\" placeholder=\"Recherche...\" #searchBox />\n  </div>\n</div>\n"
         },
         {
             "name": "ViewHomeComponent",
@@ -1491,50 +1791,6 @@
             ]
         },
         {
-            "name": "Information1Module",
-            "id": "module-Information1Module-3b79046f8dcc9876f2553955a3c8e38a21501968687f5e2c61154ac14d4441136e8fc93bf0a1c749e69a21127f0f1ae06aa7d8a9da42a2de3c54c5cdfe382997",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/stories/libs/composite/information1/information1.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Information1Component } from './information1.component';\r\n\r\n@NgModule({\r\n  imports: [],\r\n  declarations: [Information1Component],\r\n  exports: [Information1Component],\r\n})\r\nexport class Information1Module {}\r\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "Information1Component"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "Information1Component"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
             "name": "IngredientListModule",
             "id": "module-IngredientListModule-0fe08bf180a82a9c2b829ba36b4e0be968301f8e97a19edbf9145f94bb865b453753a01526c89b3313867214b8c421c5976634512a2fface27eca8445b9002ee",
             "description": "",
@@ -1565,6 +1821,138 @@
                     "elements": [
                         {
                             "name": "IngredientListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "InputSelectResearchModule",
+            "id": "module-InputSelectResearchModule-f3e6cad5de400e9529430b24e40508327b847cc8319cd98a5df5f4a010212856c7b8e2eaee38a17b03875ea7418b25af8b4e2c4451f45e4a8ef5f1e0ef08c88e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/Base/select-research/select-research.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { SelectResearchComponent } from './select-research.component';\r\n\r\n@NgModule({\r\n  declarations: [SelectResearchComponent],\r\n  imports: [],\r\n  exports: [SelectResearchComponent],\r\n})\r\nexport class InputSelectResearchModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SelectResearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SelectResearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "InputTypeModule",
+            "id": "module-InputTypeModule-1c064eea3ea9b216908647d231e9145e063eec6de88c2a7cdf3b50c406b6ad6dbbf9708dc56752b6d82dbb279276644e564d161d0ebd109229d8e624fbc54c64",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/Base/input-type/input-type.modue.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { InputTypeComponent } from './input-type.component';\r\n\r\n@NgModule({\r\n  declarations: [InputTypeComponent],\r\n  imports: [],\r\n  exports: [InputTypeComponent],\r\n})\r\nexport class InputTypeModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "InputTypeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputTypeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "InputTypeSelectModule",
+            "id": "module-InputTypeSelectModule-fb14a2f8c7f1c442682ac8c1bd117931d6af6821f8f38e2f9e408263a8ac0d7291d6e9f8f654f70f28098f96eec78412d6ea1a35f4c045abacbc56bc6ac10b44",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/Base/input-type-select/input-type-select.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { InputTypeSelectComponent } from './input-type-select.component';\r\n\r\n@NgModule({\r\n  declarations: [InputTypeSelectComponent],\r\n  imports: [],\r\n  exports: [InputTypeSelectComponent],\r\n})\r\nexport class InputTypeSelectModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "InputTypeSelectComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputTypeSelectComponent"
                         }
                     ]
                 },
@@ -2063,6 +2451,26 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "customText",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "customText",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2086,27 +2494,17 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "intagrated",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "intagrated",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2146,16 +2544,6 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/information1/information1.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "intagrated",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2167,6 +2555,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2223,6 +2621,36 @@
                 "defaultValue": "[uiModule]"
             },
             {
+                "name": "normalInput",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "normalSelect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "normalSelect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2232,24 +2660,24 @@
                 "type": "literal type"
             },
             {
-                "name": "Template",
+                "name": "requiredInput",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<DateTrainingComponent>",
-                "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Template",
+                "name": "requiredInput",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LogoComponent>",
-                "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -2260,6 +2688,16 @@
                 "deprecationMessage": "",
                 "type": "Story<FrameNumberComponent>",
                 "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DateTrainingComponent>",
+                "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
             },
             {
                 "name": "Template",
@@ -2295,16 +2733,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/information1/information1.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Information1Component>",
-                "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2320,6 +2748,46 @@
                 "deprecationMessage": "",
                 "type": "Story<IngredientListComponent>",
                 "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTypeComponent>",
+                "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTypeSelectComponent>",
+                "defaultValue": "(\r\n  args: InputTypeSelectComponent\r\n) => ({\r\n  component: InputTypeSelectComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LogoComponent>",
+                "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SelectResearchComponent>",
+                "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -2369,6 +2837,90 @@
                     "type": "literal type"
                 }
             ],
+            "src/stories/libs/Base/input-type/input-type.stories.ts": [
+                {
+                    "name": "customText",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "normalInput",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "requiredInput",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputTypeComponent>",
+                    "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/Base/input-type-select/input-type-select.stories.ts": [
+                {
+                    "name": "customText",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "normalSelect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "requiredInput",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputTypeSelectComponent>",
+                    "defaultValue": "(\r\n  args: InputTypeSelectComponent\r\n) => ({\r\n  component: InputTypeSelectComponent,\r\n  props: args,\r\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -2393,50 +2945,6 @@
                     "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
                 }
             ],
-            "src/stories/libs/composite/date-training/date-training.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<DateTrainingComponent>",
-                    "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
-                }
-            ],
-            "src/stories/libs/Base/logo/logo.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<LogoComponent>",
-                    "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
                 {
                     "name": "intagrated",
@@ -2457,6 +2965,28 @@
                     "deprecationMessage": "",
                     "type": "Story<FrameNumberComponent>",
                     "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/date-training/date-training.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DateTrainingComponent>",
+                    "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
                 }
             ],
             "src/stories/libs/composite/galerie/galerie.stories.ts": [
@@ -2545,28 +3075,6 @@
                     "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/libs/composite/information1/information1.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Information1Component>",
-                    "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/libs/composite/recipe-display/recipe-display.stories.ts": [
                 {
                     "name": "intagrated",
@@ -2621,6 +3129,28 @@
                     "defaultValue": "(\r\n  args: IngredientListComponent\r\n) => ({\r\n  component: IngredientListComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/libs/Base/logo/logo.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LogoComponent>",
+                    "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
+                }
+            ],
             "src/app/view/view.module.ts": [
                 {
                     "name": "modules",
@@ -2631,6 +3161,28 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[uiModule]"
+                }
+            ],
+            "src/stories/libs/Base/select-research/select-research.stories.ts": [
+                {
+                    "name": "normalSelect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SelectResearchComponent>",
+                    "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -2809,6 +3361,104 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/libs/Base/input-type-select/input-type-select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTypeSelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "customText",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "normalSelect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "requiredInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type-select/input-type-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type/input-type.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTypeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "customText",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "normalInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "requiredInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/libs/Base/logo/logo.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2829,6 +3479,35 @@
             },
             {
                 "filePath": "src/stories/libs/Base/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/select-research/select-research.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectResearchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "normalSelect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/Base/select-research/select-research.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2965,35 +3644,6 @@
             },
             {
                 "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/libs/composite/information1/information1.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "Information1Component",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "intagrated",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

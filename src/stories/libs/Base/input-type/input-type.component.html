@@ -1,0 +1,12 @@
+<div class="type-container">
+  <h2>{{ title }}</h2>
+  <input
+    type="text"
+    id="sessionTitle"
+    placeholder="Nom de votre séance"
+    (focusout)="sendName($event)"
+  />
+  <div *ngIf="requiredField">
+    <i class="customText" data-testId="custom">{{ customText }}</i>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 
 import { DateTrainingComponent } from './date-training.component';
 
-fdescribe('DateTrainingComponent', () => {
+describe('DateTrainingComponent', () => {
   let component: DateTrainingComponent;
   let fixture: ComponentFixture<DateTrainingComponent>;
 
