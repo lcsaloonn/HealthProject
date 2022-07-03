@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-//import { LogoComponent } from 'src/stories/libs/Base/logo/logo.component';
+import { InputTypeComponent } from 'stories/libs/Base/input-type/input-type.component';
+import { InputTypeModule } from 'stories/libs/Base/input-type/input-type.modue';
 import { LogoComponent } from 'stories/libs/Base/logo/logo.component';
 import { LogoModule } from 'stories/libs/Base/logo/logo.module';
 import { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';
@@ -17,6 +18,7 @@ const modules = [
   RecipeDescriptionModule,
   LogoModule,
   HorizontalGalleryModule,
+  InputTypeModule,
 ];
 
 const components = [
@@ -25,6 +27,7 @@ const components = [
   RecipeDescriptionComponent,
   LogoComponent,
   HorizontalGalleryComponent,
+  InputTypeComponent,
 ];
 
 @NgModule({

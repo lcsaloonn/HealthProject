@@ -36,14 +36,16 @@ export class SelectResearchComponent implements OnInit {
   toogleSelection() {
     this.optionsContainer.nativeElement.classList.toggle('active');
     this.searchBox.nativeElement.value = '';
-    //this.filterList('');
+
+    this.filterList('');
     if (this.optionsContainer.nativeElement.classList.contains('active')) {
       this.searchBox.nativeElement.focus();
     }
   }
 
-  removeActiveLabel(labelName: string) {
+  selectActiveLabel(labelName: string) {
     this.selected.nativeElement.innerHTML = labelName;
+    this.optionsContainer.nativeElement.classList.toggle('active');
   }
 
   filterList(searchTerm: string) {

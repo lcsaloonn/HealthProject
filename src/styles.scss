@@ -1,14 +1,16 @@
+@use './app/shared/styles/color.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("./app/shared/styles/buttons.scss");
+@import url("./app/shared/styles/color.scss");
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Biotif", Arial, sans-serif;
 }
 .content-container {
-  @screen lg {
-    display: block;
-    margin: 0 20% 0 20%;
-  }
+  display: block;
+  margin: 0 20% 0 20%;
 }

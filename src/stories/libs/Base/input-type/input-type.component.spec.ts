@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 
 import { InputTypeComponent } from './input-type.component';
 
-fdescribe('InputTypeComponent', () => {
+describe('InputTypeComponent', () => {
   let component: InputTypeComponent;
   let fixture: ComponentFixture<InputTypeComponent>;
 

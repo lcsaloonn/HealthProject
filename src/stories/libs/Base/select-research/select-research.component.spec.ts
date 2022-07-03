@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectResearchComponent } from './select-research.component';
 
-describe('InputSelectResearchComponent', () => {
+fdescribe('InputSelectResearchComponent', () => {
   let component: SelectResearchComponent;
   let fixture: ComponentFixture<SelectResearchComponent>;
 

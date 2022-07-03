@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputTypeSelectComponent } from './input-type-select.component';
+import { ViewStartTrainingComponent } from './view-start-training.component';
 
-describe('InputTypeSelectComponent', () => {
-  let component: InputTypeSelectComponent;
-  let fixture: ComponentFixture<InputTypeSelectComponent>;
+describe('ViewStartTrainingComponent', () => {
+  let component: ViewStartTrainingComponent;
+  let fixture: ComponentFixture<ViewStartTrainingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputTypeSelectComponent ]
+      declarations: [ ViewStartTrainingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputTypeSelectComponent);
+    fixture = TestBed.createComponent(ViewStartTrainingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

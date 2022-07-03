@@ -4,7 +4,7 @@
       class="option"
       #options
       *ngFor="let i of items"
-      (click)="removeActiveLabel(i); addToItemSelected(i)"
+      (click)="selectActiveLabel(i); addToItemSelected(i)"
     >
       <input type="radio" class="radio" [id]="i" name="item" />
       <label [for]="i">{{ i }}</label>

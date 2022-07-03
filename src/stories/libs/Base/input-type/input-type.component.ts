@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-input-type',
+  selector: '[health-input-type]',
   templateUrl: './input-type.component.html',
   styleUrls: ['./input-type.component.scss'],
 })

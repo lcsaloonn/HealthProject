@@ -7,7 +7,7 @@
     font-weight: 400;
   }
   input {
-    border: solid 2px aquamarine;
+    border: solid 2px var(--color-main);
     border-radius: 25px;
     height: 40px;
     width: 80%;
@@ -15,7 +15,7 @@
     text-align: center;
     font-size: 1rem;
     &:focus {
-      border: solid 2px rgb(0, 110, 255);
+      border: solid 3px var(--color-aquamarine);
       outline: none;
     }
     @screen lg {

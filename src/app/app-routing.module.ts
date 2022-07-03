@@ -17,6 +17,14 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'startTraining',
+    loadChildren: () =>
+      import('./view/view-start-training/view-start-training.module').then(
+        (m) => m.ViewStartTrainingModule
+      ),
+  },
+
+  {
     path: '',
     loadChildren: () =>
       import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule),
