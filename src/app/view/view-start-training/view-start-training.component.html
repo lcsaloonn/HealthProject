@@ -1,10 +1,24 @@
-dd
-<h2>Votre entrainement</h2>
+<h2 class="title">Demarrer votre entrainement</h2>
 <div class="content-container"></div>
 <!-- revoir le content container -->
 
 <div
+  class="mt-20"
   health-input-type
   [title]="inputTypeData.title"
   [requiredField]="inputTypeData.requiredField"
 ></div>
+
+<!-- crée des container -->
+
+<div class="component-container-center mt-10">
+  <div
+    health-select-research
+    [items]="selectResearchData.items"
+    [selectName]="selectResearchData.selectName"
+  ></div>
+</div>
+
+<div class="text-center mt-20">
+  <a href="" class="btn-start btn">Commencer</a>
+</div>

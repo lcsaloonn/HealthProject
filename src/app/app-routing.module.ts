@@ -23,14 +23,30 @@ const routes: Routes = [
         (m) => m.ViewStartTrainingModule
       ),
   },
-
+  {
+    path: 'findExercices',
+    loadChildren: () =>
+      import(
+        './view/view-find-exercices-trainning/view-find-exercices-trainning.module'
+      ).then((m) => m.ViewFindExercicesTrainningModule),
+  },
   {
     path: '',
     loadChildren: () =>
-      import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule),
+      import('./view/view-home-training/view-home-training.module').then(
+        (m) => m.ViewHomeTrainingModule
+      ),
     pathMatch: 'full',
     // full = que si tous l'url est blanc alors on redirige
   },
+
+  // {
+  //   path: '',
+  //   loadChildren: () =>
+  //     import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule),
+  //   pathMatch: 'full',
+  //   // full = que si tous l'url est blanc alors on redirige
+  // },
   {
     path: 'home',
     redirectTo: '',

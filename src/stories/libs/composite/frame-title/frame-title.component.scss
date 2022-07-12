@@ -1,0 +1,22 @@
+.frame {
+  margin-top: 15px;
+  position: relative;
+}
+
+.content {
+  border: 2px solid var(--color-main);
+  border-radius: 25px;
+  padding: 60px 40px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  width: 200px;
+  position: absolute;
+  top: -42.5px;
+  left: calc(50% - 100px);
+  background-color: white;
+}

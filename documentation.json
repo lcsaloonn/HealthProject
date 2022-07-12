@@ -327,7 +327,7 @@
         },
         {
             "name": "FrameNumberComponent",
-            "id": "component-FrameNumberComponent-c7428c2318633e9c8fef53c25858e5ba53d418090e22560f14a5d9803ce989cda09758af50e0b7c7dfe1b777624b6a8a499f2b3f3ca84e159147e4ba973c3116",
+            "id": "component-FrameNumberComponent-bac957a5fd0b4f400588aef858b9c1bf62ab2723bb10e2075577a6190e51e97ca081c9eede6b7993aeec14aeef0c227c2d929d69d1d17e31fba24a65b52569cf",
             "file": "src/stories/libs/composite/frame-number/frame-number.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -341,6 +341,85 @@
             "styles": [],
             "templateUrl": [
                 "./frame-number.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[frame-number]',\n  templateUrl: './frame-number.component.html',\n  styleUrls: ['./frame-number.component.scss'],\n})\nexport class FrameNumberComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n\n  @Input()\n  color!: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".frame {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: auto 10% auto 10%;\r\n  justify-content: center;\r\n  &-spire {\r\n    width: 100%;\r\n    background-color: var(--color-main);\r\n    height: 3px;\r\n  }\r\n  &-title {\r\n    padding: 0 20px 0 20px;\r\n    font-size: 25px;\r\n    white-space: nowrap;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./frame-number.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"frame\">\n  <span class=\"frame-spire\" [style.background-color]=\"color\"></span>\n  <div class=\"frame-title\">{{ title }}</div>\n  <span class=\"frame-spire\" [style.background-color]=\"color\"></span>\n</div>\n"
+        },
+        {
+            "name": "FrameTitleComponent",
+            "id": "component-FrameTitleComponent-6c6779f0cf29b39efbd932adaddb50fc202123c3812173cd26f3bd9d3551dd848addc43d2da355e001d9b404daa5948b434d6e346fe347d1a0ee49b9884ddca5",
+            "file": "src/stories/libs/composite/frame-title/frame-title.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[health-frame-title]",
+            "styleUrls": [
+                "./frame-title.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./frame-title.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
@@ -374,12 +453,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[frame-number]',\n  templateUrl: './frame-number.component.html',\n  styleUrls: ['./frame-number.component.scss'],\n})\nexport class FrameNumberComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[health-frame-title]',\n  templateUrl: './frame-title.component.html',\n  styleUrls: ['./frame-title.component.scss'],\n})\nexport class FrameTitleComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  title!: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".frame {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: auto 20% auto 20%;\r\n  justify-content: center;\r\n  &-spire {\r\n    width: 100%;\r\n    background-color: rgb(211, 28, 28);\r\n    height: 3px;\r\n    border-radius: 10px;\r\n  }\r\n  &-title {\r\n    padding: 0 20px 0 20px;\r\n    font-size: 25px;\r\n    white-space: nowrap;\r\n  }\r\n}\r\n",
-                    "styleUrl": "./frame-number.component.scss"
+                    "data": ".frame {\r\n  margin-top: 15px;\r\n  position: relative;\r\n}\r\n\r\n.content {\r\n  border: 2px solid var(--color-main);\r\n  border-radius: 25px;\r\n  padding: 60px 40px;\r\n}\r\n\r\n.title {\r\n  font-size: 25px;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  display: block;\r\n  width: 200px;\r\n  position: absolute;\r\n  top: -42.5px;\r\n  left: calc(50% - 100px);\r\n  background-color: white;\r\n}\r\n",
+                    "styleUrl": "./frame-title.component.scss"
                 }
             ],
             "stylesData": "",
@@ -394,7 +473,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"frame\">\n  <span class=\"frame-spire\"></span>\n  <div class=\"frame-title\">{{ title }}</div>\n  <span class=\"frame-spire\"></span>\n</div>\n"
+            "templateData": "<!--  <div class=\"frame\">\n  <div class=\"tc\">\n    <div class=\"title-2\">{{ title }}</div>\n  </div>\n  <div class=\"content\">\n    <ng-content> </ng-content>\n  </div>\n</div> -->\n\n<div class=\"frame\">\n  <h1 class=\"title\">{{ title }}</h1>\n  <div class=\"content\">\n    <ng-content> </ng-content>\n  </div>\n</div>\n"
         },
         {
             "name": "GalerieComponent",
@@ -592,6 +671,79 @@
             "templateData": "<div class=\"horizantal-gallery-container\">\n  <div class=\"card\" *ngFor=\"let card of cards\">\n    <a [routerLink]=\"card.link\">\n      <img [src]=\"card.src\" />\n      <div class=\"card__head\">{{ card.alt }}</div>\n    </a>\n  </div>\n</div>\n"
         },
         {
+            "name": "Information3Component",
+            "id": "component-Information3Component-1d8029f769184753a53399c7f62d7bbbd8682181a0dab3dec776517bc1cd51c99e5e416fab9589f9ff2b2ff86dbf2b1576a852d3a9531f63e5f531e7bbf3aa95",
+            "file": "src/stories/libs/composite/information3/information3.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-information3",
+            "styleUrls": [
+                "./information3.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./information3.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "statsArray",
+                    "defaultValue": "[\n    {\n      number: 140,\n      title: 'EXPERT COACHES',\n    },\n    {\n      number: 978,\n      title: 'Members joined',\n    },\n    {\n      number: 50,\n      title: 'fitness programs',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-information3',\n  templateUrl: './information3.component.html',\n  styleUrls: ['./information3.component.scss'],\n})\nexport class Information3Component implements OnInit {\n  statsArray = [\n    {\n      number: 140,\n      title: 'EXPERT COACHES',\n    },\n    {\n      number: 978,\n      title: 'Members joined',\n    },\n    {\n      number: 50,\n      title: 'fitness programs',\n    },\n  ];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use \"../../../../app/shared/styles/mixins.scss\";\r\n\r\n.home-training-header {\r\n  .slogan {\r\n    margin: 40px 0px;\r\n    @include mixins.text-format(2.5rem, normal, normal);\r\n    font-weight: 700;\r\n    text-transform: uppercase;\r\n\r\n    @screen md {\r\n      @include mixins.text-format(4.5rem, normal, normal);\r\n    }\r\n\r\n    .transparent {\r\n      color: transparent;\r\n      -webkit-text-stroke-width: 1px;\r\n      -webkit-text-stroke-color: #fff;\r\n    }\r\n    .full {\r\n      color: white;\r\n    }\r\n  }\r\n\r\n  .cummon-text {\r\n    font-size: 1.2rem;\r\n    font-weight: 200;\r\n    color: #fff;\r\n  }\r\n\r\n  .stats-container {\r\n    margin: 40px 0;\r\n\r\n    @screen md {\r\n      display: flex;\r\n    }\r\n\r\n    .stats {\r\n      margin: 0 20px;\r\n      &-number {\r\n        color: #fff;\r\n        font-size: 1.4rem;\r\n        @screen md {\r\n          font-size: 2rem;\r\n        }\r\n      }\r\n      &-text {\r\n        text-transform: uppercase;\r\n        color: #9c9c9c;\r\n      }\r\n    }\r\n  }\r\n\r\n  .btn {\r\n    background-color: #fff;\r\n    border: 4px solid transparent;\r\n    font-weight: 700;\r\n    padding: 0.5rem;\r\n    transition: all 0.3s;\r\n    &:hover {\r\n      cursor: pointer;\r\n    }\r\n  }\r\n  .hero-button {\r\n    display: flex;\r\n    font-weight: 400 !important;\r\n    gap: 1rem;\r\n    > :first-child {\r\n      background-color: #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n    > :nth-child(2) {\r\n      background-color: initial;\r\n      border: 2px solid #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./information3.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 22
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"home-training-header\">\n  <div class=\"slogan\">\n    <span class=\"transparent\">Shape </span> <span class=\"full\">Your</span>\n    <div class=\"full\">Ideal Body</div>\n  </div>\n\n  <div class=\"cummon-text\">\n    In here we will help you to shape and build your ideal body and live up your\n    life to fullest\n  </div>\n\n  <div class=\"stats-container\">\n    <div class=\"stats\" *ngFor=\"let i of statsArray\">\n      <div class=\"stats-number\">+ {{ i.number }}</div>\n      <div class=\"stats-text\">{{ i.title }}</div>\n    </div>\n  </div>\n\n  <div class=\"hero-button\">\n    <button class=\"btn\">Get started</button>\n    <button class=\"btn\">Learn More</button>\n  </div>\n</div>\n"
+        },
+        {
             "name": "IngredientListComponent",
             "id": "component-IngredientListComponent-e446c3496842a4b9cc0d09e60097ac8bafe6109c9a5ea2dd6d3c6bec720e07c8517b45eb21b62b02b41a67ac3b3943b2762fab02f5a21306c91173e76e4a9627",
             "file": "src/stories/libs/composite/ingredient-list/ingredient-list.component.ts",
@@ -769,7 +921,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../app/shared/styles/mixins.scss';\r\n\r\n.type-container {\r\n  text-align: center;\r\n  h2 {\r\n    @include mixins.text-format(20px, normal, normal);\r\n    font-weight: 400;\r\n  }\r\n  input {\r\n    border: solid 2px aquamarine;\r\n    border-radius: 25px;\r\n    height: 40px;\r\n    width: 80%;\r\n    margin: 20px auto 2px auto;\r\n    text-align: center;\r\n    font-size: 1rem;\r\n    &:focus {\r\n      border: solid 2px rgb(0, 110, 255);\r\n      outline: none;\r\n    }\r\n    @screen lg {\r\n      width: 50%;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@use '../../../../app/shared/styles/mixins.scss';\r\n\r\n.type-container {\r\n  text-align: center;\r\n  h2 {\r\n    @include mixins.text-format(20px, normal, normal);\r\n    font-weight: 400;\r\n  }\r\n  input {\r\n    border: solid 2px var(--color-main);\r\n    border-radius: 25px;\r\n    height: 40px;\r\n    width: 80%;\r\n    margin: 20px auto 2px auto;\r\n    text-align: center;\r\n    font-size: 1rem;\r\n    &:focus {\r\n      border: solid 3px var(--color-aquamarine);\r\n      outline: none;\r\n    }\r\n    @screen lg {\r\n      width: 50%;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./input-type.component.scss"
                 }
             ],
@@ -1017,14 +1169,14 @@
         },
         {
             "name": "SelectResearchComponent",
-            "id": "component-SelectResearchComponent-a67b67d2af7bddff6877412c27f532d86f0276c1db4763bd4d778064b7bb9dfe4f1877bbbd73a16755b1071b3144dbed15cbfe9ed257b442aad335708ce86a03",
+            "id": "component-SelectResearchComponent-8f31969f948fceb389feb40e6e0c95a9714308b4be6660a6a1e26b188a1c6686125988c8e64ae37046942cbf36fb7ab8fa6c7d6d36fd0d84e489b85d764aca54",
             "file": "src/stories/libs/Base/select-research/select-research.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "[select-research]",
+            "selector": "[health-select-research]",
             "styleUrls": [
                 "./select-research.component.scss"
             ],
@@ -1235,11 +1387,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  ElementRef,\n  Input,\n  OnInit,\n  Output,\n  QueryList,\n  ViewChild,\n  ViewChildren,\n} from '@angular/core';\n\n@Component({\n  selector: '[select-research]',\n  templateUrl: './select-research.component.html',\n  styleUrls: ['./select-research.component.scss'],\n})\nexport class SelectResearchComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  items!: string[];\n\n  @Input()\n  selectName!: string;\n\n  @Output()\n  itemSelected!: string | number;\n\n  @ViewChild('optionsContainer') optionsContainer!: ElementRef;\n  @ViewChild('selected') selected!: ElementRef;\n  @ViewChild('searchBox') searchBox!: ElementRef;\n  @ViewChildren('options') options!: QueryList<ElementRef>;\n\n  toogleSelection() {\n    this.optionsContainer.nativeElement.classList.toggle('active');\n    this.searchBox.nativeElement.value = '';\n\n    this.filterList('');\n    if (this.optionsContainer.nativeElement.classList.contains('active')) {\n      this.searchBox.nativeElement.focus();\n    }\n  }\n\n  selectActiveLabel(labelName: string) {\n    this.selected.nativeElement.innerHTML = labelName;\n    this.optionsContainer.nativeElement.classList.toggle('active');\n  }\n\n  filterList(searchTerm: string) {\n    searchTerm.toLowerCase();\n    this.options.forEach((option) => {\n      let label =\n        option.nativeElement.firstElementChild.nextElementSibling.innerText.toLowerCase();\n      if (label.indexOf(searchTerm) != -1) {\n        option.nativeElement.style.display = 'block';\n      } else {\n        option.nativeElement.style.display = 'none';\n      }\n    });\n  }\n\n  addToItemSelected(item: string | number) {\n    this.itemSelected = item;\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  ElementRef,\n  Input,\n  OnInit,\n  Output,\n  QueryList,\n  ViewChild,\n  ViewChildren,\n} from '@angular/core';\n\n@Component({\n  selector: '[health-select-research]',\n  templateUrl: './select-research.component.html',\n  styleUrls: ['./select-research.component.scss'],\n})\nexport class SelectResearchComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  @Input()\n  items!: string[];\n\n  @Input()\n  selectName!: string;\n\n  @Output()\n  itemSelected!: string | number;\n\n  @ViewChild('optionsContainer') optionsContainer!: ElementRef;\n  @ViewChild('selected') selected!: ElementRef;\n  @ViewChild('searchBox') searchBox!: ElementRef;\n  @ViewChildren('options') options!: QueryList<ElementRef>;\n\n  toogleSelection() {\n    this.optionsContainer.nativeElement.classList.toggle('active');\n    this.searchBox.nativeElement.value = '';\n\n    this.filterList('');\n    if (this.optionsContainer.nativeElement.classList.contains('active')) {\n      this.searchBox.nativeElement.focus();\n    }\n  }\n\n  selectActiveLabel(labelName: string) {\n    this.selected.nativeElement.innerHTML = labelName;\n    this.optionsContainer.nativeElement.classList.toggle('active');\n  }\n\n  filterList(searchTerm: string) {\n    searchTerm.toLowerCase();\n    this.options.forEach((option) => {\n      let label =\n        option.nativeElement.firstElementChild.nextElementSibling.innerText.toLowerCase();\n      if (label.indexOf(searchTerm) != -1) {\n        option.nativeElement.style.display = 'block';\n      } else {\n        option.nativeElement.style.display = 'none';\n      }\n    });\n  }\n\n  addToItemSelected(item: string | number) {\n    this.itemSelected = item;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".select-box {\r\n  position: relative;\r\n  display: flex;\r\n  width: 400px;\r\n  flex-direction: column;\r\n}\r\n\r\n.select-box .options-container {\r\n  background: #2f3640;\r\n  color: #f5f6fa;\r\n  max-height: 0;\r\n  width: 100%;\r\n  opacity: 0;\r\n  transition: all 0.4s;\r\n  border-radius: 8px;\r\n  overflow: hidden;\r\n\r\n  order: 1;\r\n}\r\n\r\n.selected {\r\n  background: #2f3640;\r\n  border-radius: 8px;\r\n  margin-bottom: 8px;\r\n  color: #f5f6fa;\r\n  position: relative;\r\n\r\n  order: 0;\r\n}\r\n\r\n.selected::after {\r\n  content: \"\";\r\n  // background: url(\"img/arrow-down.svg\");\r\n  background-size: contain;\r\n  background-repeat: no-repeat;\r\n\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 32px;\r\n  right: 10px;\r\n  top: 5px;\r\n\r\n  transition: all 0.4s;\r\n}\r\n\r\n.select-box .options-container.active {\r\n  max-height: 240px;\r\n  opacity: 1;\r\n  overflow-y: scroll;\r\n  margin-top: 54px;\r\n}\r\n\r\n.select-box .options-container.active + .selected::after {\r\n  transform: rotateX(180deg);\r\n  top: -6px;\r\n}\r\n\r\n// .select-box .options-container::-webkit-scrollbar {\r\n//   width: 8px;\r\n//   background: #376fc9;\r\n//   border-radius: 0 8px 8px 0;\r\n// }\r\n\r\n// .select-box .options-container::-webkit-scrollbar-thumb {\r\n//   background: #1cc933;\r\n//   border-radius: 0 8px 8px 0;\r\n// }\r\n\r\n.select-box .option,\r\n.selected {\r\n  padding: 12px 24px;\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option:hover {\r\n  background: rgba(127, 255, 212, 0.781);\r\n}\r\n\r\n.select-box label {\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option .radio {\r\n  display: none;\r\n}\r\n\r\n/* Searchbox */\r\n\r\n.search-box input {\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  font-family: \"Roboto\", sans-serif;\r\n  font-size: 16px;\r\n  position: absolute;\r\n  border-radius: 8px 8px 0 0;\r\n  z-index: 100;\r\n  border: 8px solid #2f3640;\r\n\r\n  opacity: 0;\r\n  pointer-events: none;\r\n  transition: all 0.4s;\r\n}\r\n\r\n.search-box input:focus {\r\n  outline: none;\r\n}\r\n\r\n.select-box .options-container.active ~ .search-box input {\r\n  opacity: 1;\r\n  pointer-events: auto;\r\n}\r\n",
+                    "data": ".select-box {\r\n  position: relative;\r\n  display: flex;\r\n  margin: auto;\r\n  width: 250px;\r\n  flex-direction: column;\r\n  @screen md {\r\n    width: 400px;\r\n  }\r\n}\r\n\r\n.select-box .options-container {\r\n  background: #2f3640;\r\n  color: #f5f6fa;\r\n  max-height: 0;\r\n  width: 100%;\r\n  opacity: 0;\r\n  transition: all 0.4s;\r\n  border-radius: 8px;\r\n  overflow: hidden;\r\n\r\n  order: 1;\r\n}\r\n\r\n.selected {\r\n  background: #2f3640;\r\n  border-radius: 8px;\r\n  margin-bottom: 8px;\r\n  color: #f5f6fa;\r\n  position: relative;\r\n\r\n  order: 0;\r\n}\r\n\r\n.selected::after {\r\n  content: \"\";\r\n  // background: url(\"img/arrow-down.svg\");\r\n  background-size: contain;\r\n  background-repeat: no-repeat;\r\n\r\n  position: absolute;\r\n  height: 100%;\r\n  width: 32px;\r\n  right: 10px;\r\n  top: 5px;\r\n\r\n  transition: all 0.4s;\r\n}\r\n\r\n.select-box .options-container.active {\r\n  max-height: 240px;\r\n  opacity: 1;\r\n  overflow-y: scroll;\r\n  margin-top: 54px;\r\n}\r\n\r\n.select-box .options-container.active + .selected::after {\r\n  transform: rotateX(180deg);\r\n  top: -6px;\r\n}\r\n\r\n// .select-box .options-container::-webkit-scrollbar {\r\n//   width: 8px;\r\n//   background: #376fc9;\r\n//   border-radius: 0 8px 8px 0;\r\n// }\r\n\r\n// .select-box .options-container::-webkit-scrollbar-thumb {\r\n//   background: #1cc933;\r\n//   border-radius: 0 8px 8px 0;\r\n// }\r\n\r\n.select-box .option,\r\n.selected {\r\n  padding: 12px 24px;\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option:hover {\r\n  background: rgba(127, 255, 212, 0.781);\r\n}\r\n\r\n.select-box label {\r\n  cursor: pointer;\r\n}\r\n\r\n.select-box .option .radio {\r\n  display: none;\r\n}\r\n\r\n/* Searchbox */\r\n\r\n.search-box input {\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  font-family: \"Roboto\", sans-serif;\r\n  font-size: 16px;\r\n  position: absolute;\r\n  border-radius: 8px 8px 0 0;\r\n  z-index: 100;\r\n  border: 8px solid #2f3640;\r\n\r\n  opacity: 0;\r\n  pointer-events: none;\r\n  transition: all 0.4s;\r\n}\r\n\r\n.search-box input:focus {\r\n  outline: none;\r\n}\r\n\r\n.select-box .options-container.active ~ .search-box input {\r\n  opacity: 1;\r\n  pointer-events: auto;\r\n}\r\n",
                     "styleUrl": "./select-research.component.scss"
                 }
             ],
@@ -1256,6 +1408,88 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"select-box\">\n  <div class=\"options-container\" #optionsContainer>\n    <div\n      class=\"option\"\n      #options\n      *ngFor=\"let i of items\"\n      (click)=\"selectActiveLabel(i); addToItemSelected(i)\"\n    >\n      <input type=\"radio\" class=\"radio\" [id]=\"i\" name=\"item\" />\n      <label [for]=\"i\">{{ i }}</label>\n    </div>\n  </div>\n  <div class=\"selected\" #selected (click)=\"toogleSelection()\">\n    {{ selectName }}\n  </div>\n\n  <div class=\"search-box\">\n    <input\n      type=\"text\"\n      placeholder=\"Recherche...\"\n      #searchBox\n      (keyup)=\"filterList(searchBox.value)\"\n    />\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ViewFindExercicesTrainningComponent",
+            "id": "component-ViewFindExercicesTrainningComponent-9c2ef75db39f1e0f2581d052188516c3ea969bd82fbbfa069e8249c6fa2445648328fdb287b1a02152f50492c63c61747fcaa8fd3724573c55d9f47e64452c2a",
+            "file": "src/app/view/view-find-exercices-trainning/view-find-exercices-trainning.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-view-find-exercices-trainning",
+            "styleUrls": [
+                "./view-find-exercices-trainning.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./view-find-exercices-trainning.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "exercicesList",
+                    "defaultValue": "mockExercices",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "exercicesRealize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { mockExercices } from 'app/shared/mocks/exercices.mock';\n\n@Component({\n  selector: 'app-view-find-exercices-trainning',\n  templateUrl: './view-find-exercices-trainning.component.html',\n  styleUrls: ['./view-find-exercices-trainning.component.scss'],\n})\nexport class ViewFindExercicesTrainningComponent implements OnInit {\n  constructor() {}\n  exercicesRealize!: [];\n  exercicesList = mockExercices;\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".essaie {\r\n  margin-top: 20px;\r\n}\r\n.btn {\r\n  padding-top: 50px;\r\n  display: block;\r\n  text-align: center;\r\n  margin: auto;\r\n}\r\n",
+                    "styleUrl": "./view-find-exercices-trainning.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"ml-40 mr-40 mt-20\">\n  <div class=\"grid grid-cols-6 gap-12 lg:grid-cols-12 lg:gap-24\">\n    <div class=\"col-span-8 exercice-realise\">\n      <div frame-number [title]=\"'Rechercher un exercice'\"></div>\n      <div\n        class=\"essaie\"\n        health-select-research\n        [selectName]=\"'Choisir un exercice'\"\n        [items]=\"exercicesList\"\n      ></div>\n      <div class=\"btn\">\n        <a href=\"\" class=\"btn-start-3\">valider</a>\n      </div>\n    </div>\n    <div class=\"col-span-4 exercice-find\">\n      <div health-frame-title [title]=\"'Exercices réalisés'\">\n        <ng-container\n          ><ul>\n            <li *ngFor=\"let i of exercicesRealize\"></li>\n          </ul>\n        </ng-container>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ViewHomeComponent",
@@ -1356,6 +1590,89 @@
                 "OnInit"
             ],
             "templateData": "<header class=\"mt-5\">\n  <div logo-title></div>\n</header>\n\n<div horizontal-gallery [cards]=\"mock\"></div>\n<!-- modifier et rajouter des routes -->\n"
+        },
+        {
+            "name": "ViewHomeTrainingComponent",
+            "id": "component-ViewHomeTrainingComponent-96126055cfa88c5e398aee535ddd29ecc4d4f12f2050bfd1719209c0a5da2c568d383ce1410f20170035fdbbc2b75d3b9418f7231007cf929a8d332f8c7188ef",
+            "file": "src/app/view/view-home-training/view-home-training.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-view-home-training",
+            "styleUrls": [
+                "./view-home-training.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./view-home-training.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faArrow",
+                    "defaultValue": "faArrowRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "faDumbbell",
+                    "defaultValue": "faDumbbell",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  faArrowCircleRight,\n  faArrowDownUpAcrossLine,\n  faArrowRight,\n  faBurn,\n  faDumbbell,\n  faWeight,\n} from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-view-home-training',\n  templateUrl: './view-home-training.component.html',\n  styleUrls: ['./view-home-training.component.scss'],\n})\nexport class ViewHomeTrainingComponent implements OnInit {\n  faDumbbell = faDumbbell;\n  faArrow = faArrowRight;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../shared/styles/mixins.scss';\r\n\r\n.home-training-container {\r\n  background-color: #3c3f45;\r\n  margin: 0 45px;\r\n  .home-training-header {\r\n    padding: 0 32px;\r\n  }\r\n  .slogan {\r\n    margin: 40px 0px;\r\n    @include mixins.text-format(2.5rem, normal, normal);\r\n    font-weight: 700;\r\n    text-transform: uppercase;\r\n\r\n    @screen lg {\r\n      @include mixins.text-format(4.5rem, normal, normal);\r\n    }\r\n\r\n    .transparent {\r\n      color: transparent;\r\n      -webkit-text-stroke-width: 1px;\r\n      -webkit-text-stroke-color: #fff;\r\n    }\r\n    .full {\r\n      color: white;\r\n    }\r\n  }\r\n\r\n  .cummon-text {\r\n    font-size: 1.2rem;\r\n    font-weight: 200;\r\n    color: #fff;\r\n  }\r\n\r\n  .stats-container {\r\n    margin: 40px 0;\r\n    display: flex;\r\n\r\n    .stats {\r\n      margin: 0 20px;\r\n      &-number {\r\n        color: #fff;\r\n        font-size: 2rem;\r\n      }\r\n      &-text {\r\n        text-transform: uppercase;\r\n        color: #9c9c9c;\r\n      }\r\n    }\r\n  }\r\n\r\n  .btn {\r\n    background-color: #fff;\r\n    border: 4px solid transparent;\r\n    font-weight: 700;\r\n    padding: 0.5rem;\r\n    transition: all 0.3s;\r\n    &:hover {\r\n      cursor: pointer;\r\n    }\r\n  }\r\n  .hero-button {\r\n    display: flex;\r\n    font-weight: 400 !important;\r\n    gap: 1rem;\r\n    > :first-child {\r\n      background-color: #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n    > :nth-child(2) {\r\n      background-color: initial;\r\n      border: 2px solid #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n  }\r\n\r\n  .programs {\r\n    margin: 80px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2rem;\r\n    padding: 0 2rem;\r\n    &-header {\r\n      color: #fff;\r\n      display: flex;\r\n      font-size: 3rem;\r\n      font-style: italic;\r\n      font-weight: 700;\r\n      gap: 5rem;\r\n      justify-content: center;\r\n      text-transform: uppercase;\r\n      .transparent {\r\n        -webkit-text-stroke-width: 1px;\r\n        -webkit-text-stroke-color: #fff;\r\n        color: transparent;\r\n        font-family: Arial, Helvetica, sans-serif;\r\n      }\r\n      .full {\r\n        color: white;\r\n        font-family: Arial, Helvetica, sans-serif;\r\n      }\r\n    }\r\n\r\n    &-categories {\r\n      display: flex;\r\n      gap: 1rem;\r\n      .category {\r\n        background: rgb(128, 128, 128) none repeat scroll 0% 0%;\r\n        cursor: auto;\r\n        color: #fff;\r\n        flex: 1 1;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2rem;\r\n        display: flex;\r\n        gap: 1rem;\r\n        .join-now {\r\n          align-items: center;\r\n          display: flex;\r\n          gap: 2rem;\r\n        }\r\n        &:hover {\r\n          background: rgba(0, 0, 0, 0)\r\n            linear-gradient(\r\n              210.41deg,\r\n              rgb(250, 80, 66) 1.14%,\r\n              rgb(255, 167, 57) 100.75%\r\n            );\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./view-home-training.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 18
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"home-training-container\">\n  <div class=\"home-training-header\">\n    <div class=\"slogan\">\n      <span class=\"transparent\">Shape </span> <span class=\"full\">Your</span>\n      <div class=\"full\">Ideal Body</div>\n    </div>\n\n    <div class=\"cummon-text\">\n      In here we will help you to shape and build your ideal body and live up\n      your life to fullest\n    </div>\n\n    <div class=\"stats-container\">\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 90</div>\n        <div class=\"stats-text\">Expert coaches</div>\n      </div>\n\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 908</div>\n        <div class=\"stats-text\">Member joined</div>\n      </div>\n\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 50</div>\n        <div class=\"stats-text\">Fitness program</div>\n      </div>\n    </div>\n\n    <div class=\"hero-button\">\n      <button class=\"btn\">Get started</button>\n      <button class=\"btn\">Learn More</button>\n    </div>\n  </div>\n\n  <div class=\"programs\">\n    <div class=\"programs-header\">\n      <span class=\"transparent\">Explore our</span>\n      <span class=\"full\">Programs</span>\n      <span class=\"transparent\"> to share you</span>\n    </div>\n\n    <div class=\"programs-categories\">\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon class=\"arrow\" [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ViewRecipeComponent",
@@ -1575,7 +1892,7 @@
         },
         {
             "name": "ViewStartTrainingComponent",
-            "id": "component-ViewStartTrainingComponent-0dd85e7bcc63fedf0fdd56a6a8ff3bbb8c57beea759511e1aa63f2ae017de1df905b5bb131eb6d0279374fe15dad1a3f53aab58fb01d55ff11abf1262a33ed5d",
+            "id": "component-ViewStartTrainingComponent-451d63a5c0d49661b2b4f74433b7e1cd89cda2ed8c9771f34588e612958250c16dd47af9dab186b775becd2b7619d368626c44112672168b0b8f54b17c96d75a",
             "file": "src/app/view/view-start-training/view-start-training.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1603,6 +1920,16 @@
                     "optional": false,
                     "description": "",
                     "line": 13
+                },
+                {
+                    "name": "selectResearchData",
+                    "defaultValue": "{\n    selectName: 'Choisir un entrainement',\n    items: [],\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
                 }
             ],
             "methodsClass": [
@@ -1624,7 +1951,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-view-start-training',\n  templateUrl: './view-start-training.component.html',\n  styleUrls: ['./view-start-training.component.scss'],\n})\nexport class ViewStartTrainingComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  inputTypeData = {\n    title: 'Nom de votre Séance',\n    requiredField: true,\n  };\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-view-start-training',\n  templateUrl: './view-start-training.component.html',\n  styleUrls: ['./view-start-training.component.scss'],\n})\nexport class ViewStartTrainingComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  inputTypeData = {\n    title: 'Nom de votre Séance',\n    requiredField: true,\n  };\n  selectResearchData = {\n    selectName: 'Choisir un entrainement',\n    items: [],\n  };\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1644,7 +1971,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "dd\n<h2>Votre entrainement</h2>\n<div class=\"content-container\"></div>\n<div\n  health-input-type\n  [requiredField]=\"inputTypeData.requiredField\"\n  [title]=\"inputTypeData.title\"\n></div>\n"
+            "templateData": "<h2 class=\"title\">Demarrer votre entrainement</h2>\n<div class=\"content-container\"></div>\n<!-- revoir le content container -->\n\n<div\n  class=\"mt-20\"\n  health-input-type\n  [title]=\"inputTypeData.title\"\n  [requiredField]=\"inputTypeData.requiredField\"\n></div>\n\n<!-- crée des container -->\n\n<div class=\"component-container-center mt-10\">\n  <div\n    health-select-research\n    [items]=\"selectResearchData.items\"\n    [selectName]=\"selectResearchData.selectName\"\n  ></div>\n</div>\n\n<div class=\"text-center mt-20\">\n  <a href=\"\" class=\"btn-start btn\">Commencer</a>\n</div>\n"
         }
     ],
     "modules": [
@@ -1701,13 +2028,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-12adb7e94f868050e2ff47b5ea01c1e5a755dbd200567c91ea5eccd6720ede668c8bc94ba2bb86a79ca439cbca7b72e5a37922560799db5bb37aecd6281fb71c",
+            "id": "module-AppRoutingModule-6f17346e4181fca470f0716feb4cf0f89b5469a6e9449dc1592275cecfb01d8c3afd0fe75abddfd1735f5a345f2dd5d2b4820076c696e13afa906ad8502d2b91",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipe/:id',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n  {\n    path: 'recipe',\n    loadChildren: () =>\n      \"import('./view/view-recipe-home/view-recipe-home.module').then(\\\n        (m) => m.ViewRecipeHomeModule\\\n      )\",\n  },\n  {\n    path: 'startTraining',\n    loadChildren: () =>\n      \"import('./view/view-start-training/view-start-training.module').then(\\\n        (m) => m.ViewStartTrainingModule\\\n      )\",\n  },\n\n  {\n    path: '',\n    loadChildren: () =>\n      \"import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule)\",\n    pathMatch: 'full',\n    // full = que si tous l'url est blanc alors on redirige\n  },\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'recipe/:id',\n    loadChildren: () =>\n      \"import('./view/view-recipe/view-recipe.module').then(\\\n        (m) => m.ViewRecipeModule\\\n      )\",\n  },\n  {\n    path: 'recipe',\n    loadChildren: () =>\n      \"import('./view/view-recipe-home/view-recipe-home.module').then(\\\n        (m) => m.ViewRecipeHomeModule\\\n      )\",\n  },\n  {\n    path: 'startTraining',\n    loadChildren: () =>\n      \"import('./view/view-start-training/view-start-training.module').then(\\\n        (m) => m.ViewStartTrainingModule\\\n      )\",\n  },\n  {\n    path: 'findExercices',\n    loadChildren: () =>\n      \"import(\\\n        './view/view-find-exercices-trainning/view-find-exercices-trainning.module'\\\n      ).then((m) => m.ViewFindExercicesTrainningModule)\",\n  },\n  {\n    path: '',\n    loadChildren: () =>\n      \"import('./view/view-home-training/view-home-training.module').then(\\\n        (m) => m.ViewHomeTrainingModule\\\n      )\",\n    pathMatch: 'full',\n    // full = que si tous l'url est blanc alors on redirige\n  },\n\n  // {\n  //   path: '',\n  //   loadChildren: () =>\n  //     import('./view/view-home/view-home.module').then((m) => m.ViewHomeModule),\n  //   pathMatch: 'full',\n  //   // full = que si tous l'url est blanc alors on redirige\n  // },\n  {\n    path: 'home',\n    redirectTo: '',\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1824,6 +2151,50 @@
             ]
         },
         {
+            "name": "FrameTitleModule",
+            "id": "module-FrameTitleModule-794b1f3d893d0edffe799a1613595f9573db37437f7660a735b81c67eda08dba36273e7f97900ab7390b5ec91f3c93fca4052d0645f9fbf5c333a752e16f8000",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/frame-title/frame-title.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameTitleComponent } from './frame-title.component';\r\n\r\n@NgModule({\r\n  declarations: [FrameTitleComponent],\r\n  imports: [],\r\n  exports: [FrameTitleComponent],\r\n})\r\nexport class FrameTitleModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FrameTitleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FrameTitleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "HorizontalGalleryModule",
             "id": "module-HorizontalGalleryModule-16fd6874f0fb72a512924a14251ff7f5d0e55cd27d0ce04dd1ccb86b8fc68017684910779e09f47dce4cc3d5bcb34aaa3b54446e19bd1d458b7731c2233f150f",
             "description": "",
@@ -1854,6 +2225,50 @@
                     "elements": [
                         {
                             "name": "HorizontalGalleryComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "Information3Module",
+            "id": "module-Information3Module-c6abc9f19a5a680bae162fe72a2c3b31459ab99acb7d4e43e9f609d2ac6eb2dd35c26a412831284e32593371e225e2a44c51ee15d459c39b9ad7e5207c0bb28a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/information3/information3.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Information3Component } from './information3.component';\r\n\r\n@NgModule({\r\n  declarations: [Information3Component],\r\n  imports: [],\r\n  exports: [Information3Component],\r\n})\r\nexport class Information3Module {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Information3Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Information3Component"
                         }
                     ]
                 },
@@ -1912,58 +2327,14 @@
             ]
         },
         {
-            "name": "InputSelectResearchModule",
-            "id": "module-InputSelectResearchModule-f3e6cad5de400e9529430b24e40508327b847cc8319cd98a5df5f4a010212856c7b8e2eaee38a17b03875ea7418b25af8b4e2c4451f45e4a8ef5f1e0ef08c88e",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/stories/libs/Base/select-research/select-research.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { SelectResearchComponent } from './select-research.component';\r\n\r\n@NgModule({\r\n  declarations: [SelectResearchComponent],\r\n  imports: [],\r\n  exports: [SelectResearchComponent],\r\n})\r\nexport class InputSelectResearchModule {}\r\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "SelectResearchComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "SelectResearchComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
             "name": "InputTypeModule",
-            "id": "module-InputTypeModule-1c064eea3ea9b216908647d231e9145e063eec6de88c2a7cdf3b50c406b6ad6dbbf9708dc56752b6d82dbb279276644e564d161d0ebd109229d8e624fbc54c64",
+            "id": "module-InputTypeModule-f9577801d0555f4be6e8d14fefc3bef5a149218699c7cf834322572f9bc14afe52faf744278903d11809920ac042b85f0bd171ec49db3a8b8fb82ca1af0cfa72",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/stories/libs/Base/input-type/input-type.modue.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { InputTypeComponent } from './input-type.component';\r\n\r\n@NgModule({\r\n  declarations: [InputTypeComponent],\r\n  imports: [],\r\n  exports: [InputTypeComponent],\r\n})\r\nexport class InputTypeModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { InputTypeComponent } from './input-type.component';\r\n\r\n@NgModule({\r\n  declarations: [InputTypeComponent],\r\n  imports: [CommonModule],\r\n  exports: [InputTypeComponent],\r\n})\r\nexport class InputTypeModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2132,6 +2503,50 @@
             ]
         },
         {
+            "name": "SelectResearchModule",
+            "id": "module-SelectResearchModule-40948a02980a9a90699f33ebae7bb4f9380dba418aa972f1c1225fde2ff2986d80926cc5a877cf1193a1d7d81ca86f8eb397429418863209639d9b8449bd2eca",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/Base/select-research/select-research.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { SelectResearchComponent } from './select-research.component';\r\n\r\n@NgModule({\r\n  declarations: [SelectResearchComponent],\r\n  imports: [CommonModule],\r\n  exports: [SelectResearchComponent],\r\n})\r\nexport class SelectResearchModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SelectResearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SelectResearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "SharedModule",
             "id": "module-SharedModule-b2311eacc1d14519b92da090d7cc6aa6bd5152eaeeacabaedf6b2a8ad812c3810562a95599c0e5c1e5d8ef84e01b5dad46f600f88d3d73cf84709934b10a2110",
             "description": "",
@@ -2173,13 +2588,13 @@
         },
         {
             "name": "uiModule",
-            "id": "module-uiModule-6a98ed3c73499a9f228c17c90b0f9d9933d4d70d63b3ca97583c4f1a06e9ee9ed66824989fcff0b3c484afe94c8c1c97670bd452184a99a853b1fd4dd62f7afa",
+            "id": "module-uiModule-5a6f8fce6bcf99fcc053377e31389b3b0387b158c726e06aed95fa2657da9b128c9e3a553af16bc9dcef6f58298767f72ab4301ed577c340e1ca3ecfcdd65491",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { InputTypeComponent } from 'stories/libs/Base/input-type/input-type.component';\r\nimport { InputTypeModule } from 'stories/libs/Base/input-type/input-type.modue';\r\nimport { LogoComponent } from 'stories/libs/Base/logo/logo.component';\r\nimport { LogoModule } from 'stories/libs/Base/logo/logo.module';\r\nimport { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'stories/libs/composite/frame-number/frame-number.module';\r\nimport { HorizontalGalleryModule } from 'stories/libs/composite/horizontal-gallery/horizantal-gallery.module';\r\nimport { HorizontalGalleryComponent } from 'stories/libs/composite/horizontal-gallery/horizontal-gallery.component';\r\nimport { IngredientListComponent } from 'stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameTitleComponent } from '@healthComponents/frame-title/frame-title.component';\r\nimport { FrameTitleModule } from '@healthComponents/frame-title/frame-title.module';\r\nimport { InputTypeComponent } from 'stories/libs/Base/input-type/input-type.component';\r\nimport { InputTypeModule } from 'stories/libs/Base/input-type/input-type.modue';\r\nimport { LogoComponent } from 'stories/libs/Base/logo/logo.component';\r\nimport { LogoModule } from 'stories/libs/Base/logo/logo.module';\r\nimport { SelectResearchComponent } from 'stories/libs/Base/select-research/select-research.component';\r\nimport { SelectResearchModule } from 'stories/libs/Base/select-research/select-research.module';\r\nimport { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'stories/libs/composite/frame-number/frame-number.module';\r\nimport { HorizontalGalleryModule } from 'stories/libs/composite/horizontal-gallery/horizantal-gallery.module';\r\nimport { HorizontalGalleryComponent } from 'stories/libs/composite/horizontal-gallery/horizontal-gallery.component';\r\nimport { IngredientListComponent } from 'stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2196,6 +2611,9 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "FrameTitleModule"
+                        },
+                        {
                             "name": "HorizontalGalleryModule"
                         },
                         {
@@ -2209,6 +2627,9 @@
                         },
                         {
                             "name": "RecipeDescriptionModule"
+                        },
+                        {
+                            "name": "SelectResearchModule"
                         }
                     ]
                 },
@@ -2217,6 +2638,9 @@
                     "elements": [
                         {
                             "name": "FrameNumberComponent"
+                        },
+                        {
+                            "name": "FrameTitleComponent"
                         },
                         {
                             "name": "HorizontalGalleryComponent"
@@ -2232,6 +2656,60 @@
                         },
                         {
                             "name": "RecipeDescriptionComponent"
+                        },
+                        {
+                            "name": "SelectResearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ViewFindExercicesTrainningModule",
+            "id": "module-ViewFindExercicesTrainningModule-5565f4b7771ce4ce7962ae847c9ac353c09b08e3d9cc435cea9eb13f5a10122f80e6befaf44afa99fdd752dd2cd499ab7ceb0112ba26a4c1c4732221f964ad00",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/view/view-find-exercices-trainning/view-find-exercices-trainning.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewFindExercicesTrainningComponent } from './view-find-exercices-trainning.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewFindExercicesTrainningComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([\r\n      {\r\n        path: '',\r\n        component: ViewFindExercicesTrainningComponent,\r\n      },\r\n    ]),\r\n  ],\r\n  exports: [ViewFindExercicesTrainningComponent],\r\n})\r\nexport class ViewFindExercicesTrainningModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ViewFindExercicesTrainningComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        },
+                        {
+                            "name": "ViewModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ViewFindExercicesTrainningComponent"
                         }
                     ]
                 },
@@ -2297,14 +2775,65 @@
             ]
         },
         {
+            "name": "ViewHomeTrainingModule",
+            "id": "module-ViewHomeTrainingModule-429f2ea07be62bc645aa2e563fa0e10a3b7504c81b68f6810110e3dee2084b7dac0dd1bb9e356effdfb0e5d1a51bab90862d5f40916b5150b123e4b14a385d27",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/view/view-home-training/view-home-training.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { SharedModule } from 'app/shared/shared.module';\r\nimport { ViewModule } from '../view.module';\r\nimport { ViewHomeTrainingComponent } from './view-home-training.component';\r\n\r\n@NgModule({\r\n  declarations: [ViewHomeTrainingComponent],\r\n  imports: [\r\n    SharedModule,\r\n    ViewModule,\r\n    RouterModule.forChild([\r\n      { path: '**', component: ViewHomeTrainingComponent },\r\n    ]),\r\n  ],\r\n  exports: [ViewHomeTrainingComponent],\r\n})\r\nexport class ViewHomeTrainingModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ViewHomeTrainingComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        },
+                        {
+                            "name": "ViewModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ViewHomeTrainingComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "ViewModule",
-            "id": "module-ViewModule-c0ec28dcec92ae8cc5233a27a4e6e852abcb8bd8713127643b983a83e18f8f52cbc51caca0dc38e5ff7d43a6b6c4a807e0dab6397f084c84370344fe3646eadf",
+            "id": "module-ViewModule-3962cffe949ede639c972e8a8d4084968e0a8c87634651fa295171ffd2b82f81e9de4e697b5f2f720a5b19e02bb794fbdd2359debb45acc8b1c63debc1ddb58e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/view/view.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { uiModule } from '../shared/ui.module';\r\nimport { ViewStartTrainingComponent } from './view-start-training/view-start-training.component';\r\n\r\n//module de base à export\r\nconst modules = [uiModule];\r\n@NgModule({\r\n  imports: modules,\r\n  exports: [...modules],\r\n})\r\nexport class ViewModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { uiModule } from '../shared/ui.module';\r\n\r\n//module de base à export\r\nconst modules = [uiModule];\r\n@NgModule({\r\n  imports: modules,\r\n  exports: [...modules],\r\n})\r\nexport class ViewModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2321,6 +2850,9 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "FrameTitleModule"
+                        },
+                        {
                             "name": "HorizontalGalleryModule"
                         },
                         {
@@ -2334,6 +2866,9 @@
                         },
                         {
                             "name": "RecipeDescriptionModule"
+                        },
+                        {
+                            "name": "SelectResearchModule"
                         }
                     ]
                 },
@@ -2344,6 +2879,9 @@
                             "name": "FrameNumberModule"
                         },
                         {
+                            "name": "FrameTitleModule"
+                        },
+                        {
                             "name": "HorizontalGalleryModule"
                         },
                         {
@@ -2357,6 +2895,9 @@
                         },
                         {
                             "name": "RecipeDescriptionModule"
+                        },
+                        {
+                            "name": "SelectResearchModule"
                         }
                     ]
                 },
@@ -2534,7 +3075,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n]"
             },
             {
                 "name": "context",
@@ -2560,16 +3101,6 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2577,10 +3108,40 @@
                 "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
             },
             {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2610,7 +3171,27 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2631,26 +3212,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/libs/composite/recipe-display/recipe-display.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "intagrated",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "intagrated",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/Base/logo/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2687,6 +3248,16 @@
                 "defaultValue": "[\r\n  {\r\n    name: 'Tomate',\r\n    quantity: 5,\r\n    quantityValue: 'kg',\r\n    description: '',\r\n  },\r\n  {\r\n    name: 'Chou',\r\n    quantity: 5,\r\n    quantityValue: 'kg',\r\n    description: '',\r\n  },\r\n  {\r\n    name: 'Patate',\r\n    quantity: 5,\r\n    quantityValue: 'kg',\r\n    description: 'couper en rondelle',\r\n  },\r\n  {\r\n    name: 'Tomate',\r\n    quantity: 5,\r\n    quantityValue: 'kg',\r\n    description: '',\r\n  },\r\n]"
             },
             {
+                "name": "mockExercices",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/mocks/exercices.mock.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  'pompe',\r\n  'traction',\r\n  'dips',\r\n  'curl',\r\n  'pompe diamond',\r\n]"
+            },
+            {
                 "name": "modules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2694,7 +3265,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n]"
             },
             {
                 "name": "modules",
@@ -2749,11 +3320,51 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTypeComponent>",
+                "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LogoComponent>",
+                "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SelectResearchComponent>",
+                "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<DateTrainingComponent>",
                 "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FrameTitleComponent>",
+                "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2779,11 +3390,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Information3Component>",
+                "defaultValue": "(\r\n  args: Information3Component\r\n) => ({\r\n  component: Information3Component,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HorizontalGalleryComponent>",
                 "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RecipeDescriptionComponent>",
+                "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2804,46 +3435,6 @@
                 "deprecationMessage": "",
                 "type": "Story<RecipeDisplayComponent>",
                 "defaultValue": "(\r\n  args: RecipeDisplayComponent\r\n) => ({\r\n  component: RecipeDisplayComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<RecipeDescriptionComponent>",
-                "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<SelectResearchComponent>",
-                "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/Base/input-type/input-type.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputTypeComponent>",
-                "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<LogoComponent>",
-                "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -2859,7 +3450,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n]"
                 },
                 {
                     "name": "modules",
@@ -2869,7 +3460,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n]"
                 }
             ],
             "src/test.ts": [
@@ -2935,6 +3526,18 @@
                     "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -2947,16 +3550,26 @@
                     "defaultValue": "{\n  production: true\n}"
                 }
             ],
-            "src/environments/environment.ts": [
+            "src/stories/libs/Base/logo/logo.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "intagrated",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LogoComponent>",
+                    "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/date-training/date-training.stories.ts": [
@@ -2979,6 +3592,28 @@
                     "deprecationMessage": "",
                     "type": "Story<DateTrainingComponent>",
                     "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/frame-title/frame-title.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FrameTitleComponent>",
+                    "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
@@ -3035,6 +3670,28 @@
                     "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/libs/composite/information3/information3.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Information3Component>",
+                    "defaultValue": "(\r\n  args: Information3Component\r\n) => ({\r\n  component: Information3Component,\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts": [
                 {
                     "name": "intagrated",
@@ -3065,6 +3722,28 @@
                     "deprecationMessage": "",
                     "type": "Story<HorizontalGalleryComponent>",
                     "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RecipeDescriptionComponent>",
+                    "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts": [
@@ -3121,48 +3800,16 @@
                     "defaultValue": "(\r\n  args: RecipeDisplayComponent\r\n) => ({\r\n  component: RecipeDisplayComponent,\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
+            "src/app/shared/mocks/exercices.mock.ts": [
                 {
-                    "name": "intagrated",
+                    "name": "mockExercices",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
+                    "file": "src/app/shared/mocks/exercices.mock.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/recipe-description/recipe-description.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<RecipeDescriptionComponent>",
-                    "defaultValue": "(\r\n  args: RecipeDescriptionComponent\r\n) => ({\r\n  component: RecipeDescriptionComponent,\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/libs/Base/logo/logo.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/Base/logo/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<LogoComponent>",
-                    "defaultValue": "(args: LogoComponent) => ({\r\n  component: LogoComponent,\r\n  props: args,\r\n})"
+                    "type": "[]",
+                    "defaultValue": "[\r\n  'pompe',\r\n  'traction',\r\n  'dips',\r\n  'curl',\r\n  'pompe diamond',\r\n]"
                 }
             ],
             "src/app/view/view.module.ts": [
@@ -3248,14 +3895,25 @@
                         ]
                     },
                     {
+                        "path": "findExercices",
+                        "loadChildren": "./view/view-find-exercices-trainning/view-find-exercices-trainning.module#ViewFindExercicesTrainningModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [],
+                                "module": "ViewFindExercicesTrainningModule"
+                            }
+                        ]
+                    },
+                    {
                         "path": "",
-                        "loadChildren": "./view/view-home/view-home.module#ViewHomeModule",
+                        "loadChildren": "./view/view-home-training/view-home-training.module#ViewHomeTrainingModule",
                         "pathMatch": "full",
                         "children": [
                             {
                                 "kind": "module",
                                 "children": [],
-                                "module": "ViewHomeModule"
+                                "module": "ViewHomeTrainingModule"
                             }
                         ]
                     },
@@ -3279,6 +3937,16 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/mocks/exercices.mock.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockExercices",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3308,6 +3976,24 @@
                 "name": "modules",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/view/view-find-exercices-trainning/view-find-exercices-trainning.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ViewFindExercicesTrainningComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/view/view-home-training/view-home-training.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ViewHomeTrainingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -3343,7 +4029,7 @@
                 "linktype": "component",
                 "name": "ViewStartTrainingComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -3536,7 +4222,7 @@
                 "linktype": "component",
                 "name": "FrameNumberComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -3551,6 +4237,35 @@
             },
             {
                 "filePath": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-title/frame-title.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FrameTitleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3629,6 +4344,35 @@
             },
             {
                 "filePath": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information3/information3.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Information3Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information3/information3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information3/information3.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -1,16 +1,19 @@
 @use './app/shared/styles/color.scss';
+@use "./app/shared//styles/containers.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url("./app/shared/styles/buttons.scss");
 @import url("./app/shared/styles/color.scss");
 
+@import url("./app/shared/styles/title.scss");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Biotif", Arial, sans-serif;
+  // font-family: "Biotif", Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
-.content-container {
-  display: block;
-  margin: 0 20% 0 20%;
+body {
+  background-color: #3c3f45;
 }

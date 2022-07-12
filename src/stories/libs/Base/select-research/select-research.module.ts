@@ -7,4 +7,4 @@ import { SelectResearchComponent } from './select-research.component';
   imports: [CommonModule],
   exports: [SelectResearchComponent],
 })
-export class InputSelectResearchModule {}
+export class SelectResearchModule {}

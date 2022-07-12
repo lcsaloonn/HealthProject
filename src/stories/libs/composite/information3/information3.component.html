@@ -1,0 +1,23 @@
+<div class="home-training-header">
+  <div class="slogan">
+    <span class="transparent">Shape </span> <span class="full">Your</span>
+    <div class="full">Ideal Body</div>
+  </div>
+
+  <div class="cummon-text">
+    In here we will help you to shape and build your ideal body and live up your
+    life to fullest
+  </div>
+
+  <div class="stats-container">
+    <div class="stats" *ngFor="let i of statsArray">
+      <div class="stats-number">+ {{ i.number }}</div>
+      <div class="stats-text">{{ i.title }}</div>
+    </div>
+  </div>
+
+  <div class="hero-button">
+    <button class="btn">Get started</button>
+    <button class="btn">Learn More</button>
+  </div>
+</div>

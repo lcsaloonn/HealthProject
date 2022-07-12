@@ -1,0 +1,25 @@
+<div class="ml-40 mr-40 mt-20">
+  <div class="grid grid-cols-6 gap-12 lg:grid-cols-12 lg:gap-24">
+    <div class="col-span-8 exercice-realise">
+      <div frame-number [title]="'Rechercher un exercice'"></div>
+      <div
+        class="essaie"
+        health-select-research
+        [selectName]="'Choisir un exercice'"
+        [items]="exercicesList"
+      ></div>
+      <div class="btn">
+        <a href="" class="btn-start-3">valider</a>
+      </div>
+    </div>
+    <div class="col-span-4 exercice-find">
+      <div health-frame-title [title]="'Exercices réalisés'">
+        <ng-container
+          ><ul>
+            <li *ngFor="let i of exercicesRealize"></li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

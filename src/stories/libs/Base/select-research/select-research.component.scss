@@ -1,8 +1,12 @@
 .select-box {
   position: relative;
   display: flex;
-  width: 400px;
+  margin: auto;
+  width: 250px;
   flex-direction: column;
+  @screen md {
+    width: 400px;
+  }
 }
 
 .select-box .options-container {

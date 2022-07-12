@@ -12,4 +12,7 @@ export class FrameNumberComponent implements OnInit {
 
   @Input()
   title!: string;
+
+  @Input()
+  color!: string;
 }

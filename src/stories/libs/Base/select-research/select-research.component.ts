@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: '[select-research]',
+  selector: '[health-select-research]',
   templateUrl: './select-research.component.html',
   styleUrls: ['./select-research.component.scss'],
 })

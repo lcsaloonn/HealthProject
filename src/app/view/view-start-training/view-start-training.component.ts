@@ -14,4 +14,8 @@ export class ViewStartTrainingComponent implements OnInit {
     title: 'Nom de votre Séance',
     requiredField: true,
   };
+  selectResearchData = {
+    selectName: 'Choisir un entrainement',
+    items: [],
+  };
 }
