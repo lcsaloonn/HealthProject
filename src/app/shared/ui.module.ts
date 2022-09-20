@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FrameTitleComponent } from '@healthComponents/frame-title/frame-title.component';
 import { FrameTitleModule } from '@healthComponents/frame-title/frame-title.module';
+import { Information1Component } from '@healthComponents/information1/information1.component';
+import { Information1Module } from '@healthComponents/information1/information1.module';
 import { Information3Component } from '@healthComponents/information3/information3.component';
 import { Information3Module } from '@healthComponents/information3/information3.module';
 import { ProgramsComponent } from '@healthComponents/programs/programs.component';
@@ -31,6 +33,7 @@ const modules = [
   FrameTitleModule,
   ProgramsModule,
   Information3Module,
+  Information1Module,
 ];
 
 const components = [
@@ -44,6 +47,7 @@ const components = [
   FrameTitleComponent,
   ProgramsComponent,
   Information3Component,
+  Information1Component,
 ];
 
 @NgModule({

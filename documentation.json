@@ -671,15 +671,88 @@
             "templateData": "<div class=\"horizantal-gallery-container\">\n  <div class=\"card\" *ngFor=\"let card of cards\">\n    <a [routerLink]=\"card.link\">\n      <img [src]=\"card.src\" />\n      <div class=\"card__head\">{{ card.alt }}</div>\n    </a>\n  </div>\n</div>\n"
         },
         {
+            "name": "Information1Component",
+            "id": "component-Information1Component-0d59e83187642fbf04ffcf63a5f4715d16066e4a8ed30c430681fa0b72512a3014844d6f7672226068d257cf307c6f3bd40752d7c710028afdaad87c40e83189",
+            "file": "src/stories/libs/composite/information1/information1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-information1",
+            "styleUrls": [
+                "./information1.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./information1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "fatick",
+                    "defaultValue": "faCheck",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { faCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-information1',\n  templateUrl: './information1.component.html',\n  styleUrls: ['./information1.component.scss'],\n})\nexport class Information1Component implements OnInit {\n  fatick = faCheck;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".information1-container {\r\n  display: flex;\r\n  gap: 2rem;\r\n\r\n  .left {\r\n    justify-content: center;\r\n    display: grid;\r\n    gap: 0.3rem;\r\n    grid-template-columns: repeat(3, 1fr);\r\n    @screen lg {\r\n      gap: 1rem;\r\n      justify-content: start;\r\n    }\r\n    img {\r\n      object-fit: cover;\r\n    }\r\n\r\n    > :first-child {\r\n      grid-row: 1/3;\r\n      height: 14rem;\r\n      width: 6rem;\r\n      @screen lg {\r\n        height: 28rem;\r\n        width: 12rem;\r\n      }\r\n    }\r\n    > :nth-child(2) {\r\n      grid-column: 2/4;\r\n      height: 8rem;\r\n      width: auto;\r\n      @screen lg {\r\n        height: 16rem;\r\n      }\r\n    }\r\n    > :nth-child(3) {\r\n      grid-column: 2/3;\r\n      grid-row: 2;\r\n      width: 7rem;\r\n      height: 5.6rem;\r\n      @screen lg {\r\n        width: 14rem;\r\n        height: 11.2rem;\r\n      }\r\n    }\r\n    > :nth-child(4) {\r\n      grid-column: 3/4;\r\n      grid-row: 2;\r\n      height: 5.6rem;\r\n      width: 5rem;\r\n\r\n      @screen lg {\r\n        height: 11.2rem;\r\n        width: 10rem;\r\n      }\r\n    }\r\n  }\r\n  .right {\r\n    display: flex;\r\n    flex: 1 1;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    text-transform: uppercase;\r\n    > span {\r\n      color: var(--color-orange);\r\n      font-weight: 700;\r\n    }\r\n    > div {\r\n      color: #fff;\r\n      font-size: 3rem;\r\n      font-weight: 700;\r\n      .transparent {\r\n        -webkit-text-stroke-width: 1px;\r\n        -webkit-text-stroke-color: #fff;\r\n        color: transparent;\r\n        font-family: Arial, Helvetica, sans-serif;\r\n      }\r\n    }\r\n    .details {\r\n      display: flex;\r\n      flex-direction: column;\r\n      gap: 1rem;\r\n      .icon {\r\n        color: var(--color-orange);\r\n      }\r\n      div {\r\n        font-size: 1rem;\r\n        display: flex;\r\n        gap: 1rem;\r\n        align-items: center;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./information1.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"information1-container\">\n  <div class=\"left\">\n    <img src=\"./assets\\images\\training\\training-home-1.png\" alt=\"\" />\n    <img src=\"./assets\\images\\training\\training-home-2.png\" alt=\"\" />\n    <img src=\"./assets\\images\\training\\training-home-3.png\" alt=\"\" />\n    <img src=\"./assets\\images\\training\\training-home-4.png\" alt=\"\" />\n  </div>\n  <div class=\"right\">\n    <span>Some Reasons</span>\n    <div>\n      <span class=\"transparent\">Why </span>\n      <span>Choose us?</span>\n    </div>\n    <div class=\"details\">\n      <div>\n        <fa-icon [icon]=\"fatick\" size=\"2x\" class=\"icon\"></fa-icon>\n        <span>Over 140+ expert coaches</span>\n      </div>\n      <div>\n        <fa-icon [icon]=\"fatick\" size=\"2x\" class=\"icon\"></fa-icon>\n        <span>train smarter and faster than before</span>\n      </div>\n      <div>\n        <fa-icon [icon]=\"fatick\" size=\"2x\" class=\"icon\"></fa-icon>\n        <span>1 free program for new member</span>\n      </div>\n      <div>\n        <fa-icon [icon]=\"fatick\" size=\"2x\" class=\"icon\"></fa-icon>\n        <span>reliable partners</span>\n      </div>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
             "name": "Information3Component",
-            "id": "component-Information3Component-1d8029f769184753a53399c7f62d7bbbd8682181a0dab3dec776517bc1cd51c99e5e416fab9589f9ff2b2ff86dbf2b1576a852d3a9531f63e5f531e7bbf3aa95",
+            "id": "component-Information3Component-64bd024cc1878340524343c7dab3e212eb17fc13a5cec00d6c0b6567c6f97e28d9bd252a7ffeb0c3baa690625d06cf2e2da3c26727308be01bc6c02eb182c1c4",
             "file": "src/stories/libs/composite/information3/information3.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-information3",
+            "selector": "[health-information3]",
             "styleUrls": [
                 "./information3.component.scss"
             ],
@@ -721,7 +794,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-information3',\n  templateUrl: './information3.component.html',\n  styleUrls: ['./information3.component.scss'],\n})\nexport class Information3Component implements OnInit {\n  statsArray = [\n    {\n      number: 140,\n      title: 'EXPERT COACHES',\n    },\n    {\n      number: 978,\n      title: 'Members joined',\n    },\n    {\n      number: 50,\n      title: 'fitness programs',\n    },\n  ];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: '[health-information3]',\n  templateUrl: './information3.component.html',\n  styleUrls: ['./information3.component.scss'],\n})\nexport class Information3Component implements OnInit {\n  statsArray = [\n    {\n      number: 140,\n      title: 'EXPERT COACHES',\n    },\n    {\n      number: 978,\n      title: 'Members joined',\n    },\n    {\n      number: 50,\n      title: 'fitness programs',\n    },\n  ];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1000,6 +1073,89 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"container-logo\">\n  <div class=\"logo\">\n    <span class=\"logo-1\">The</span>\n    <span class=\"logo-2\">Healthy</span>\n    <span class=\"logo-3\">Project</span>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ProgramsComponent",
+            "id": "component-ProgramsComponent-1e2ce6ce98563dc65af41ac22fc25eb5cc314dcfc6046fd88f82b1d1aefddd377ccf1d8c4688414597ae056f74ac0833c6413cadec5fb4bd655b7e506f780423",
+            "file": "src/stories/libs/composite/programs/programs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[health-programs]",
+            "styleUrls": [
+                "./programs.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./programs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faArrow",
+                    "defaultValue": "faArrowRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "faDumbbell",
+                    "defaultValue": "faDumbbell",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { faArrowRight, faDumbbell } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: '[health-programs]',\n  templateUrl: './programs.component.html',\n  styleUrls: ['./programs.component.scss'],\n})\nexport class ProgramsComponent implements OnInit {\n  faDumbbell = faDumbbell;\n  faArrow = faArrowRight;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".programs {\r\n  gap: 2rem;\r\n\r\n  &-header {\r\n    color: #fff;\r\n    font-size: 2rem;\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    gap: 0.5rem;\r\n    text-transform: uppercase;\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-bottom: 40px;\r\n    @screen md {\r\n      gap: 1.5rem;\r\n      flex-direction: row;\r\n      display: flex;\r\n      font-size: 2rem;\r\n      gap: 4rem;\r\n      justify-content: center;\r\n    }\r\n    @screen lg {\r\n      font-size: 3rem;\r\n      gap: 5rem;\r\n    }\r\n    .transparent {\r\n      -webkit-text-stroke-width: 1px;\r\n      -webkit-text-stroke-color: #fff;\r\n      color: transparent;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n    }\r\n    .full {\r\n      color: white;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n    }\r\n  }\r\n\r\n  &-categories {\r\n    @screen md {\r\n      display: grid;\r\n      grid-template-columns: repeat(12, minmax(0, 1fr));\r\n      gap: 1rem;\r\n    }\r\n\r\n    .category {\r\n      margin: 20px 40px;\r\n      @screen md {\r\n        grid-column: span 6 / span 6;\r\n        margin: 0;\r\n      }\r\n      @screen lg {\r\n        grid-column: span 3 / span 3;\r\n      }\r\n      background: var(--color-light-grey) none repeat scroll 0% 0%;\r\n      cursor: auto;\r\n      color: #fff;\r\n      flex: 1 1;\r\n      flex-direction: column;\r\n      justify-content: space-between;\r\n      padding: 2rem;\r\n      display: flex;\r\n      gap: 1rem;\r\n      &-title {\r\n        font-size: 1rem;\r\n        font-weight: 700;\r\n      }\r\n      .join-now {\r\n        align-items: center;\r\n        display: flex;\r\n        gap: 2rem;\r\n        &:hover {\r\n          cursor: pointer;\r\n        }\r\n      }\r\n      &:hover {\r\n        background: rgba(0, 0, 0, 0)\r\n          linear-gradient(\r\n            210.41deg,\r\n            rgb(250, 80, 66) 1.14%,\r\n            rgb(255, 167, 57) 100.75%\r\n          );\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./programs.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"programs\">\n  <div class=\"programs-header\">\n    <span class=\"transparent\">Explore our</span>\n    <span class=\"full\">Programs</span>\n    <span class=\"transparent\"> to share you</span>\n  </div>\n  <div class=\"programs-categories\">\n    <div class=\"category\">\n      <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n      <span class=\"category-title\">Title</span>\n      <span>\n        This programs is designed for those who exercises only for their body\n        fitness not body building.\n      </span>\n      <div class=\"join-now\">\n        <span>Join Now</span>\n        <fa-icon class=\"arrow\" [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n      </div>\n    </div>\n\n    <div class=\"category\">\n      <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n      <span class=\"category-title\">Title</span>\n      <span>\n        This programs is designed for those who exercises only for their body\n        fitness not body building.\n      </span>\n      <div class=\"join-now\">\n        <span>Join Now</span>\n        <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n      </div>\n    </div>\n\n    <div class=\"category\">\n      <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n      <span class=\"category-title\">Title</span>\n      <span>\n        This programs is designed for those who exercises only for their body\n        fitness not body building.\n      </span>\n      <div class=\"join-now\">\n        <span>Join Now</span>\n        <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n      </div>\n    </div>\n\n    <div class=\"category\">\n      <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n      <span class=\"category-title\">Title</span>\n      <span>\n        This programs is designed for those who exercises only for their body\n        fitness not body building.\n      </span>\n      <div class=\"join-now\">\n        <span>Join Now</span>\n        <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "RecipeDescriptionComponent",
@@ -1593,7 +1749,7 @@
         },
         {
             "name": "ViewHomeTrainingComponent",
-            "id": "component-ViewHomeTrainingComponent-96126055cfa88c5e398aee535ddd29ecc4d4f12f2050bfd1719209c0a5da2c568d383ce1410f20170035fdbbc2b75d3b9418f7231007cf929a8d332f8c7188ef",
+            "id": "component-ViewHomeTrainingComponent-c87c0f37ed516b6d59bf21bcec4f3331e9a02a520e5418ccc62b48c4192d6e29c1b9ffc5eb927863761161f07196125b84562cc347a894e4288c76b0669a43b7",
             "file": "src/app/view/view-home-training/view-home-training.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1611,28 +1767,7 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "faArrow",
-                    "defaultValue": "faArrowRight",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "faDumbbell",
-                    "defaultValue": "faDumbbell",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -1640,7 +1775,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 11,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1652,11 +1787,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  faArrowCircleRight,\n  faArrowDownUpAcrossLine,\n  faArrowRight,\n  faBurn,\n  faDumbbell,\n  faWeight,\n} from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-view-home-training',\n  templateUrl: './view-home-training.component.html',\n  styleUrls: ['./view-home-training.component.scss'],\n})\nexport class ViewHomeTrainingComponent implements OnInit {\n  faDumbbell = faDumbbell;\n  faArrow = faArrowRight;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-view-home-training',\n  templateUrl: './view-home-training.component.html',\n  styleUrls: ['./view-home-training.component.scss'],\n})\nexport class ViewHomeTrainingComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../shared/styles/mixins.scss';\r\n\r\n.home-training-container {\r\n  background-color: #3c3f45;\r\n  margin: 0 45px;\r\n  .home-training-header {\r\n    padding: 0 32px;\r\n  }\r\n  .slogan {\r\n    margin: 40px 0px;\r\n    @include mixins.text-format(2.5rem, normal, normal);\r\n    font-weight: 700;\r\n    text-transform: uppercase;\r\n\r\n    @screen lg {\r\n      @include mixins.text-format(4.5rem, normal, normal);\r\n    }\r\n\r\n    .transparent {\r\n      color: transparent;\r\n      -webkit-text-stroke-width: 1px;\r\n      -webkit-text-stroke-color: #fff;\r\n    }\r\n    .full {\r\n      color: white;\r\n    }\r\n  }\r\n\r\n  .cummon-text {\r\n    font-size: 1.2rem;\r\n    font-weight: 200;\r\n    color: #fff;\r\n  }\r\n\r\n  .stats-container {\r\n    margin: 40px 0;\r\n    display: flex;\r\n\r\n    .stats {\r\n      margin: 0 20px;\r\n      &-number {\r\n        color: #fff;\r\n        font-size: 2rem;\r\n      }\r\n      &-text {\r\n        text-transform: uppercase;\r\n        color: #9c9c9c;\r\n      }\r\n    }\r\n  }\r\n\r\n  .btn {\r\n    background-color: #fff;\r\n    border: 4px solid transparent;\r\n    font-weight: 700;\r\n    padding: 0.5rem;\r\n    transition: all 0.3s;\r\n    &:hover {\r\n      cursor: pointer;\r\n    }\r\n  }\r\n  .hero-button {\r\n    display: flex;\r\n    font-weight: 400 !important;\r\n    gap: 1rem;\r\n    > :first-child {\r\n      background-color: #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n    > :nth-child(2) {\r\n      background-color: initial;\r\n      border: 2px solid #f48515;\r\n      color: #fff;\r\n      width: 8rem;\r\n    }\r\n  }\r\n\r\n  .programs {\r\n    margin: 80px 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 2rem;\r\n    padding: 0 2rem;\r\n    &-header {\r\n      color: #fff;\r\n      display: flex;\r\n      font-size: 3rem;\r\n      font-style: italic;\r\n      font-weight: 700;\r\n      gap: 5rem;\r\n      justify-content: center;\r\n      text-transform: uppercase;\r\n      .transparent {\r\n        -webkit-text-stroke-width: 1px;\r\n        -webkit-text-stroke-color: #fff;\r\n        color: transparent;\r\n        font-family: Arial, Helvetica, sans-serif;\r\n      }\r\n      .full {\r\n        color: white;\r\n        font-family: Arial, Helvetica, sans-serif;\r\n      }\r\n    }\r\n\r\n    &-categories {\r\n      display: flex;\r\n      gap: 1rem;\r\n      .category {\r\n        background: rgb(128, 128, 128) none repeat scroll 0% 0%;\r\n        cursor: auto;\r\n        color: #fff;\r\n        flex: 1 1;\r\n        flex-direction: column;\r\n        justify-content: space-between;\r\n        padding: 2rem;\r\n        display: flex;\r\n        gap: 1rem;\r\n        .join-now {\r\n          align-items: center;\r\n          display: flex;\r\n          gap: 2rem;\r\n        }\r\n        &:hover {\r\n          background: rgba(0, 0, 0, 0)\r\n            linear-gradient(\r\n              210.41deg,\r\n              rgb(250, 80, 66) 1.14%,\r\n              rgb(255, 167, 57) 100.75%\r\n            );\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ".programs {\r\n  margin-top: 100px;\r\n}\r\n",
                     "styleUrl": "./view-home-training.component.scss"
                 }
             ],
@@ -1667,12 +1802,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 18
+                "line": 8
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"home-training-container\">\n  <div class=\"home-training-header\">\n    <div class=\"slogan\">\n      <span class=\"transparent\">Shape </span> <span class=\"full\">Your</span>\n      <div class=\"full\">Ideal Body</div>\n    </div>\n\n    <div class=\"cummon-text\">\n      In here we will help you to shape and build your ideal body and live up\n      your life to fullest\n    </div>\n\n    <div class=\"stats-container\">\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 90</div>\n        <div class=\"stats-text\">Expert coaches</div>\n      </div>\n\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 908</div>\n        <div class=\"stats-text\">Member joined</div>\n      </div>\n\n      <div class=\"stats\">\n        <div class=\"stats-number\">+ 50</div>\n        <div class=\"stats-text\">Fitness program</div>\n      </div>\n    </div>\n\n    <div class=\"hero-button\">\n      <button class=\"btn\">Get started</button>\n      <button class=\"btn\">Learn More</button>\n    </div>\n  </div>\n\n  <div class=\"programs\">\n    <div class=\"programs-header\">\n      <span class=\"transparent\">Explore our</span>\n      <span class=\"full\">Programs</span>\n      <span class=\"transparent\"> to share you</span>\n    </div>\n\n    <div class=\"programs-categories\">\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon class=\"arrow\" [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n\n      <div class=\"category\">\n        <fa-icon [icon]=\"faDumbbell\" size=\"2x\"></fa-icon>\n        <span>\n          This programs is designed for those who exercises only for their body\n          fitness not body building.\n        </span>\n        <div class=\"join-now\">\n          <span>Join Now</span>\n          <fa-icon [icon]=\"faArrow\" size=\"2x\"></fa-icon>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<!-- header -->\n<div class=\"content-container\">\n  <div health-information3></div>\n</div>\n\n<div class=\"content-container programs\">\n  <div health-programs></div>\n</div>\n"
         },
         {
             "name": "ViewRecipeComponent",
@@ -2239,14 +2374,58 @@
             ]
         },
         {
+            "name": "Information1Module",
+            "id": "module-Information1Module-fe3ae89e287f6da2f608fa282e085ea8d2a54696ef196396c08e549927ff08b40a37af865c9e64f170a27d936f119872a91fffb9f2439da81250537b0208a7d9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/information1/information1.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { Information1Component } from './information1.component';\r\n\r\n@NgModule({\r\n  declarations: [Information1Component],\r\n  imports: [FontAwesomeModule],\r\n  exports: [Information1Component],\r\n})\r\nexport class Information1Module {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Information1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Information1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "Information3Module",
-            "id": "module-Information3Module-c6abc9f19a5a680bae162fe72a2c3b31459ab99acb7d4e43e9f609d2ac6eb2dd35c26a412831284e32593371e225e2a44c51ee15d459c39b9ad7e5207c0bb28a",
+            "id": "module-Information3Module-daec06e68d3fbe4d2fbac46482f8462f6d69b736112502842d1c20346d8d712be464f851765c5a6801a3723874052b7f209c6b9220c91a61227de8d0167afa07",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/stories/libs/composite/information3/information3.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Information3Component } from './information3.component';\r\n\r\n@NgModule({\r\n  declarations: [Information3Component],\r\n  imports: [],\r\n  exports: [Information3Component],\r\n})\r\nexport class Information3Module {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { Information3Component } from './information3.component';\r\n\r\n@NgModule({\r\n  declarations: [Information3Component],\r\n  imports: [CommonModule],\r\n  exports: [Information3Component],\r\n})\r\nexport class Information3Module {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2401,6 +2580,50 @@
                     "elements": [
                         {
                             "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ProgramsModule",
+            "id": "module-ProgramsModule-a6c8f753d812667a8ddda77ff7837679858793e13d4f7a44b4bc6b45f770ea23cdd36f602a8c96cff3999ced8db560d643c210a08ab9f2a60a62a414fdbe17dc",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/libs/composite/programs/programs.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProgramsComponent } from './programs.component';\r\n\r\n@NgModule({\r\n  declarations: [ProgramsComponent],\r\n  imports: [CommonModule, FontAwesomeModule],\r\n  exports: [ProgramsComponent],\r\n})\r\nexport class ProgramsModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ProgramsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ProgramsComponent"
                         }
                     ]
                 },
@@ -2588,13 +2811,13 @@
         },
         {
             "name": "uiModule",
-            "id": "module-uiModule-5a6f8fce6bcf99fcc053377e31389b3b0387b158c726e06aed95fa2657da9b128c9e3a553af16bc9dcef6f58298767f72ab4301ed577c340e1ca3ecfcdd65491",
+            "id": "module-uiModule-2eb28b91f23f86c237b3e85c51cc6b670fd73d855aa615aab114ef0f74aefaab21f07d621d5ff326b5950ce45d29ed0d592aa6d349fe87077a5dc0f08fabf7ea",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameTitleComponent } from '@healthComponents/frame-title/frame-title.component';\r\nimport { FrameTitleModule } from '@healthComponents/frame-title/frame-title.module';\r\nimport { InputTypeComponent } from 'stories/libs/Base/input-type/input-type.component';\r\nimport { InputTypeModule } from 'stories/libs/Base/input-type/input-type.modue';\r\nimport { LogoComponent } from 'stories/libs/Base/logo/logo.component';\r\nimport { LogoModule } from 'stories/libs/Base/logo/logo.module';\r\nimport { SelectResearchComponent } from 'stories/libs/Base/select-research/select-research.component';\r\nimport { SelectResearchModule } from 'stories/libs/Base/select-research/select-research.module';\r\nimport { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'stories/libs/composite/frame-number/frame-number.module';\r\nimport { HorizontalGalleryModule } from 'stories/libs/composite/horizontal-gallery/horizantal-gallery.module';\r\nimport { HorizontalGalleryComponent } from 'stories/libs/composite/horizontal-gallery/horizontal-gallery.component';\r\nimport { IngredientListComponent } from 'stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FrameTitleComponent } from '@healthComponents/frame-title/frame-title.component';\r\nimport { FrameTitleModule } from '@healthComponents/frame-title/frame-title.module';\r\nimport { Information3Component } from '@healthComponents/information3/information3.component';\r\nimport { Information3Module } from '@healthComponents/information3/information3.module';\r\nimport { ProgramsComponent } from '@healthComponents/programs/programs.component';\r\nimport { ProgramsModule } from '@healthComponents/programs/programs.module';\r\nimport { InputTypeComponent } from 'stories/libs/Base/input-type/input-type.component';\r\nimport { InputTypeModule } from 'stories/libs/Base/input-type/input-type.modue';\r\nimport { LogoComponent } from 'stories/libs/Base/logo/logo.component';\r\nimport { LogoModule } from 'stories/libs/Base/logo/logo.module';\r\nimport { SelectResearchComponent } from 'stories/libs/Base/select-research/select-research.component';\r\nimport { SelectResearchModule } from 'stories/libs/Base/select-research/select-research.module';\r\nimport { FrameNumberComponent } from 'stories/libs/composite/frame-number/frame-number.component';\r\nimport { FrameNumberModule } from 'stories/libs/composite/frame-number/frame-number.module';\r\nimport { HorizontalGalleryModule } from 'stories/libs/composite/horizontal-gallery/horizantal-gallery.module';\r\nimport { HorizontalGalleryComponent } from 'stories/libs/composite/horizontal-gallery/horizontal-gallery.component';\r\nimport { IngredientListComponent } from 'stories/libs/composite/ingredient-list/ingredient-list.component';\r\nimport { IngredientListModule } from 'stories/libs/composite/ingredient-list/ingredient-list.module';\r\nimport { RecipeDescriptionComponent } from 'stories/libs/composite/recipe-description/recipe-description.component';\r\nimport { RecipeDescriptionModule } from 'stories/libs/composite/recipe-description/recipe-description.module';\r\n\r\nconst modules = [\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n  ProgramsModule,\r\n  Information3Module,\r\n];\r\n\r\nconst components = [\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n  ProgramsComponent,\r\n  Information3Component,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: components,\r\n})\r\nexport class uiModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2617,6 +2840,9 @@
                             "name": "HorizontalGalleryModule"
                         },
                         {
+                            "name": "Information3Module"
+                        },
+                        {
                             "name": "IngredientListModule"
                         },
                         {
@@ -2624,6 +2850,9 @@
                         },
                         {
                             "name": "LogoModule"
+                        },
+                        {
+                            "name": "ProgramsModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -2646,6 +2875,9 @@
                             "name": "HorizontalGalleryComponent"
                         },
                         {
+                            "name": "Information3Component"
+                        },
+                        {
                             "name": "IngredientListComponent"
                         },
                         {
@@ -2653,6 +2885,9 @@
                         },
                         {
                             "name": "LogoComponent"
+                        },
+                        {
+                            "name": "ProgramsComponent"
                         },
                         {
                             "name": "RecipeDescriptionComponent"
@@ -2856,6 +3091,9 @@
                             "name": "HorizontalGalleryModule"
                         },
                         {
+                            "name": "Information3Module"
+                        },
+                        {
                             "name": "IngredientListModule"
                         },
                         {
@@ -2863,6 +3101,9 @@
                         },
                         {
                             "name": "LogoModule"
+                        },
+                        {
+                            "name": "ProgramsModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -2885,6 +3126,9 @@
                             "name": "HorizontalGalleryModule"
                         },
                         {
+                            "name": "Information3Module"
+                        },
+                        {
                             "name": "IngredientListModule"
                         },
                         {
@@ -2892,6 +3136,9 @@
                         },
                         {
                             "name": "LogoModule"
+                        },
+                        {
+                            "name": "ProgramsModule"
                         },
                         {
                             "name": "RecipeDescriptionModule"
@@ -3075,7 +3322,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n  ProgramsComponent,\r\n  Information3Component,\r\n]"
             },
             {
                 "name": "context",
@@ -3101,21 +3348,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
             },
             {
                 "name": "intagrated",
@@ -3141,7 +3388,7 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3151,7 +3398,7 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/frame-number/frame-number.stories.ts",
+                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3171,6 +3418,26 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "intagrated",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/information3/information3.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3181,7 +3448,7 @@
                 "name": "intagrated",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "file": "src/stories/libs/composite/programs/programs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3265,7 +3532,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n]"
+                "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n  ProgramsModule,\r\n  Information3Module,\r\n]"
             },
             {
                 "name": "modules",
@@ -3340,31 +3607,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<SelectResearchComponent>",
-                "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/libs/composite/date-training/date-training.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<DateTrainingComponent>",
                 "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FrameTitleComponent>",
-                "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3380,11 +3627,51 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FrameTitleComponent>",
+                "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/Base/select-research/select-research.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SelectResearchComponent>",
+                "defaultValue": "(\r\n  args: SelectResearchComponent\r\n) => ({\r\n  component: SelectResearchComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/libs/composite/galerie/galerie.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<GalerieComponent>",
                 "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HorizontalGalleryComponent>",
+                "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Information1Component>",
+                "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3400,11 +3687,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts",
+                "file": "src/stories/libs/composite/programs/programs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<HorizontalGalleryComponent>",
-                "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+                "type": "Story<ProgramsComponent>",
+                "defaultValue": "(args: ProgramsComponent) => ({\r\n  component: ProgramsComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3450,7 +3737,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberComponent,\r\n  IngredientListComponent,\r\n  RecipeDescriptionComponent,\r\n  LogoComponent,\r\n  HorizontalGalleryComponent,\r\n  InputTypeComponent,\r\n  SelectResearchComponent,\r\n  FrameTitleComponent,\r\n  ProgramsComponent,\r\n  Information3Component,\r\n]"
                 },
                 {
                     "name": "modules",
@@ -3460,7 +3747,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n]"
+                    "defaultValue": "[\r\n  FrameNumberModule,\r\n  IngredientListModule,\r\n  RecipeDescriptionModule,\r\n  LogoModule,\r\n  HorizontalGalleryModule,\r\n  InputTypeModule,\r\n  SelectResearchModule,\r\n  FrameTitleModule,\r\n  ProgramsModule,\r\n  Information3Module,\r\n]"
                 }
             ],
             "src/test.ts": [
@@ -3526,18 +3813,6 @@
                     "defaultValue": "(args: InputTypeComponent) => ({\r\n  component: InputTypeComponent,\r\n  props: args,\r\n})"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3548,6 +3823,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  spaceId: 'zfepwmneoymr',\n  accessToken: 'pH_0g8yMK6j0UHkNtHpFYf25B1eBQZTv90K_QXMcIxM',\n}"
                 }
             ],
             "src/stories/libs/Base/logo/logo.stories.ts": [
@@ -3594,28 +3881,6 @@
                     "defaultValue": "(\r\n  args: DateTrainingComponent\r\n) => ({\r\n  component: DateTrainingComponent,\r\n  props: args,\r\n  DateTrainingComponent,\r\n})"
                 }
             ],
-            "src/stories/libs/composite/frame-title/frame-title.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FrameTitleComponent>",
-                    "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/libs/composite/frame-number/frame-number.stories.ts": [
                 {
                     "name": "intagrated",
@@ -3636,6 +3901,28 @@
                     "deprecationMessage": "",
                     "type": "Story<FrameNumberComponent>",
                     "defaultValue": "(args: FrameNumberComponent) => ({\r\n  component: FrameNumberComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/frame-title/frame-title.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/frame-title/frame-title.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<FrameTitleComponent>",
+                    "defaultValue": "(args: FrameTitleComponent) => ({\r\n  component: FrameTitleComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/galerie/galerie.stories.ts": [
@@ -3670,28 +3957,6 @@
                     "defaultValue": "(args: GalerieComponent) => ({\r\n  component: GalerieComponent,\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/libs/composite/information3/information3.stories.ts": [
-                {
-                    "name": "intagrated",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Information3Component>",
-                    "defaultValue": "(\r\n  args: Information3Component\r\n) => ({\r\n  component: Information3Component,\r\n  props: args,\r\n})"
-                }
-            ],
             "src/stories/libs/composite/horizontal-gallery/horizontal-gallery.stories.ts": [
                 {
                     "name": "intagrated",
@@ -3722,6 +3987,72 @@
                     "deprecationMessage": "",
                     "type": "Story<HorizontalGalleryComponent>",
                     "defaultValue": "(\r\n  args: HorizontalGalleryComponent\r\n) => ({\r\n  component: HorizontalGalleryComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/information1/information1.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information1/information1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Information1Component>",
+                    "defaultValue": "(\r\n  args: Information1Component\r\n) => ({\r\n  component: Information1Component,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/information3/information3.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/information3/information3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Information3Component>",
+                    "defaultValue": "(\r\n  args: Information3Component\r\n) => ({\r\n  component: Information3Component,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/libs/composite/programs/programs.stories.ts": [
+                {
+                    "name": "intagrated",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/programs/programs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/libs/composite/programs/programs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ProgramsComponent>",
+                    "defaultValue": "(args: ProgramsComponent) => ({\r\n  component: ProgramsComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/libs/composite/recipe-description/recipe-description.stories.ts": [
@@ -3993,7 +4324,7 @@
                 "linktype": "component",
                 "name": "ViewHomeTrainingComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4353,6 +4684,35 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/libs/composite/information1/information1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Information1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/information1/information1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/libs/composite/information3/information3.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4412,6 +4772,35 @@
             },
             {
                 "filePath": "src/stories/libs/composite/ingredient-list/ingredient-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/programs/programs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgramsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/programs/programs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "intagrated",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/libs/composite/programs/programs.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
